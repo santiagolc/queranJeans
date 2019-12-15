@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+}
+
+body{
+    background: rgb(246, 246, 246);
+}
+
+.perfil{
+    margin: 230px 0px 150px 0px;
+    text-align: center;
+}
+
+
+div .imgAvatarEdit{
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+
+}
+
+/* media querie para tablets */
+@media (max-width: 768px){
+    
+    .perfil{
+        margin-top: 200px;
+        margin-bottom: 250px;
+        padding: 10px;
+    }
+
+    div .imgAvatarEdit{
+        width: 150px;
+    }
+}
+
+
+/* media querie para mobile */
+@media (max-width: 425px){
+
+    .perfil{
+        margin-top: 30%;
+        margin-bottom: 40%;
+    }
+
+    .perfil h2, .perfil a{
+        font-size: .7em;
+    }
+
+    div .imgAvatarEdit{
+        width: 100px;
+    }
+
+}

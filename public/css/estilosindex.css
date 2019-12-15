@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+}
+
+    body{
+        background: rgb(246, 246, 246);
+    }
+
+/* BANNER ------------ */
+
+    .banner{
+        margin-top: 6%;
+    }
+
+    .banner img{
+        width: 100%;
+        margin-top: 5%;
+    }
+
+/* SECTION --------------- */
+
+    .titulo{
+        text-align: center;
+    }
+
+    hr{
+        width: 25%;
+        margin: 1% 0% 1% 37%
+    }
+
+    .ofertas{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .oferta{
+        width: 23%;
+        margin: 1%;
+        height: 385px;
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    }
+
+    .oferta img{
+        width: 100%;
+    }
+
+    .descuento{
+        background: rgba(0,0,0,0.6);
+        position: relative;
+        text-align: center;
+        bottom: 115%;
+        left: 75%;
+        width: 25%;
+        padding:10px;
+    }
+
+    .oferta .datos{
+        background: rgba(0,0,0,0.6);
+        position: relative;
+        text-align: center;
+        bottom: 35%;
+        width: 100%;
+        padding:10px;
+    }
+
+    .descuento span{
+        color: white;
+        font-weight: bolder;
+        font-size: 30px;
+    }
+
+    .datos span, .datos2 span {
+        text-transform: uppercase;
+    }
+
+    .oferta .datos span, .oferta .datos a{
+        font-size: 25px;
+        color: white;
+    }
+
+    .oferta .datos a{
+        text-decoration: none;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding: 2px;
+    }
+
+    .datos a:hover{
+        background: white;
+        color: rgb(24, 24, 24)
+    }
+
+    .jeans{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .jean{
+        width: 40%;
+    }
+
+    .jean img{
+        width: 100%;
+    }
+
+    .datos2{
+        background: rgba(0,0,0,0.6);
+        position: relative;
+        text-align: center;
+        bottom: 25%;
+        width: 100%;
+        padding: 15px;
+        color: white;
+    }
+
+    .datos2 a{
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 1px solid white;
+        padding: 10px;
+    }
+
+    .datos2 a:hover{
+        background: white;
+        color: rgb(24, 24, 24);
+    }
+
+    .remeras{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .remera{
+        width: 40%;
+    }
+
+    .remera img{
+        width: 100%;
+    }
+
+@media (max-width: 1100px){
+
+    .banner{
+        margin-top: 8.5%;
+    }
+
+    .oferta{
+        width: 45%;
+        margin-left: 3%;
+    }
+
+    .descuento{
+        bottom: 90.7%;
+        left: 75%;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .banner{
+        margin-top: 12%;
+    }
+
+    .oferta{
+        width: 45%;
+        margin-left: 3%;
+    }
+
+    .descuento{
+        bottom: 87.8%;
+        left: 75%;
+    }
+
+    .datos2 span, .datos2 a{
+        font-size: 35px;
+    }
+
+    .datos2 a{
+        padding: 0px 5px 0px 5px;
+    }
+
+}
+
+@media (max-width: 400px){
+
+    .banner{
+        display: none;
+    }
+
+    .productos{
+        margin-top: 8%;
+    }
+
+    .ofertas{
+        margin-top: 8%;
+    }
+
+    .oferta{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .descuento{
+        bottom: 88.9%;
+        left: 75%;
+    }
+
+    .jean, .remera{
+        width: 100%;
+    }
+
+}
+
+

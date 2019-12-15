@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+}
+
+/* HEADER ----------- */
+
+header{
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav img{
+    width: 60%;
+}
+
+nav a{
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    padding: 20px;
+    
+}
+
+.avatarHeader {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.avatarHeader img {
+    width: 60px;
+    height: 60px;
+    margin-left: 10%;
+    border-radius: 50px;
+}
+
+.avatarHeader .nombreHeader {
+    margin-left: 10%;
+}
+
+.cartelExitoso main {
+    text-align: center;
+}
+
+
+/* HOVER --------- */
+
+nav ul li a:hover{
+    background: white;
+    color: rgb(24, 24, 24)
+}
+
+/* Media queries Tablets */
+@media (max-width: 768px){
+
+    nav{
+        padding: 2.8%;
+    }
+
+    nav img{
+    width: 90px;
+    height: 65px;
+    object-fit: cover;
+    object-position: center center;
+    }
+
+    nav ul li a{
+    text-align: center;
+    }
+}
+
+
+/* Media queries Mobile */
+@media (max-width: 425px){
+
+    header{
+        position: inherit;
+    }
+
+    nav{
+        flex-wrap: wrap;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav span{
+        width: unset;
+    }
+
+    nav ul{
+        flex-direction: column;
+    }
+
+    .avatarHeader img {
+        margin-left: 0%;
+    }
+
+    nav ul li a:hover{
+        background: none;
+        color: gray;
+    }
+
+}
