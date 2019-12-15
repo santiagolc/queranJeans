@@ -1,58 +1,52 @@
-<?php 
+@extends('plantilla')
+
 @section("principal")
-?>
 
  <!-- BANNER -->
- <div class="banner">
-            <img src="images/547128-banner.jpg" alt="banner">
-        </div>
+    <div class="banner">
+        <img src="images/547128-banner.jpg" alt="banner">
+    </div>
+       
         <!-- SECTION -->
         <section class="productos">
             <hr><h2 class="titulo">PRODUCTOS DESTACADOS</h2><hr>
+            
             <div class="ofertas">
-                <!--Molde Article en HTML-->
-                <!--<article class="oferta">
-                <img src="images/ropa1.jpg" alt="ropa">
+            @foreach ($ofertas as $oferta)
+              
+                <article class="oferta">
+                <img src='{{$oferta->imagen}}' alt='{{$oferta->titulo}}'>
                 <div class="datos">
-                    <span>TITULO PRODUCTO</span>
-                    <span>$ VALOR</span>
+                    <span>{{$oferta->titulo}}</span>
+                    <span>${{$oferta->precio}}></span>
                     <a href="#">COMPRAR</a>
                 </div>
                 <div class="descuento">
-                    <span>30%</span>
+                    <span>{{$oferta->descuento}}%</span>
                 </div>
-                </article> -->
-                <?php
-                verTodosOferta2($productos);
-                ?>
+                </article>
+
+            @endforeach
             </div>
+
             <div class="jeans">
-                <!--Molde Article en HTML-->
-                <!--<article class="jean">
-                    <img src="images/jean1.jpg" alt="ropa">
+            @foreach($jeans as $jean)
+           
+                <article class="jean">
+                <img src='{{$jean->imagen}}' alt='{{$jean->titulo}}'>
                 <div class="datos2">
-                    <span>JEANS HOMBRE</span>
-                    <a href="#">VER</a>
+                    <span>{{$jean->nombre}} {{$jean->sexo->sexo}}</span>
+                    <a href=''>VER</a>
                 </div>
-                </article> -->
-                <?php
-                verTodosJeans2($jeans);
-                ?>
+                </article> 
+
+             @endforeach  
             </div>
+
             <div class="remeras">
-                <!--Molde Article en HTML-->
-                <!--<article class="remera">
-                    <img src="images/remera1.jpg" alt="ropa">
-                    <div class="datos2">
-                        <span>REMERAS HOMBRE</span>
-                        <a href="#">VER</a>
-                    </div>
-                </article>-->
-                <?php
-                verTodosRemera2($remeras);
-                ?>
-    </div>
+           
+            </div>
+            
         </section>
-<?php         
-    @endsection
-?>
+     
+    @stop
