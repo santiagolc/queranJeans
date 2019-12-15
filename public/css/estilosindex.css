@@ -98,10 +98,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        
     }
 
     .jean{
         width: 40%;
+        height: 900px;
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+        
     }
 
     .jean img{
@@ -139,6 +143,8 @@
 
     .remera{
         width: 40%;
+        height: 670px;
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
     }
 
     .remera img{
