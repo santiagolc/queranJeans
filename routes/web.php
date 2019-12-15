@@ -1,5 +1,5 @@
 <?php
-include "productos.php";
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/index", "IndexController@verOfertas($productos)");
+Route::get("/index", "IndexController@mostrarOfertasYCategorias");
+
 
 Route::get("/faq", function(){
     return view("faq");
