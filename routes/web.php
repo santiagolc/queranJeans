@@ -17,10 +17,7 @@ Route::get('/', function () {
 
 Route::get("/index", "IndexController@mostrarOfertasYCategorias");
 
-
-Route::get("/faq", function(){
-    return view("faq");
-});
+Route::get("/faq", "FaqController@faq");
 
 Route::get("/registro", function(){
     return view("registro");

@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilosheader.css">
     <link rel="stylesheet" href="css/estilosindex.css">
+    <link rel="stylesheet" href="css/estilosfaq.css">
     <link rel="stylesheet" href="css/estilosfooter.css">
     <title>Document</title>
 </head>
@@ -14,11 +15,11 @@
 <header>
     <nav>
         <span class="logo">
-            <a href="indexdinamico.php" class="logo"><img src="images/logob&n.png" alt="logo QueranJeans"></a>
+            <a href="/index" class="logo"><img src="images/logob&n.png" alt="logo QueranJeans"></a>
         </span>
         <ul>
-            <li><a href="login.php">LOGIN</a></li>
-            <li><a href="registro.php">REGISTRARSE</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/registro">REGISTRARSE</a></li>
         </ul>
     </nav>
 </header>
@@ -31,7 +32,7 @@
             <a href="tel:5254-5658">5254-5658</a><br>
             <a href="mailto:nuestrositio@gmail.com">nuestrositio@gmail.com</a>
         </div>
-        <a class="faq" href="faq.php">PREGUNTAS FRECUENTES</a>
+        <a class="faq" href="/faq">PREGUNTAS FRECUENTES</a>
         <ul class="redes">
             <li><a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt=""> FACEBOOK</a></li>
             <li><a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt=""> INSTAGRAM</a></li>

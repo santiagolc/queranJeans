@@ -1,3 +1,5 @@
+@extends('plantilla')
+
 @section("principal")
   <!-- MAIN -->
   <main class="preguntas">
@@ -34,4 +36,4 @@
                 <h3>¿COMO HAGO PARA RECIBIR LAS ULTIMAS NOVEDADES?</h3>
                 <p>Cuando hagas el <a href="registro.php">registro</a> selecciona la opcion: "Deseo recibir ofertas".</p>
             </main>
-@endsection
+@stop
