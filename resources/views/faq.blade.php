@@ -1,5 +1,11 @@
 @extends('plantilla')
 
+@section("titulo")
+
+QueranJeans - PREGUNTAS FRECEUNTES
+
+@endsection
+
 @section("principal")
   <!-- MAIN -->
   <main class="preguntas">

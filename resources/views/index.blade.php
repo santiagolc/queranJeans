@@ -1,5 +1,11 @@
 @extends('plantilla')
 
+@section("titulo")
+
+QueranJeans - HOME
+
+@endsection
+
 @section("principal")
 
  <!-- BANNER -->
@@ -46,7 +52,7 @@
             <div class="remeras">
            
             </div>
-            
+
         </section>
      
     @stop

@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="css/estilosheader.css">
     <link rel="stylesheet" href="css/estilosindex.css">
     <link rel="stylesheet" href="css/estilosfaq.css">
+    <link rel="stylesheet" href="css/estilosregistro.css">
+    <link rel="stylesheet" href="css/estiloslogin.css">
     <link rel="stylesheet" href="css/estilosfooter.css">
-    <title>Document</title>
+    
+    <title>
+
+    @yield("titulo")
+
+    </title>
+    
 </head>
 <body>
 <header>
