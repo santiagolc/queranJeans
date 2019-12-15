@@ -4,25 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-include "productos.php";
+use App\Producto;
+use App\Categoria;
+use App\Sexo;
+
 
 class IndexController extends Controller
 {
-    public function verOfertas($productos){
-        foreach($productos as $producto) {
-    ?>
-        <article class="oferta">
-            <img src="<?=$producto["imagen"];?>" alt="<?=$producto["titulo"];?>">
-            <div class="datos">
-                <span><?=$producto["titulo"];?></span>
-                <span>$<?= oferta($producto["valor"], $producto["descuento"]);?></span>
-                <a href="#">COMPRAR</a>
-            </div>
-            <div class="descuento">
-                <span><?=$producto["descuento"]?>%</span>
-            </div>
-        </article>
-    <?php
-        }
+
+    public function oferta($precio, $descuento){
+        $resultado1 = $precio * $descuento / 100;
+        $resultado2 = $precio - $resultado1;
+        return $resultado2;
     }
+    
+    public function mostrarOfertasYCategorias(){
+        $ofertas = Producto::where("oferta", "=", "1")->get();
+        $jeans = Categoria::all();
+        //$remeras = Categoria::take(2)->skip(2)->get();
+
+        return view("index", compact("ofertas", "jeans"));
+    }
+
+   
 }
