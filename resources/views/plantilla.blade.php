@@ -17,39 +17,14 @@
             <a href="indexdinamico.php" class="logo"><img src="images/logob&n.png" alt="logo QueranJeans"></a>
         </span>
         <ul>
-            <?php            
-            if(isset($_SESSION["id"])) {
-            ?>
-            <li><a href="logout.php">LOG OUT</a></li>  
-            <li class="avatarHeader">
-                <img src="<?=$_SESSION["avatar"];?>" alt="avatar header">
-                <div class="nombreHeader">
-                    <a href="perfil.php"> <?=$_SESSION["nombre"];?></a>
-                </div>
-                </li> 
-            <?php } else if(isset($_COOKIE["usuario"])) {
-                include_once("clases/BDJson.php");
-                $BDJson = new JsonDB("usuarios.json");
-                $usuarioCookie = $BDJson->encontrarUsuariosPorMail($_COOKIE["usuario"]);
-                $BDJson->login($usuarioCookie); 
-                ?>
-                <li><a href="logout.php">LOG OUT</a></li>  
-                <li class="avatarHeader">
-                    <img src="<?=$_SESSION["avatar"];?>" alt="avatar header">
-                    <div class="nombreHeader">
-                        <a href="perfil.php"> <?=$_SESSION["nombre"];?></a>
-                    </div>
-                </li>   
-            <?php } else { ?>
-                <li><a href="login.php">LOGIN</a></li>
-                <li><a href="registro.php">REGISTRARSE</a></li>
-            <?php }?>
+            <li><a href="login.php">LOGIN</a></li>
+            <li><a href="registro.php">REGISTRARSE</a></li>
         </ul>
     </nav>
 </header>
-<?php
- @section("principal");
-?>
+
+ @yield("principal")
+
 <footer>
         <div class="contacto">
             <h3>CONTACTO</h3>
