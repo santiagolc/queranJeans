@@ -27,7 +27,7 @@
         </span>
         <ul>
             <li><a href="/login">LOGIN</a></li>
-            <li><a href="/registro">REGISTRARSE</a></li>
+            <li><a href="/register">REGISTRARSE</a></li>
         </ul>
     </nav>
 </header>
