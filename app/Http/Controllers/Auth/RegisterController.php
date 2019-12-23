@@ -50,13 +50,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'surname' => ['required', 'string', 'max:255'],
-            'sex' => ['required'],
-            'question' => ['required', 'string', 'max:100'],
-            'answer' => ['required', 'string', 'max:100'],
-
+            //'avatar' => ['file']
         ]);
     }
 
@@ -71,7 +68,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
     
-        dd($_FILES);
+
         /*$request = request();
 
         $route = $request->file("poster")->store("public");
@@ -80,7 +77,7 @@ class RegisterController extends Controller
         $request = request();
 
         $profileImage = $request->file('profile_picture');
-        
+        $request->hasFile("profile_picture");
         $profileImageSaveAsName = time() . "-profile." . 
                                   $profileImage->getClientOriginalExtension();
 
@@ -90,6 +87,7 @@ class RegisterController extends Controller
 
         return User::create([
             'name' => $data['name'],
+            'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'surname' => $data["surname"],
