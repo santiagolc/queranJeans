@@ -70,8 +70,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+    
+        dd($_FILES);
+        /*$request = request();
 
-        dd($request->file('profile_picture'));
+        $route = $request->file("poster")->store("public");
+        $fileName = basename($route);*/
+
         $request = request();
 
         $profileImage = $request->file('profile_picture');
