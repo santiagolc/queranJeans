@@ -55,6 +55,8 @@ class RegisterController extends Controller
         ]);
     }
 
+
+
     /**
      * Create a new user instance after a valid registration.
      *
@@ -63,10 +65,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+    
+
+        /*$request = request();
+
+        $route = $request->file("poster")->store("public");
+        $fileName = basename($route);*/
+
+        $request = request();
+
+        $profileImage = $request->file('profile_picture');
+        
+        $profileImageSaveAsName = time() . "-profile." . 
+                                  $profileImage->getClientOriginalExtension();
+
+        $upload_path = 'profile_images/';
+        $profile_image_url = $upload_path . $profileImageSaveAsName;
+        $success = $profileImage->move($upload_path, $profileImageSaveAsName);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'surname' => $data["surname"],
+            'profile_picture' => $profile_image_url
         ]);
     }
 }
