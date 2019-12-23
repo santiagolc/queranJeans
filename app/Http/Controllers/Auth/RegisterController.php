@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
+
+
+
 
 class RegisterController extends Controller
 {
@@ -28,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -53,11 +58,11 @@ class RegisterController extends Controller
             'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            //'avatar' => ['file']
+            'question' => ['required', 'string', 'max:100'],
+            'answer' => ['required', 'string', 'max:100'],
+            'avatar' => ['file'],
         ]);
     }
-
-
 
     /**
      * Create a new user instance after a valid registration.
@@ -66,32 +71,24 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
+   
     {
-    
-
-        /*$request = request();
-
-        $route = $request->file("poster")->store("public");
-        $fileName = basename($route);*/
-
         $request = request();
-
-        $profileImage = $request->file('profile_picture');
-        $request->hasFile("profile_picture");
-        $profileImageSaveAsName = time() . "-profile." . 
-                                  $profileImage->getClientOriginalExtension();
-
-        $upload_path = 'profile_images/';
+        $profileImage = $request->file('avatar');
+        $request->hasFile("avatar");
+        $profileImageSaveAsName = time() . "." . $profileImage->getClientOriginalExtension();
+        $upload_path = 'avatars/';
         $profile_image_url = $upload_path . $profileImageSaveAsName;
         $success = $profileImage->move($upload_path, $profileImageSaveAsName);
-
+ 
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'surname' => $data["surname"],
-            'profile_picture' => $profile_image_url
+            'question' => $data['question'],
+            'answer' => $data['answer'],
+            'avatar' => $profile_image_url,
         ]);
     }
 }

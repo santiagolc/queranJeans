@@ -11,20 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get("/index", "IndexController@mostrarOfertasYCategorias");
 
 Route::get("/faq", "FaqController@faq");
 
-Route::get("/login", function(){
-    return view("login");
+Route::get("/profile", "ProfileController@vista");
+
+
+Route::get('/', function () {
+    return view('welcome');
 });
-
-
-
 
 Auth::routes();
 

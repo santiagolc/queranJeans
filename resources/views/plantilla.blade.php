@@ -25,10 +25,26 @@
         <span class="logo">
             <a href="/index" class="logo"><img src="images/logob&n.png" alt="logo QueranJeans"></a>
         </span>
+        @guest
         <ul>
             <li><a href="/login">LOGIN</a></li>
             <li><a href="/register">REGISTRARSE</a></li>
         </ul>
+        @endguest
+        @auth
+        <ul>
+            <li class="avatarHeader"><img src="/{{ Auth::user()->avatar }}" alt=""></li>
+            <li><a href="/profile">{{ Auth::user()->name }}</a></li>
+            <li>
+                <a class="dropdown-item" href="{{ route('logout') }}" 
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">SALIR</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>
+            </li>
+        </ul>
+        @endauth
     </nav>
 </header>
 

@@ -11,7 +11,6 @@ use App\Sexo;
 
 class IndexController extends Controller
 {
-
     public function oferta($precio, $descuento){
         $resultado1 = $precio * $descuento / 100;
         $resultado2 = $precio - $resultado1;
@@ -23,6 +22,4 @@ class IndexController extends Controller
 
         return view("index", compact("ofertas"));
     }
-
-   
 }
