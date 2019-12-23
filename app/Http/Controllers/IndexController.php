@@ -19,11 +19,9 @@ class IndexController extends Controller
     }
     
     public function mostrarOfertasYCategorias(){
-        $ofertas = Producto::where("oferta", "=", "1")->get();
-        $jeans = Categoria::all();
-        //$remeras = Categoria::take(2)->skip(2)->get();
+        $ofertas = Producto::where("oferta", "=", "1")->take(4)->get();
 
-        return view("index", compact("ofertas", "jeans"));
+        return view("index", compact("ofertas"));
     }
 
    

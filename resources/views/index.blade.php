@@ -36,21 +36,37 @@ QueranJeans - HOME
             </div>
 
             <div class="jeans">
-            @foreach($jeans as $jean)
-           
                 <article class="jean">
-                <img src='{{$jean->imagen}}' alt='{{$jean->titulo}}'>
+                <img src='/images/jean1.jpg' alt='jeans hombre'>
                 <div class="datos2">
-                    <span>{{$jean->nombre}} {{$jean->sexo->sexo}}</span>
+                    <span>JEANS HOMBRE</span>
                     <a href=''>VER</a>
                 </div>
                 </article> 
-
-             @endforeach  
+                <article class="jean">
+                <img src='/images/jean2.jpg' alt='jeans mujer'>
+                <div class="datos2">
+                    <span>JEANS MUJER</span>
+                    <a href=''>VER</a>
+                </div>
+                </article> 
             </div>
 
             <div class="remeras">
-           
+                <article class="remera">
+                <img src="/images/remera1.jpg" alt="remeras hombre">
+                <div class="datos2">
+                    <span>REMERAS HOMBRE</span>
+                    <a href="#">VER</a>
+                </div>
+                </article>
+                <article class="remera">
+                <img src="/images/remera2.jpg" alt="remeras mujer">
+                <div class="datos2">
+                    <span>REMERAS MUJER</span>
+                    <a href="#">VER</a>
+                </div>
+                </article>
             </div>
 
         </section>
