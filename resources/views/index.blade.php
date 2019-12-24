@@ -24,7 +24,7 @@ QueranJeans - HOME
                 <img src='{{$oferta->imagen}}' alt='{{$oferta->titulo}}'>
                 <div class="datos">
                     <span>{{$oferta->titulo}}</span>
-                    <span>${{$oferta->precio}}></span>
+                    <span>${{$oferta->precio}}</span>
                     <a href="#">COMPRAR</a>
                 </div>
                 <div class="descuento">
