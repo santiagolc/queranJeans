@@ -74,12 +74,15 @@ class RegisterController extends Controller
    
     {
         $request = request();
-        $profileImage = $request->file('avatar');
-        $request->hasFile("avatar");
-        $profileImageSaveAsName = time() . "." . $profileImage->getClientOriginalExtension();
-        $upload_path = 'avatars/';
-        $profile_image_url = $upload_path . $profileImageSaveAsName;
-        $success = $profileImage->move($upload_path, $profileImageSaveAsName);
+        if($request->hasFile("avatar")) {
+            $profileImage = $request->file('avatar');
+            $profileImageSaveAsName = time() . "." . $profileImage->getClientOriginalExtension();
+            $upload_path = 'avatars/';
+            $profile_image_url = $upload_path . $profileImageSaveAsName;
+            $success = $profileImage->move($upload_path, $profileImageSaveAsName);
+        } else {
+            $profile_image_url = "avatars/foto".rand(1,3).".png"; 
+        }
  
         return User::create([
             'name' => $data['name'],
