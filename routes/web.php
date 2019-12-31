@@ -11,7 +11,7 @@
 |
 */
 
-Route::get("/index", "IndexController@mostrarOfertasYCategorias");
+Route::get("/index", "ProductController@ofertas");
 
 Route::get("/faq", "FaqController@faq");
 

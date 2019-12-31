@@ -21,14 +21,14 @@ QueranJeans - HOME
             @foreach ($ofertas as $oferta)
               
                 <article class="oferta">
-                <img src='{{$oferta->imagen}}' alt='{{$oferta->titulo}}'>
+                <img src='{{$oferta->image}}' alt='{{$oferta->name}}'>
                 <div class="datos">
-                    <span>{{$oferta->titulo}}</span>
-                    <span>${{$oferta->precio}}</span>
+                    <span>{{$oferta->name}}</span>
+                    <span>${{$oferta->price}}</span>
                     <a href="#">COMPRAR</a>
                 </div>
                 <div class="descuento">
-                    <span>{{$oferta->descuento}}%</span>
+                    <span>{{$oferta->sale}}%</span>
                 </div>
                 </article>
 
