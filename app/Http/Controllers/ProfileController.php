@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ProfileController extends Controller
 {
@@ -12,6 +13,6 @@ class ProfileController extends Controller
     }
 
     public function vista(){
-        return view('profile');
+        return view('profile', array('user' => Auth::user()) );
     }
 }

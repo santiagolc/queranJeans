@@ -17,6 +17,10 @@ Route::get("/faq", "FaqController@faq");
 
 Route::get("/profile", "ProfileController@vista");
 
+Route::get("/edit", "EditProfileController@edit");
+Route::post("/edit", "EditProfileController@update");
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,3 +29,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

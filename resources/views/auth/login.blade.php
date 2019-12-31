@@ -58,11 +58,11 @@ QueranJeans - LOGIN
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0" style="margin-bottom:100px;>
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
-                                </button>
+                                </button><br>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

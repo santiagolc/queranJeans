@@ -13,11 +13,13 @@ class Proyecto extends Migration
      */
     public function up()
     {
+        
         Schema::table('users', function (Blueprint $table) {
+            $avatar = "foto".rand(1,3).".png"; 
             $table->string('surname');
             $table->string('question');
             $table->string('answer');
-            $table->string('avatar')->default('default.png');
+            $table->string('avatar')->default($avatar);
         });
     }
 
@@ -32,7 +34,7 @@ class Proyecto extends Migration
             $table->dropColumn('surname');
             $table->dropColumn('question');
             $table->dropColumn('answer');
-            $table->string('avatar')->default('default.png');
+            $table->string('avatar')->default($avatar);
         });
     }
 }
