@@ -15,15 +15,15 @@ class ProductController extends Controller
     }
     
     public function ofertas(){
-        $ofertas = Product::where("offer", "=", "1")->take(4)->get();
+        $products = Product::where("offer", "=", "1")->take(4)->get();
 
-        return view("index", compact("ofertas"));
+        return view("index", compact("products"));
     }
 
     public function todos(){
-        $productos = Product::all();
+        $products = Product::all();
 
-        return view("index", compact("productos"));
+        return view("index", compact("products"));
     }
 
 

@@ -18,17 +18,23 @@ QueranJeans - HOME
             <hr><h2 class="titulo">PRODUCTOS DESTACADOS</h2><hr>
             
             <div class="ofertas">
-            @foreach ($ofertas as $oferta)
+            @foreach ($products as $product)
               
                 <article class="oferta">
-                <img src='{{$oferta->image}}' alt='{{$oferta->name}}'>
+                <img src='{{$product->image}}' alt='{{$product->name}}'>
                 <div class="datos">
-                    <span>{{$oferta->name}}</span>
-                    <span>${{$oferta->price}}</span>
-                    <a href="#">COMPRAR</a>
+                    <span>{{$product->name}}</span>
+                    <span>${{$product->price}}</span>
+                    
+                    <form action="/agregarProducto" method='POST'>
+                    @csrf
+                    <input type="hidden" name="product_id" value='{{$product->id}}'>
+                    <button type='submit'>Comprar</button>
+                    </form>
+                   
                 </div>
                 <div class="descuento">
-                    <span>{{$oferta->sale}}%</span>
+                    <span>{{$product->sale}}%</span>
                 </div>
                 </article>
 
