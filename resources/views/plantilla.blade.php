@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilosheader.css">
-    <link rel="stylesheet" href="css/estilosindex.css">
-    <link rel="stylesheet" href="css/estilosfaq.css">
-    <link rel="stylesheet" href="css/estilosregistro.css">
-    <link rel="stylesheet" href="css/estiloslogin.css">
-    <link rel="stylesheet" href="css/estiloscategorias.css">
-
-    <link rel="stylesheet" href="css/estilosfooter.css">
+    <link rel="stylesheet" href="/css/estilosheader.css">
+    <link rel="stylesheet" href="/css/estilosindex.css">
+    <link rel="stylesheet" href="/css/estilosfaq.css">
+    <link rel="stylesheet" href="/css/estilosregistro.css">
+    <link rel="stylesheet" href="/css/estiloslogin.css">
+    <link rel="stylesheet" href="/css/estiloscategorias.css">
+    <link rel="stylesheet" href="/css/estilosfooter.css">
 
 
     
@@ -27,7 +26,7 @@
 <header>
     <nav>
         <span class="logo">
-            <a href="/index" class="logo"><img src="images/logob&n.png" alt="logo QueranJeans"></a>
+            <a href="/index" class="logo"><img src="/images/logob&n.png" alt="logo QueranJeans"></a>
         </span>
         @guest
         <ul>

@@ -22,7 +22,9 @@ Route::post("/edit", "EditProfileController@update");
 
 Route::post("/agregar", "CartProductController@agregar");
 
-Route::get('/categoria/hombres', 'ProductController@mostrarProductos');
+Route::get('/hombre', 'ProductController@mostrarProductosHombre');
+Route::get('/mujer', 'ProductController@mostrarProductosMujer');
+
 
 
 

@@ -27,10 +27,16 @@ class ProductController extends Controller
         return view("index", compact("products"));
     }
 
-    public function mostrarProductos(){
+    public function mostrarProductosHombre(){
         $products = Product::where('category', '=', 'hombre')->get();
 
-        return view('catHombres', compact('products'));
+        return view('categoria_hombre', compact('products'));
+    }
+
+    public function mostrarProductosMujer(){
+        $products = Product::where('category', '=', 'mujer')->get();
+
+        return view('categoria_mujer', compact('products'));
     }
 
 

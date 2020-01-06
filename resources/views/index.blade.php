@@ -14,10 +14,9 @@ QueranJeans - HOME
     </div>
        
         <!-- SECTION -->
-        <section class="productos">
+        <section class="destacados">
             <hr><h2 class="titulo">PRODUCTOS DESTACADOS</h2><hr>
 
-         
             
             <div class="ofertas">
             @foreach ($products as $product)
@@ -48,14 +47,14 @@ QueranJeans - HOME
                 <img src='/images/jean1.jpg' alt='jeans hombre'>
                 <div class="datos2">
                     <span>JEANS HOMBRE</span>
-                    <a href=''>VER</a>
+                    <a href='hombre'>VER</a>
                 </div>
                 </article> 
                 <article class="jean">
                 <img src='/images/jean2.jpg' alt='jeans mujer'>
                 <div class="datos2">
                     <span>JEANS MUJER</span>
-                    <a href=''>VER</a>
+                    <a href='mujer'>VER</a>
                 </div>
                 </article> 
             </div>
@@ -65,14 +64,14 @@ QueranJeans - HOME
                 <img src="/images/remera1.jpg" alt="remeras hombre">
                 <div class="datos2">
                     <span>REMERAS HOMBRE</span>
-                    <a href="#">VER</a>
+                    <a href="hombre">VER</a>
                 </div>
                 </article>
                 <article class="remera">
                 <img src="/images/remera2.jpg" alt="remeras mujer">
                 <div class="datos2">
                     <span>REMERAS MUJER</span>
-                    <a href="#">VER</a>
+                    <a href="mujer">VER</a>
                 </div>
                 </article>
             </div>

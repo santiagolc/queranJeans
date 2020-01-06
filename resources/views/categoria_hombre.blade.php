@@ -8,6 +8,8 @@ QueranJeans - HOMBRES
 
 @section("principal")
 
+<div class='contenedor'>
+
 <!-- LISTA DE CATEGORIAS -->
 <aside class="lateralizq">
             <div class="lista">
@@ -15,20 +17,20 @@ QueranJeans - HOMBRES
                     <li>JEANS
                         <ul>
                             <li class="cat">
-                                <a href="jeanshombre.php">HOMBRE</a>
+                                <a href="hombre">HOMBRE</a>
                             </li>
                             <li class="cat">
-                                <a href="jeansmujer.php">MUJER</a>
+                                <a href="mujer">MUJER</a>
                             </li>
                         </ul>
                     </li>
                     <li>REMERAS
                         <ul>
                             <li class="cat">
-                                <a href="remerashombre.php">HOMBRE</a>
+                                <a href="hombre">HOMBRE</a>
                             </li>
                             <li class="cat">
-                                <a href="remerasmujer.php">MUJER</a>
+                                <a href="mujer">MUJER</a>
                             </li>
                         </ul>
                     </li>
@@ -63,5 +65,5 @@ QueranJeans - HOMBRES
                 </div>
             </section>
         </main>
-
+        </div>
 @stop
