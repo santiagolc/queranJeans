@@ -20,7 +20,9 @@ Route::get("/profile", "ProfileController@vista");
 Route::get("/edit", "EditProfileController@edit");
 Route::post("/edit", "EditProfileController@update");
 
-Route::post("/agregarProducto", "CartProductController@agregar");
+Route::post("/agregar", "CartProductController@agregar");
+
+Route::get('/categoria/hombres', 'ProductController@mostrarProductos');
 
 
 

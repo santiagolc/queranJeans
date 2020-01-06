@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="css/estilosfaq.css">
     <link rel="stylesheet" href="css/estilosregistro.css">
     <link rel="stylesheet" href="css/estiloslogin.css">
+    <link rel="stylesheet" href="css/estiloscategorias.css">
+
     <link rel="stylesheet" href="css/estilosfooter.css">
+
+
     
     <title>
 

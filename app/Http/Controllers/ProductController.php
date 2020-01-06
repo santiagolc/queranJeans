@@ -11,6 +11,7 @@ class ProductController extends Controller
     public function calcularDescuento($precio, $descuento){
         $resultado1 = $precio * $descuento / 100;
         $resultado2 = $precio - $resultado1;
+        
         return $resultado2;
     }
     
@@ -24,6 +25,12 @@ class ProductController extends Controller
         $products = Product::all();
 
         return view("index", compact("products"));
+    }
+
+    public function mostrarProductos(){
+        $products = Product::where('category', '=', 'hombre')->get();
+
+        return view('catHombres', compact('products'));
     }
 
 

@@ -16,6 +16,8 @@ QueranJeans - HOME
         <!-- SECTION -->
         <section class="productos">
             <hr><h2 class="titulo">PRODUCTOS DESTACADOS</h2><hr>
+
+         
             
             <div class="ofertas">
             @foreach ($products as $product)
@@ -26,7 +28,7 @@ QueranJeans - HOME
                     <span>{{$product->name}}</span>
                     <span>${{$product->price}}</span>
                     
-                    <form action="/agregarProducto" method='POST'>
+                    <form class="botonCarrito" action="/agregar" method='POST'>
                     @csrf
                     <input type="hidden" name="product_id" value='{{$product->id}}'>
                     <button type='submit'>Comprar</button>
