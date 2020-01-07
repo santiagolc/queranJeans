@@ -15,12 +15,21 @@ class CartProductController extends Controller
     public function agregar(Request $request){
 
         $product_id = $request->product_id;
-            
-        $nuevoCarrito = new Cart;
-        $nuevoCarrito->user_id = Auth::user()->id;
-        $nuevoCarrito->save();
-        $cart_id = $nuevoCarrito->id;
+
+        $carritosActivos = Cart::where('user_id','=',\Auth::user()->id)->where('status','=','1')->get();
         
+        if(count($carritosActivos)>0){
+            //dd(count($carritosActivos));
+            $cart_id = $carritosActivos[0]->id;
+        }else{
+            $nuevoCarrito = new Cart;
+            $nuevoCarrito->user_id = \Auth::user()->id;
+            $nuevoCarrito->status =1;
+            $nuevoCarrito->save();
+            //tomo el carrito
+            $cart_id = $nuevoCarrito->id;
+        }
+     
 
         $relacion = new Cart_Product;
         $relacion->product_id = $product_id;

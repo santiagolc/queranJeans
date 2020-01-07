@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->timestamps();
+            $table->string('status');
         });
 
         Schema::create('cart_product', function (Blueprint $table) {
