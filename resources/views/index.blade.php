@@ -14,21 +14,28 @@ QueranJeans - HOME
     </div>
        
         <!-- SECTION -->
-        <section class="productos">
+        <section class="destacados">
             <hr><h2 class="titulo">PRODUCTOS DESTACADOS</h2><hr>
+
             
             <div class="ofertas">
-            @foreach ($ofertas as $oferta)
+            @foreach ($products as $product)
               
                 <article class="oferta">
-                <img src='{{$oferta->imagen}}' alt='{{$oferta->titulo}}'>
+                <img src='{{$product->image}}' alt='{{$product->name}}'>
                 <div class="datos">
-                    <span>{{$oferta->titulo}}</span>
-                    <span>${{$oferta->precio}}></span>
-                    <a href="#">COMPRAR</a>
+                    <span>{{$product->name}}</span>
+                    <span>${{$product->price}}</span>
+                    
+                    <form class="botonCarrito" action="/agregar" method='POST'>
+                    @csrf
+                    <input type="hidden" name="product_id" value='{{$product->id}}'>
+                    <button type='submit'>Comprar</button>
+                    </form>
+                   
                 </div>
                 <div class="descuento">
-                    <span>{{$oferta->descuento}}%</span>
+                    <span>{{$product->sale}}%</span>
                 </div>
                 </article>
 
@@ -40,14 +47,14 @@ QueranJeans - HOME
                 <img src='/images/jean1.jpg' alt='jeans hombre'>
                 <div class="datos2">
                     <span>JEANS HOMBRE</span>
-                    <a href=''>VER</a>
+                    <a href='hombre'>VER</a>
                 </div>
                 </article> 
                 <article class="jean">
                 <img src='/images/jean2.jpg' alt='jeans mujer'>
                 <div class="datos2">
                     <span>JEANS MUJER</span>
-                    <a href=''>VER</a>
+                    <a href='mujer'>VER</a>
                 </div>
                 </article> 
             </div>
@@ -57,14 +64,14 @@ QueranJeans - HOME
                 <img src="/images/remera1.jpg" alt="remeras hombre">
                 <div class="datos2">
                     <span>REMERAS HOMBRE</span>
-                    <a href="#">VER</a>
+                    <a href="hombre">VER</a>
                 </div>
                 </article>
                 <article class="remera">
                 <img src="/images/remera2.jpg" alt="remeras mujer">
                 <div class="datos2">
                     <span>REMERAS MUJER</span>
-                    <a href="#">VER</a>
+                    <a href="mujer">VER</a>
                 </div>
                 </article>
             </div>

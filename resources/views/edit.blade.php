@@ -11,7 +11,7 @@ QueranJeans - Editar Perfil
     <input type="hidden" name="_token" value="{{csrf_token() }}">
     <label for="">Edita tus datos:</label><br>
     <label for="name">Nombre</label><br>
-    <input type="text" name="name" id="" value={{$user->name}}><br>
+    <input type="text" name="name" id="" value="{{$user->name}}"><br>
     <label for="name">Apellido</label><br>
     <input type="text" name="surname" id="" value="{{$user->surname}}"><br>
 
