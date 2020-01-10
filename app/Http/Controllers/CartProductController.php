@@ -19,7 +19,6 @@ class CartProductController extends Controller
         $carritosActivos = Cart::where('user_id','=',\Auth::user()->id)->where('status','=','1')->get();
         
         if(count($carritosActivos)>0){
-            //dd(count($carritosActivos));
             $cart_id = $carritosActivos[0]->id;
         }else{
             $nuevoCarrito = new Cart;
