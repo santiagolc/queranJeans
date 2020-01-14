@@ -18,12 +18,12 @@ class CartProductController extends Controller
 
         $carritosActivos = Cart::where('user_id','=',\Auth::user()->id)->where('status','=','1')->get();
         
-        if(count($carritosActivos)>0){
+        if(count($carritosActivos) > 0){
             $cart_id = $carritosActivos[0]->id;
         }else{
             $nuevoCarrito = new Cart;
             $nuevoCarrito->user_id = \Auth::user()->id;
-            $nuevoCarrito->status =1;
+            $nuevoCarrito->status = 1;
             $nuevoCarrito->save();
             //tomo el carrito
             $cart_id = $nuevoCarrito->id;
