@@ -26,7 +26,7 @@
 <header>
     <nav>
         <span class="logo">
-            <a href="/index" class="logo"><img src="/images/logob&n.png" alt="logo QueranJeans"></a>
+            <a href="/" class="logo"><img src="/images/logob&n.png" alt="logo QueranJeans"></a>
         </span>
         @guest
         <ul>
