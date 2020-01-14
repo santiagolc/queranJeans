@@ -26,6 +26,7 @@ Route::post("/edit", "EditProfileController@update");
 //Rutas para carrito
 Route::post("/agregar", "CartProductController@agregar");
 Route::get("/carrito", "CartController@mostrarCarrito");
+Route::post('/eliminar', "CartController@eliminarProducto");
 
 //Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
@@ -37,5 +38,7 @@ Route::get('/mujer', 'ProductController@mostrarProductosMujer');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 

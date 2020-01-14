@@ -35,7 +35,7 @@ class CartProductController extends Controller
         $relacion->cart_id = $cart_id;
         $relacion->save();
 
-        return redirect('/index');
+        return redirect('/');
     }
 
         

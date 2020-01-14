@@ -15,7 +15,28 @@ class CartController extends Controller
 
         $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
         $carritoActivo = $carrito[0];
-        return view('carrito', compact('carrito'));
+       // dd($carritoActivo->products);
+        return view('carrito', compact('carritoActivo'));
+    }
+
+    public function finalizarCompra() {
+        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
+        $carritoActivo = $carrito[0];
+        $carritoActivo->status = 0;
+        $carritoActivo->save();
+        return redirect('checkout');
+    }
+
+    public function eliminarProducto(Request $request) {
+        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
+        $carritoActivo = $carrito[0];
+        $productId = $request->product_id;
+        $cartId = $carritoActivo->id;
+
+        $relacion = Cart_Product::where("cart_id", "=", $cartId)->where("product_id", "=", $productId);
+        $relacion->first()->delete();
+        return redirect("/carrito");
+        
     }
 
 
