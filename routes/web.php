@@ -15,14 +15,19 @@ Route::get("/", "ProductController@ofertas");
 
 Route::get("/faq", "FaqController@faq");
 
-Route::get("/profile", "ProfileController@vista");
 
+
+//Rutas para perfil de usuario
+Route::get("/profile", "ProfileController@vista");
 Route::get("/edit", "EditProfileController@edit");
 
 Route::post("/edit", "EditProfileController@update");
 
+//Rutas para carrito
 Route::post("/agregar", "CartProductController@agregar");
+Route::get("/carrito", "CartController@mostrarCarrito");
 
+//Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
 
 Route::get('/mujer', 'ProductController@mostrarProductosMujer');

@@ -24,7 +24,7 @@ QueranJeans - HOME
                 <article class="oferta">
                 <img src='{{$product->image}}' alt='{{$product->name}}'>
                 <div class="datos">
-                    <span>{{$product->name}}</span>
+                    <span>{{$product->name}} {{$product->category}}</span>
                     <span>${{$product->price}}</span>
                     
                     <form class="botonCarrito" action="/agregar" method='POST'>
