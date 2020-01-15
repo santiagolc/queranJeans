@@ -2,7 +2,7 @@
 
 @section("titulo")
 
-QueranJeans - Editar Perfil
+QueranJeans - EDITAR PERFIL
 
 @endsection
 

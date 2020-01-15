@@ -9,26 +9,31 @@ QueranJeans - CARRITO
 @section("principal")
 
 
-<div class="cartShow" style="margin-top:200px;">
+<div class="listaProductos">
     <ul>
         @forelse($carritoActivo->products as $product) 
         <li>
-            <span>{{$product->name}}</span>
-            <span>${{$product->price}}</span>
+            <div class="productoEnCarro">
             <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
-            <form action="/eliminar" method="post">
-            @csrf
-            <input type="hidden" value="{{$product->id}}" name="product_id">
-           <button type="submit">Eliminar Producto</button>
-        </form>
+            <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
+            <span>${{$product->price}}</span>
+           
+            <form class="formCarrito" action="/eliminar" method="post">
+                @csrf
+                <input type="hidden" value="{{$product->id}}" name="product_id">
+                <button type="submit"><i class="large material-icons">delete</i>Eliminar</button>
+            </form>
+            </div>
         </li>
         @empty
         <span>Carrito Vacio</span>
         @endforelse
-        <form action="/finalizarCompra">
+
+        <form class="finalizarCompra" action="/finalizarCompra">
             @csrf
-           <button type="submit">Finalizar Compra</button>
+            <button type="submit">Finalizar Compra</button>
         </form>
+
     </ul>
 </div>
 

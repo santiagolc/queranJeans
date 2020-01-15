@@ -1,10 +1,4 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Amatic SC', cursive;
-    font-size: 40px;
-}
+
 
 body{
   background: rgb(246, 246, 246);
@@ -12,14 +6,14 @@ body{
 
 /* FORM -------------- */
 
-form {
+    form {
     text-align: center;
     margin-top: 150px;
     margin-bottom: 20px;
-}
+    }
 
     input{ 
-        margin-bottom: 15px;
+    margin-bottom: 15px;
     }
 
     .avatar input{
