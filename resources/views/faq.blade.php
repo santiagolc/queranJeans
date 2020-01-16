@@ -39,7 +39,5 @@ QueranJeans - PREGUNTAS FRECEUNTES
                 <h3>¿PUEDO CANCELAR MI PEDIDO?</h3>
                 <p>Si, podes hacerlo comunicandote con <a href="#nosotros">nosotros</a>. Recorda tener tu numero de pedido.</p>
 
-                <h3>¿COMO HAGO PARA RECIBIR LAS ULTIMAS NOVEDADES?</h3>
-                <p>Cuando hagas el <a href="/register">registro</a> selecciona la opcion: "Deseo recibir ofertas".</p>
             </main>
 @stop

@@ -1,0 +1,31 @@
+.listaProductos{
+   margin-top: 150px;
+}
+
+.formCarrito{
+    display: inline;
+    margin-top: 0px; 
+    margin-bottom: 0px;
+   
+}
+
+.listaProductos li{
+    list-style: none;
+    background-color: lightgrey;
+    height: 100px;
+    width: 1200px;
+    margin-left: 80px;
+    margin-bottom: 15px;
+}
+
+.productoEnCarro{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.finalizarCompra{
+    margin-top: 0px; 
+    margin-bottom: 0px;
+}
+

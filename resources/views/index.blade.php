@@ -15,7 +15,7 @@ QueranJeans - HOME
        
         <!-- SECTION -->
         <section class="destacados">
-            <hr><h2 class="titulo">PRODUCTOS DESTACADOS</h2><hr>
+            <hr><h2 class="titulo"><i class="large material-icons">stars</i>Productos Destacados<i class="large material-icons">stars</i></h2><hr>
 
             
             <div class="ofertas">
@@ -24,7 +24,7 @@ QueranJeans - HOME
                 <article class="oferta">
                 <img src='{{$product->image}}' alt='{{$product->name}}'>
                 <div class="datos">
-                    <span>{{$product->name}} {{$product->category}}</span>
+                    <span>{{$product->name}}</span>
                     <span>${{$product->price}}</span>
                     
                     <form class="botonCarrito" action="/agregar" method='POST'>
@@ -46,15 +46,15 @@ QueranJeans - HOME
                 <article class="jean">
                 <img src='/images/jean1.jpg' alt='jeans hombre'>
                 <div class="datos2">
-                    <span>JEANS HOMBRE</span>
-                    <a href='hombre'>VER</a>
+                    <span>Jeans Hombre</span>
+                    <a href='hombre'>ver</a>
                 </div>
                 </article> 
                 <article class="jean">
                 <img src='/images/jean2.jpg' alt='jeans mujer'>
                 <div class="datos2">
-                    <span>JEANS MUJER</span>
-                    <a href='mujer'>VER</a>
+                    <span>Jeans Mujer</span>
+                    <a href='mujer'>ver</a>
                 </div>
                 </article> 
             </div>
@@ -63,15 +63,15 @@ QueranJeans - HOME
                 <article class="remera">
                 <img src="/images/remera1.jpg" alt="remeras hombre">
                 <div class="datos2">
-                    <span>REMERAS HOMBRE</span>
-                    <a href="hombre">VER</a>
+                    <span>Remeras Hombre</span>
+                    <a href="hombre">ver</a>
                 </div>
                 </article>
                 <article class="remera">
                 <img src="/images/remera2.jpg" alt="remeras mujer">
                 <div class="datos2">
-                    <span>REMERAS MUJER</span>
-                    <a href="mujer">VER</a>
+                    <span>Remeras Mujer</span>
+                    <a href="mujer">ver</a>
                 </div>
                 </article>
             </div>
