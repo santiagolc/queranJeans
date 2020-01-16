@@ -28,12 +28,7 @@ QueranJeans - CARRITO
         @empty
         <span>Carrito Vacio</span>
         @endforelse
-<<<<<<< HEAD
         <form action="/finalizarCompra" method="post">
-=======
-
-        <form class="finalizarCompra" action="/finalizarCompra">
->>>>>>> 1d67174efb9fee149ed483dc59a3ff8ca0b3c878
             @csrf
             <button type="submit">Finalizar Compra</button>
         </form>
