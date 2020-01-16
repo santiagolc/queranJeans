@@ -12,19 +12,19 @@ class CartController extends Controller
 {
 
     public function mostrarCarrito(){
-
         $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
         $carritoActivo = $carrito[0];
-       // dd($carritoActivo->products);
         return view('carrito', compact('carritoActivo'));
     }
 
-    public function finalizarCompra() {
+    public function finalizarCompra(Request $request) {
         $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
         $carritoActivo = $carrito[0];
         $carritoActivo->status = 0;
         $carritoActivo->save();
-        return redirect('checkout');
+        $cartId = $carritoActivo->id;     
+        $relacion = Cart_Product::where("cart_id", "=", $cartId);
+        return view('finalizarCompra', compact('relacion', 'carritoActivo'));
     }
 
     public function eliminarProducto(Request $request) {
@@ -37,6 +37,17 @@ class CartController extends Controller
         $relacion->first()->delete();
         return redirect("/carrito");
         
+    }
+
+    public function sumarPrecios() {
+        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        $carritoCerrado = $carrito[0];
+        $contador = 0;
+        foreach($carritoCerrado->products as $product){
+            $contador = $contador + $product->price;
+            return $contador;
+        }
+        return view('finalizarCompra', compact('contador'));
     }
 
 

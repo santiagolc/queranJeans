@@ -2,7 +2,7 @@
 
 @section("titulo")
 
-QueranJeans - CARRITO
+QueranJeans - Checkout
 
 @endsection
 
@@ -10,24 +10,21 @@ QueranJeans - CARRITO
 
 
 <div class="cartShow" style="margin-top:200px;">
+    <h1>Esta es la compra que realizaste!</h1>
     <ul>
         @forelse($carritoActivo->products as $product) 
         <li>
             <span>{{$product->name}}</span>
             <span>${{$product->price}}</span>
             <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
-            <form action="/eliminar" method="post">
-            @csrf
-            <input type="hidden" value="{{$product->id}}" name="product_id">
-           <button type="submit">Eliminar Producto</button>
-        </form>
         </li>
         @empty
         <span>Carrito Vacio</span>
         @endforelse
-        <form action="/finalizarCompra" method="post">
+        <h1>Total: {{$contador}}</h1>
+        <form action="/pagar" method="post">
             @csrf
-           <button type="submit">Finalizar Compra</button>
+           <button type="submit">Pagar</button>
         </form>
     </ul>
 </div>
