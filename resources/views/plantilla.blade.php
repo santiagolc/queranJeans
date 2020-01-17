@@ -52,6 +52,9 @@
             <li>
             <a href="/carrito"><i class="large material-icons">shopping_cart</i>Carrito</a>
             </li>
+            <li>
+            <a href="/productos"><i class="large material-icons">add_circle</i>Agregar Productos</a>
+            </li>
         </ul>
         @endauth
     </nav>

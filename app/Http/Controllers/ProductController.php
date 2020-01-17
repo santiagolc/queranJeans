@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Product;
+use Image;
+
 
 class ProductController extends Controller
 {
@@ -37,6 +37,38 @@ class ProductController extends Controller
         $products = Product::where('category', '=', 'mujer')->get();
 
         return view('categoria_mujer', compact('products'));
+    }
+
+    public function create(Request $request){
+
+        return view('productos');
+
+    }
+
+    public function store(Request $request){
+       
+        $request->validate([
+           
+            'name' => 'required',
+            'price' => 'required',
+            'category' => 'required',
+            'sale' => 'required',
+        ]);
+        
+
+        $newProduct = new Product ([
+            // dd($newProduct);
+                'name' => $request->get('name'),
+                'price' => $request->get('price'),
+                'offer' => $request->get('offer'),
+                'category' => $request->get('category'),
+                'sale' => $request->get('sale')
+            ]);
+           
+            $newProduct->save();
+    
+            return redirect ('productos');
+      
     }
 
 
