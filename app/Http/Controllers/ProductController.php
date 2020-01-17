@@ -46,30 +46,34 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-       
-        $request->validate([
-           
-            'name' => 'required',
-            'price' => 'required',
-            'category' => 'required',
-            'sale' => 'required',
-        ]);
-        
 
-        $newProduct = new Product ([
-            // dd($newProduct);
+        if($request->hasFile('avatar')) {
+            $productImage = $request->file('avatar');
+            $productName = $request->get('name');
+            $productImageSaveAsName = $productName . "." . $productImage->getClientOriginalExtension();
+            $upload_path = 'images/';
+            $product_image_url = $upload_path . $productImageSaveAsName;
+            $success = $productImage->move($upload_path, $productImageSaveAsName);
+
+            $request->validate([
+                'name' => 'required',
+                'price' => 'required',
+                'category' => 'required',
+                'sale' => 'required',
+            ]);
+
+            $newProduct = new Product ([
                 'name' => $request->get('name'),
                 'price' => $request->get('price'),
                 'offer' => $request->get('offer'),
                 'category' => $request->get('category'),
-                'sale' => $request->get('sale')
+                'sale' => $request->get('sale'),
+                'image' => 'images/'.$productImageSaveAsName
             ]);
-           
-            $newProduct->save();
-    
-            return redirect ('productos');
-      
+                $newProduct->save();
+                return redirect ('productos');
+        }
+       
+        
     }
-
-
 }

@@ -9,31 +9,32 @@ QueranJeans - HOME
 @section("principal")
 
 <form action="/productos/store" method="POST" enctype="multipart/form-data">
-   
-<input type="hidden" name="_token" value="{{csrf_token() }}">
+
+    <input type="hidden" name="_token" value="{{csrf_token() }}">
     
-    <label for="">Carga aqui tu producto:</label><br><br>
+    <h1>Carga aqui tu producto:</h1><br><br>
     
-    <label for="name">Producto:</label><br>
-    <input type="text" name="name" value="nombre del producto"><br><br>
+    <label for="name">Nombre del Producto:</label><br>
+    <input type="text" name="name" value=""><br><br>
    
-    <label for="price">Precio:</label><br>
-    <input type="text" name="price" value="precio"><br><br>
+    <label for="price">Precio (numero):</label><br>
+    <input type="text" name="price" value=""><br><br>
    
-    <label for="offer">Oferta:</label><br>
-    <input type="text" name="offer" value="tiene oferta? 0/1"><br><br>
+    <label for="offer">Oferta: (0/1)</label><br>
+    <input type="text" name="offer" value=""><br><br>
 
-    <label for="sale">Descuento:</label><br>
-    <input type="text" name="sale" value="descuento"><br><br>
+    <label for="sale">Descuento (0-100):</label><br>
+    <input type="text" name="sale" value=""><br><br>
 
-    <label for="category">Categoria:</label><br>
-    <input type="text" name="category" value="hombre/mujer"><br><br>
+    <label for="category">Categoria (hombre/mujer):</label><br>
+    <input type="text" name="category" value=""><br><br>
 
-    <label for="image">Imagen</label><br>
-    <input class="boton1" type="file" name="image"><br>
+    <label for="avatar">Imagen</label><br>
+    <input id="avatar" type="file" class="form-control form-control-sm offset-6" name="avatar" required><br>
   
     <input class="boton1" type="submit" name="" id="" class="btn-sm btn-primary">
 
 </form>
 
-@stop
+@endsection
+
