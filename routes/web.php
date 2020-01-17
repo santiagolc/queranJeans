@@ -12,7 +12,6 @@
 */
 
 Route::get("/", "ProductController@ofertas");
-
 Route::get("/faq", "FaqController@faq");
 
 
@@ -20,7 +19,6 @@ Route::get("/faq", "FaqController@faq");
 //Rutas para perfil de usuario
 Route::get("/profile", "ProfileController@vista");
 Route::get("/edit", "EditProfileController@edit");
-
 Route::post("/edit", "EditProfileController@update");
 
 //Rutas para carrito
@@ -33,8 +31,11 @@ Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado");
 
 //Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
-
 Route::get('/mujer', 'ProductController@mostrarProductosMujer');
+Route::get('/productos', 'ProductController@create');
+Route::post('/productos/store', 'ProductController@store');
+
+
 
 
 
