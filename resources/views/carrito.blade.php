@@ -11,6 +11,9 @@ QueranJeans - CARRITO
 
 <div class="listaProductos">
     <ul>
+        @php
+            $total = 0;
+        @endphp
         @forelse($carritoActivo->products as $product) 
         <li>
             <div class="productoEnCarro">
@@ -25,13 +28,28 @@ QueranJeans - CARRITO
             </form>
             </div>
         </li>
+        @php
+            $total = $total + $product->price;
+        @endphp
         @empty
-        <span>Carrito Vacio</span>
+        <h3 style="text-align: center;">Sin productos en el Carrito</h3>
         @endforelse
-        <form action="/finalizarCompra" method="post">
+        <h3 style="text-align: center;">Total: ${{$total}}</h3>
+        <form action="/finalizarcompra" method="post">
             @csrf
-            <button type="submit">Finalizar Compra</button>
+            @php
+            if(empty($carritoActivo->products->count())){
+               echo '<button type="submit" disabled>Finalizar Compra</button>';
+              
+               
+            } else {
+                echo '<button type="submit">Finalizar Compra</button>';  
+                
+            }
+            @endphp
         </form>
+     
+       
 
     </ul>
 </div>

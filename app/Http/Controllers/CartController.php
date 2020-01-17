@@ -13,7 +13,12 @@ class CartController extends Controller
 
     public function mostrarCarrito(){
         $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
-        $carritoActivo = $carrito[0];
+        if(isset($carrito[0])){
+            $carritoActivo = $carrito[0];
+        } else {
+            $carritoActivo = new Cart;
+        }
+        //dd($carritoActivo->products->count());
         return view('carrito', compact('carritoActivo'));
     }
 
@@ -22,9 +27,8 @@ class CartController extends Controller
         $carritoActivo = $carrito[0];
         $carritoActivo->status = 0;
         $carritoActivo->save();
-        $cartId = $carritoActivo->id;     
-        $relacion = Cart_Product::where("cart_id", "=", $cartId);
-        return view('finalizarCompra', compact('relacion', 'carritoActivo'));
+        //dd($carritoActivo);
+        return redirect("/finalizarcompra");
     }
 
     public function eliminarProducto(Request $request) {
@@ -39,15 +43,11 @@ class CartController extends Controller
         
     }
 
-    public function sumarPrecios() {
-        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
-        $carritoCerrado = $carrito[0];
-        $contador = 0;
-        foreach($carritoCerrado->products as $product){
-            $contador = $contador + $product->price;
-            return $contador;
-        }
-        return view('finalizarCompra', compact('contador'));
+    public function mostrarCarritoFinalizado() {
+        $carritos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        dd($carritos);
+        $carrito = $carritos[0];
+        return view('finalizarcompra', compact('carritos'));
     }
 
 

@@ -27,8 +27,9 @@ Route::post("/edit", "EditProfileController@update");
 Route::post("/agregar", "CartProductController@agregar");
 Route::get("/carrito", "CartController@mostrarCarrito");
 Route::post('/eliminar', "CartController@eliminarProducto");
-Route::post('/finalizarCompra', "CartController@finalizarCompra");
-Route::post('checkout', "CartController@pagar");
+Route::post('/finalizarcompra', "CartController@finalizarCompra");
+Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado");
+
 
 //Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
