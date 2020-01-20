@@ -91,6 +91,7 @@ class ProductController extends Controller
             $productName = $request->get('name');
             $productImageSaveAsName = $productName . "." . $productImage->getClientOriginalExtension();
             $upload_path = 'images/';
+            $image = 'images/'.$productImageSaveAsName;
             $product_image_url = $upload_path . $productImageSaveAsName;
             $success = $productImage->move($upload_path, $productImageSaveAsName);
         }else{

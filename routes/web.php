@@ -22,7 +22,7 @@ Route::post("/edit", "EditProfileController@update");
 
 //Rutas para carrito
 Route::post("/agregar", "CartProductController@agregar");
-Route::get("/carrito", "CartController@mostrarCarrito");
+Route::get("/carrito", "CartController@mostrarCarrito")->middleware("auth");
 Route::post('/eliminar', "CartController@eliminarProducto");
 Route::post('/finalizarcompra', "CartController@finalizarCompra");
 Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado");
@@ -30,12 +30,15 @@ Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado");
 //Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
 Route::get('/mujer', 'ProductController@mostrarProductosMujer');
-Route::get('/productos', 'ProductController@todos');
-Route::get('/producto/nuevo', 'ProductController@create');
-Route::post('/producto/nuevo/store', 'ProductController@store');
-Route::get('/producto/{id}', 'ProductController@edit');
-Route::post('/producto/update/{id}', 'ProductController@update');
-Route::post('/producto/delete/{id}', 'ProductController@delete');
+
+Route::get('/productos', 'ProductController@todos')->middleware("isAdmin");
+Route::get('/producto/nuevo', 'ProductController@create')->middleware("isAdmin");
+Route::post('/producto/nuevo/store', 'ProductController@store')->middleware("isAdmin");
+Route::get('/producto/{id}', 'ProductController@edit')->middleware("isAdmin");
+Route::post('/producto/update/{id}', 'ProductController@update')->middleware("isAdmin");
+Route::post('/producto/delete/{id}', 'ProductController@delete')->middleware("isAdmin");
+Route::get('/logueate', 'ProfileController@logueate');
+//Route::get('/plantilla', 'CartController@mostrarCarritoPlantilla');
 
 
 Auth::routes();

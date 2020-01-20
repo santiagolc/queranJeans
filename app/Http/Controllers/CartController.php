@@ -12,14 +12,54 @@ class CartController extends Controller
 {
 
     public function mostrarCarrito(){
-        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
+        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get(); 
+       
         if(isset($carrito[0])){
             $carritoActivo = $carrito[0];
         } else {
             $carritoActivo = new Cart;
         }
-        //dd($carritoActivo->products->count());
-        return view('carrito', compact('carritoActivo'));
+        $products = Cart_Product::where("cart_id", $carritoActivo->id)->get();
+        
+        $cartIds = [];
+        foreach($products as $item){
+           
+            $cartIds[] = $item->product_id;
+        }
+
+        $cartUniqueIds = array_unique($cartIds);
+        
+        $countByIds = (object)[];
+
+
+        foreach($cartUniqueIds as $id){
+            $count = 0;
+            foreach($products as $product) {
+               
+                if($id==$product->product_id) {
+                    $count++;
+                }
+            }
+            $countByIds->{$id} = $count;
+        }
+        
+        $result = [];
+        foreach($countByIds as $id => $quantity){
+        
+              foreach($products as $product) {
+                if($product->product_id==$id) {
+                    $productSelected = Product::where('id', $product->product_id)->get()[0];
+                    $productSelected->quantity = $quantity;
+                    $result[] = $productSelected;
+                    break;
+                }
+              }
+        }
+
+        $total = count($products);
+     
+        //dd($result);
+        return view('carrito', compact('result', 'total'));
     }
 
     public function finalizarCompra(Request $request) {

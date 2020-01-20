@@ -50,7 +50,16 @@
                 </form>
             </li>
             <li>
-            <a href="/carrito"><i class="large material-icons">shopping_cart</i>Carrito</a>
+                @php
+                    $productQuantity = count($carritoActivo->products);
+                @endphp
+            <a href="/carrito">
+                <i class="large material-icons">shopping_cart</i>
+                <span>Carrito</span> 
+                @if($productQuantity>0)
+                    <span>({{$productQuantity}})</span></a>
+                @endif
+                
             
                 @php
                     if(Auth::user()->admin==1){

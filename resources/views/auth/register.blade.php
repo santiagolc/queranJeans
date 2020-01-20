@@ -81,7 +81,7 @@ QueranJeans - REGISTRO
                             </div>
                         </div>
                             </br>
-                        <div class="form-group row">
+                        <div class="form-group row" style="display:none;">
                             <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Subi tu Avatar') }}</label>
 
                             <div class="col-md-6">

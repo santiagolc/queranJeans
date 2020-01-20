@@ -15,4 +15,9 @@ class ProfileController extends Controller
     public function vista(){
         return view('profile', array('user' => Auth::user()) );
     }
+
+    public function logueate() {
+        return view('logueate', array('user' => Auth::user()) ); 
+    }
+
 }
