@@ -2,39 +2,43 @@
 
 @section("titulo")
 
-QueranJeans - HOME
+QueranJeans - AGREGAR PRODUCTOS
 
 @endsection
 
 @section("principal")
 
-<form action="/productos/store" method="POST" enctype="multipart/form-data">
-
-    <input type="hidden" name="_token" value="{{csrf_token() }}">
+<div class="listaProductos">
     
-    <h1>Carga aqui tu producto:</h1><br><br>
+    <button class="agregarProducto"><a href="/producto/nuevo" style="text-decoration: none; color: black;">Agregar un Producto</a></button>
     
-    <label for="name">Nombre del Producto:</label><br>
-    <input type="text" name="name" value=""><br><br>
-   
-    <label for="price">Precio (numero):</label><br>
-    <input type="text" name="price" value=""><br><br>
-   
-    <label for="offer">Oferta: (0/1)</label><br>
-    <input type="text" name="offer" value=""><br><br>
+    <ul>
+      
+        @forelse($products as $product) 
+        <li>
+            <div class="productoEnCarro">
+            <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
+            <span>{{$product->name}} {{$product->category}}</span>
+            <span>${{$product->price}}</span>
+            <span>Oferta: {{$product->offer}}</span>
+            <span>Desc: %{{$product->sale}}</span>
 
-    <label for="sale">Descuento (0-100):</label><br>
-    <input type="text" name="sale" value=""><br><br>
 
-    <label for="category">Categoria (hombre/mujer):</label><br>
-    <input type="text" name="category" value=""><br><br>
+           <button><i class="large material-icons">update</i><a href="/producto/{{$product->id}}" style="text-decoration: none; color: black;">Actualizar</a></button>
+          
+            <form class="formCarrito" action="/producto/delete/{{$product->id}}" method="POST">
+                @csrf
+                <input type="hidden" value="{{$product->id}}" name="product_id">
+                <button type="submit"><i class="large material-icons">delete</i>Eliminar</button>
+            </form>
+            </div>
+        </li>
+        @empty
+        <h3 style="text-align: center;">No hay productos en la base de datos</h3>
+        @endforelse
+        
 
-    <label for="avatar">Imagen</label><br>
-    <input id="avatar" type="file" class="form-control form-control-sm offset-6" name="avatar" required><br>
-  
-    <input class="boton1" type="submit" name="" id="" class="btn-sm btn-primary">
-
-</form>
+    </ul>
+</div>
 
 @endsection
-

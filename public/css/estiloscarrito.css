@@ -18,6 +18,12 @@
     margin-bottom: 15px;
 }
 
+.agregarProducto{
+    position: relative;
+    left: 40%;
+    margin-bottom: 1%;
+}
+
 .productoEnCarro{
     display: flex;
     justify-content: space-around;

@@ -26,10 +26,11 @@ footer a{
 
 footer a:hover{
     color: rgb(24, 24, 24);
+    background: none;
 }
 
 li a img{
-    width: 45px;
+    width: 25px;
 }
 
 .contacto{

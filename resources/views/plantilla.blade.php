@@ -44,20 +44,20 @@
             <li>
                 <a class="dropdown-item" href="{{ route('logout') }}" 
                 onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();" style:"color: white;">Salir</a>
+                document.getElementById('logout-form').submit();">Salir</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
                 </form>
             </li>
             <li>
             <a href="/carrito"><i class="large material-icons">shopping_cart</i>Carrito</a>
-            </li>
+            
                 @php
                     if(Auth::user()->admin==1){
-                        echo '<a href="/productos"><i class="large material-icons">add_circle</i>Agregar Productos</a>';  
+                        echo '<li><a href="/productos"><i class="large material-icons">add_circle</i>Administrar Productos</a></li>';  
                     } 
                 @endphp
-            <li>
+            
         </ul>
         @endauth
     </nav>
