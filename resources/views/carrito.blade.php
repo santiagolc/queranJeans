@@ -20,7 +20,7 @@ QueranJeans - CARRITO
             <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
             <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
             <span>${{$product->price}}</span>
-            <span>Cantidad: {{$product->quantity}}</span>
+            <span style="background-color: white; color: red; padding: 5px;">Cantidad: {{$product->quantity}}</span>
            
             <form class="formCarrito" action="/eliminar" method="post">
                 @csrf
