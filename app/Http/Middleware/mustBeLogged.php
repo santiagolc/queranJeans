@@ -16,10 +16,12 @@ class mustBeLogged
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()!=null) {
-            return $next($request);      
-        } if($request->user()==null) {
-            echo "Tenes que estar logueado para poder comprar";
-        }  
+        if(\Auth::check()) {
+            return $next($request);   
+        } else {
+            //dd(\Auth::check());
+            return redirect("/logueate");
+        } 
     }
 }
+

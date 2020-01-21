@@ -16,29 +16,29 @@ Route::get("/faq", "FaqController@faq");
 
 
 //Rutas para perfil de usuario
-Route::get("/profile", "ProfileController@vista");
-Route::get("/edit", "EditProfileController@edit");
-Route::post("/edit", "EditProfileController@update");
+Route::get("/profile", "ProfileController@vista")->middleware("auth");
+Route::get("/edit", "EditProfileController@edit")->middleware("auth");
+Route::post("/edit", "EditProfileController@update")->middleware("auth");
 
 //Rutas para carrito
-Route::post("/agregar", "CartProductController@agregar");
+Route::post("/agregar", "CartProductController@agregar")->middleware("mustBeLogged");
 Route::get("/carrito", "CartController@mostrarCarrito")->middleware("auth");
-Route::post('/eliminar', "CartController@eliminarProducto");
-Route::post('/finalizarcompra', "CartController@finalizarCompra");
-Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado");
+Route::post('/eliminar', "CartController@eliminarProducto")->middleware("auth");
+Route::post('/finalizarcompra', "CartController@finalizarCompra")->middleware("auth");
+Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado")->middleware("auth");
 
 //Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
 Route::get('/mujer', 'ProductController@mostrarProductosMujer');
 
-Route::get('/productos', 'ProductController@todos');
-Route::get('/producto/nuevo', 'ProductController@create');
-Route::post('/producto/nuevo/store', 'ProductController@store');
-Route::get('/producto/{id}', 'ProductController@edit');
-Route::post('/producto/update/{id}', 'ProductController@update');
-Route::post('/producto/delete/{id}', 'ProductController@delete');
-Route::get('/logueate', 'ProfileController@logueate');
-//Route::get('/plantilla', 'CartController@mostrarCarritoPlantilla');
+Route::get('/productos', 'ProductController@todos')->middleware("isAdmin");
+Route::get('/producto/nuevo', 'ProductController@create')->middleware("isAdmin");
+Route::post('/producto/nuevo/store', 'ProductController@store')->middleware("isAdmin");
+Route::get('/producto/{id}', 'ProductController@edit')->middleware("isAdmin");
+Route::post('/producto/update/{id}', 'ProductController@update')->middleware("isAdmin");
+Route::post('/producto/delete/{id}', 'ProductController@delete')->middleware("isAdmin");
+Route::get('/logueate', 'LogueateController@logueate');
+
 
 
 Auth::routes();
