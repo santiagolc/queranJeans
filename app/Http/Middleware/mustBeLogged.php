@@ -19,7 +19,6 @@ class mustBeLogged
         if(\Auth::check()) {
             return $next($request);   
         } else {
-            //dd(\Auth::check());
             return redirect("/logueate");
         } 
     }

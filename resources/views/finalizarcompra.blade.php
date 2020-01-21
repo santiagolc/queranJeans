@@ -14,11 +14,10 @@ QueranJeans - Checkout
 <div class="cartShow" style="margin-top:200px;">
     <h1>Esta es la compra que realizaste!</h1>
     <ul>
-        @forelse($carrito->products as $product) 
+        @forelse($carritoCerrado->products as $product) 
         <li>
             <span>{{$product->name}}</span>
             <span>${{$product->price}}</span>
-            <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
         </li>
         @php
             $total += $product->price;

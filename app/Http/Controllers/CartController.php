@@ -58,7 +58,6 @@ class CartController extends Controller
 
         $total = count($products);
      
-        //dd($result);
         return view('carrito', compact('result', 'total'));
     }
 
@@ -67,8 +66,8 @@ class CartController extends Controller
         $carritoActivo = $carrito[0];
         $carritoActivo->status = 0;
         $carritoActivo->save();
-        //dd($carritoActivo);
-        return redirect("/finalizarcompra");
+        $carritoCerrado = $carritoActivo;
+        return view("/finalizarcompra", compact('carritoCerrado'));
     }
 
     public function eliminarProducto(Request $request) {
@@ -85,9 +84,19 @@ class CartController extends Controller
 
     public function mostrarCarritoFinalizado() {
         $carritos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
-        dd($carritos);
+        //dd($carritos);
         $carrito = $carritos[0];
         return view('finalizarcompra', compact('carritos'));
+    }
+
+    public function mostrarComprasFinalizadas() {
+        $carritosCerrados = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        foreach($carritosCerrados as $carrito) {
+            $productArray = Cart_Product::where("cart_id", $carrito->id)->get();
+        }
+        $productName = Product::all();
+        return view('tuscompras', compact('carritosCerrados','productArray', 'productName'));
+        
     }
 
 
