@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
     {
        
         View::composer('*', function ($view) {
-
-            $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
+            if(\Auth::check()){
+                $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
             if(isset($carrito[0])){
                 $carritoActivo = $carrito[0];
             } else {
@@ -36,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
             }
 
             view()->share('carritoActivo', $carritoActivo);
+            }
+            
         });
     }
 }
