@@ -39,8 +39,28 @@
         @endguest
         @auth
         <ul>
+            <li>
+                @php
+                    $productQuantity = count($carritoActivo->products);
+                @endphp
+                <a href="/carrito">
+                <i class="large material-icons">shopping_cart</i>
+                <span style="font-size:20px;">Carrito</span> 
+                @if($productQuantity>0)
+                    <span>({{$productQuantity}})</span></a>
+                @endif
+            </li>   
+
+            @php
+                if(Auth::user()->admin==1){
+                    echo '<li><a href="/productos"><i class="large material-icons">add_circle</i>Administrar Productos</a></li>';  
+                } 
+            @endphp
+
             <li><a href="/profile">{{ Auth::user()->name }}</a></li>
+            
             <li class="avatarHeader"><img src="/{{ Auth::user()->avatar }}" alt=""></li>
+           
             <li>
                 <a class="dropdown-item" href="{{ route('logout') }}" 
                 onclick="event.preventDefault();
@@ -49,23 +69,6 @@
                 @csrf
                 </form>
             </li>
-            <li>
-                @php
-                    $productQuantity = count($carritoActivo->products);
-                @endphp
-            <a href="/carrito">
-                <i class="large material-icons">shopping_cart</i>
-                <span>Carrito</span> 
-                @if($productQuantity>0)
-                    <span>({{$productQuantity}})</span></a>
-                @endif
-                
-            
-                @php
-                    if(Auth::user()->admin==1){
-                        echo '<li><a href="/productos"><i class="large material-icons">add_circle</i>Administrar Productos</a></li>';  
-                    } 
-                @endphp
             
         </ul>
         @endauth

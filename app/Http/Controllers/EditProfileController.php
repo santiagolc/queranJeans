@@ -31,6 +31,10 @@ class EditProfileController extends Controller
             $user->avatar=  $request->file('avatar')->store('public');
             $user->save();*/
 
+            
+
+            $this->validate($request, $datos, $mensajes);
+
             $profileImage = $request->file('avatar');
             $profileImageSaveAsName = time() . "." . $profileImage->getClientOriginalExtension();
             $upload_path = 'avatars/';
@@ -45,6 +49,22 @@ class EditProfileController extends Controller
 
             return view('profile', array('user' => Auth::user()) );
         }
+
+        $datos = [
+            'name' => 'required|min:2',
+            'surname' => 'required|min:2',
+        ];
+
+        $mensajes = [
+            'name.required' => 'No te olvides de editar tu nombre!',
+            'name.min' => 'Te pido al menos 2 letras!',
+
+            'surname.required' => 'No te olvides de editar tu apellido!',
+            'surname.min' => 'Te pido al menos 2 letras!',
+        ];
+       
+        $this->validate($request, $datos, $mensajes);
+
 
         $user = Auth::user();
         $user->name = $request->name;
