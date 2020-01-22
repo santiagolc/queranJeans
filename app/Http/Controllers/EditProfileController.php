@@ -21,15 +21,6 @@ class EditProfileController extends Controller
     public function update(Request $request)
     {
         if($request->hasFile('avatar')) {
-           
-            /*$avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
-
-            $request->file('avatar')->store('public');
-            $user->save(public_path('/avatars/'. $filename));
-            $user = Auth::user();
-            $user->avatar=  $request->file('avatar')->store('public');
-            $user->save();*/
 
             $profileImage = $request->file('avatar');
             $profileImageSaveAsName = time() . "." . $profileImage->getClientOriginalExtension();

@@ -39,6 +39,7 @@ Route::post('/producto/update/{id}', 'ProductController@update')->middleware("is
 Route::post('/producto/delete/{id}', 'ProductController@delete')->middleware("isAdmin");
 Route::get('/logueate', 'LogueateController@logueate');
 Route::get('/tuscompras', 'CartController@mostrarComprasFinalizadas')->middleware("auth");
+Route::get('/tuscompras', 'CartController@mostrarComprasCerradas')->middleware("auth");
 
 
 Auth::routes();

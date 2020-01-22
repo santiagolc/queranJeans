@@ -122,14 +122,50 @@ class CartController extends Controller
         return view('tuscompras', compact('carritosCerrados','productArray', 'productName')); 
     }
 
-    /* public function mostrarComprasCerradas() {
+     public function mostrarComprasCerradas() {
         $carritosInactivos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
-        foreach($carritosInactivos as $carrito) {
-            $inactivProducts = Cart_Product::where("cart_id", $carritoActivo->id)->get();
+        $closedCartObject = (object)[];
+        foreach($carritosInactivos as $carritoInactivo) {
+            $inactivProducts = Cart_Product::where("cart_id", $carritoInactivo->id)->get();
+            $inactivProductIds = [];
+            foreach($inactivProducts as $inactivProduct) {
+                $inactivProductIds[] = $inactivProduct->product_id;
+            }
+            $inactivProductsUniqueIds = array_unique($inactivProductIds);
 
-            foreach
+            $inactivProductIdCount = (object)[];
+
+            foreach($inactivProductIds as $id) {
+                $inactivCount = 0;
+                foreach($inactivProducts as $inactivProduct) {
+                    if($inactivProduct->product_id==$id) {
+                        $inactivCount ++;
+                    }
+                }
+                $inactivProductIdCount->{$id} = $inactivCount;
+            }
+            $updateDate = $carritoInactivo->updated_at->toDateTimeString();
+            $objectArray = [];
+            foreach($inactivProductIdCount as $id =>$inactivQuantity) {
+                 foreach($inactivProducts as $inactivProduct){
+                     if($inactivProduct->product_id == $id){
+                         $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
+                         $selectedInactivProduct->quantity = $inactivQuantity;
+                         $selectedInactivProduct->date = $updateDate;
+                         //$selectedInactivProduct->totalProductsInCart = $productCount;
+                         $objectArray[] = $selectedInactivProduct;
+                     break;
+                     }
+                 }
+            }
+            $closedCartObject->{$carritoInactivo->id} = $objectArray;
+            $carritoInactivo->updated_at;
         } 
-    }*/
+        $productData = Product::all();
+        $vac = compact('closedCartObject', 'productData');
+        
+        return view('tuscompras', $vac); 
+    }
 
 
     /**
