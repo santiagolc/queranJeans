@@ -27,25 +27,23 @@ class CartController extends Controller
         
 
         //creo la variable $cartIds que es un array vacio.
-
-        $cartIds = [];
+        $productIds = [];
 
         //recorro todos los $products, tomo de cada uno su product_id y lo guardo en el array $cartIds
         foreach($products as $item){
-           
-            $cartIds[] = $item->product_id;
+            $productIds[] = $item->product_id;
         }
         //Ahora en CartIds tengo una coleccion de product_id's que son todos los product_id de todos los productos que hay en un carrito, incluso los repetidos.
         
         
         //al utilizar la funcion array_unique sobre el array $cartUniqueIds elimino las repeticiones, solo quedan aquellos proudc_id's que existen en el array, pero una sola vez, si habia repeticiones las elimino. Luego guarda eso en cart_uniqueIds
-        $cartUniqueIds = array_unique($cartIds);
+        $productUniqueIds = array_unique($productIds);
        
         //utilizando el concepto de "cast" creo un objeto de tipo array y lo guardo en una variable llamada $countByIds.
         $countByIds = (object)[];
 
         //recorro $cartUniqueIds y tomo cada Id
-        foreach($cartUniqueIds as $id){
+        foreach($productUniqueIds as $id){
             //genero un contador
             $count = 0;
             //recorro todos $products que es un array con todos los objetos de tipo cart_product con cart_id == al id del carrito activo, es decir $products tiene todos los productos que hay en el carrito activo.
@@ -124,7 +122,15 @@ class CartController extends Controller
         return view('tuscompras', compact('carritosCerrados','productArray', 'productName')); 
     }
 
-    
+    /* public function mostrarComprasCerradas() {
+        $carritosInactivos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        foreach($carritosInactivos as $carrito) {
+            $inactivProducts = Cart_Product::where("cart_id", $carritoActivo->id)->get();
+
+            foreach
+        } 
+    }*/
+
 
     /**
      * Display a listing of the resource.
