@@ -15,7 +15,7 @@ class ProductController extends Controller
     }
     
     public function ofertas(){
-        $products = Product::where("offer", "=", "1")->take(4)->get();
+        $products = Product::where("offer", "=", "si")->take(4)->get();
         return view("index", compact("products"));
     }
 
@@ -41,6 +41,36 @@ class ProductController extends Controller
 
     public function store(Request $request){
 
+        $datos = [
+            'name' => 'required|min:5|string',
+            'price' => 'required|numeric',
+            'offer' => 'required|max:2|alpha',
+            'sale' => 'required|numeric',
+            'category' => 'required|min:5|alpha',
+        ];
+
+        $mensajes = [
+            'name.required' => 'No te olvides el nombre!',
+            'name.min' => 'Minimo te pido 5 letras!',
+            'name.string' => 'Ojo! Solo letras!',
+
+            'price.required' => 'No te olvides el precio!',
+            'price.numeric' => 'Ojo! Solo numeros!',
+
+            'offer.required' => 'No te olvides de agregar si tiene oferta!',
+            'offer.alpha' => 'Ojo! Solo letras!',
+            'offer.max' => 'No tenes que poner mas de 2 letras!',
+
+            'sale.required' => 'No te olvides de agregarle un descuento!',
+            'sale.numeric' => 'Ojo! Solo numeros!',
+
+            'category.required' => 'No te olvides de la categoria!',
+            'category.min' => 'Minimo te pido 5 letras!',
+            'category.alpha' => 'Ojo! Solo letras!'
+        ];
+        
+        $this->validate($request, $datos, $mensajes);
+
         if($request->hasFile('avatar')) {
             $productImage = $request->file('avatar');
             $productName = $request->get('name');
@@ -48,13 +78,6 @@ class ProductController extends Controller
             $upload_path = 'images/';
             $product_image_url = $upload_path . $productImageSaveAsName;
             $success = $productImage->move($upload_path, $productImageSaveAsName);
-
-            $request->validate([
-                'name' => 'required',
-                'price' => 'required',
-                'category' => 'required',
-                'sale' => 'required',
-            ]);
 
             $newProduct = new Product ([
                 'name' => $request->get('name'),
@@ -78,6 +101,36 @@ class ProductController extends Controller
 
     public function update(Request $request, $id){
 
+        $datos = [
+            'name' => 'required|min:5|string',
+            'price' => 'required|numeric',
+            'offer' => 'required|max:2|alpha',
+            'sale' => 'required|numeric',
+            'category' => 'required|min:5|alpha',
+        ];
+
+        $mensajes = [
+            'name.required' => 'No te olvides el nombre!',
+            'name.min' => 'Minimo te pido 5 letras!',
+            'name.string' => 'Ojo! Solo letras!',
+
+            'price.required' => 'No te olvides el precio!',
+            'price.numeric' => 'Ojo! Solo numeros!',
+
+            'offer.required' => 'No te olvides de agregar si tiene oferta!',
+            'offer.alpha' => 'Ojo! Solo letras!',
+            'offer.max' => 'No tenes que poner mas de 2 letras!',
+
+            'sale.required' => 'No te olvides de agregarle un descuento!',
+            'sale.numeric' => 'Ojo! Solo numeros!',
+
+            'category.required' => 'No te olvides de la categoria!',
+            'category.min' => 'Minimo te pido 5 letras!',
+            'category.alpha' => 'Ojo! Solo letras!'
+        ];
+        
+        $this->validate($request, $datos, $mensajes);
+
         $name = $request->name;
         $price = $request->price;
         $offer = $request->offer;
@@ -94,19 +147,20 @@ class ProductController extends Controller
             $image = 'images/'.$productImageSaveAsName;
             $product_image_url = $upload_path . $productImageSaveAsName;
             $success = $productImage->move($upload_path, $productImageSaveAsName);
+       
         }else{
             $image = $product->image;
         }
               
-                $product->name =  $name;
-                $product->price = $price;
-                $product->offer = $offer;
-                $product->category = $category;
-                $product->sale = $sale;
-                $product->image = $image;
-                $product->save();
-               
-                return redirect ('productos');
+        $product->name = $name;
+        $product->price = $price;
+        $product->offer = $offer;
+        $product->category = $category;
+        $product->sale = $sale;
+        $product->image = $image;
+        $product->save();
+        
+        return redirect ('productos');
     }
 
     public function delete($id){
@@ -114,6 +168,5 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect('productos');
-
     }
 }

@@ -14,10 +14,12 @@ QueranJeans - EDITAR PERFIL
     <label for="">Edita tus datos:</label><br><br>
 
     <label for="name">Nombre</label><br>
-    <input type="text" name="name" id="" value="{{$user->name}}"><br><br>
+    <input type="text" name="name" id="" value="{{$user->name}}"> 
+    <span style="color:red; font-size:12px;">{{$errors->first('name')}}</span> <br><br>
 
     <label for="name">Apellido</label><br>
-    <input type="text" name="surname" id="" value="{{$user->surname}}"><br><br>
+    <input type="text" name="surname" id="" value="{{$user->surname}}">
+    <span style="color:red; font-size:12px;">{{$errors->first('surname')}}</span> <br><br>
 
     <label for="avatar">Avatar</label><br>
     <input id="avatar" type="file" class="form-control form-control-sm" name="avatar"><br>

@@ -1,4 +1,7 @@
 /* FORM -------------- */
+.containerLogin{
+  height: 304px;
+}
 
 form {
   text-align: center;
