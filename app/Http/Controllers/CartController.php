@@ -26,23 +26,23 @@ class CartController extends Controller
         $products = Cart_Product::where("cart_id", $carritoActivo->id)->get();
         
 
-        //creo la variable $cartIds que es un array vacio.
+        //creo la variable $productIds que es un array vacio.
         $productIds = [];
 
-        //recorro todos los $products, tomo de cada uno su product_id y lo guardo en el array $cartIds
+        //recorro todos los $products, tomo de cada uno su product_id y lo guardo en el array $productIds
         foreach($products as $item){
             $productIds[] = $item->product_id;
         }
-        //Ahora en CartIds tengo una coleccion de product_id's que son todos los product_id de todos los productos que hay en un carrito, incluso los repetidos.
+        //Ahora en productIds tengo una coleccion de product_id's que son todos los product_id de todos los productos que hay en un carrito, incluso los repetidos.
         
         
-        //al utilizar la funcion array_unique sobre el array $cartUniqueIds elimino las repeticiones, solo quedan aquellos proudc_id's que existen en el array, pero una sola vez, si habia repeticiones las elimino. Luego guarda eso en cart_uniqueIds
+        //al utilizar la funcion array_unique sobre el array $productUniqueIds elimino las repeticiones, solo quedan aquellos proudc_id's que existen en el array, pero una sola vez, si habia repeticiones las elimino. Luego guarda eso en $productUniqueIds
         $productUniqueIds = array_unique($productIds);
        
         //utilizando el concepto de "cast" creo un objeto de tipo array y lo guardo en una variable llamada $countByIds.
         $countByIds = (object)[];
 
-        //recorro $cartUniqueIds y tomo cada Id
+        //recorro $productUniqueIds y tomo cada Id
         foreach($productUniqueIds as $id){
             //genero un contador
             $count = 0;
