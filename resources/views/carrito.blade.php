@@ -17,10 +17,10 @@ QueranJeans - CARRITO
         @forelse($result as $product) 
         <li>
             <div class="productoEnCarro">
-            <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
+            <img src="{{$product->image}}" alt="" style="width:100px; height:100px; border: 2px solid black; border-radius:10px;">
             <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
             <span>${{$product->price}}</span>
-            <span style="background-color: white; color: red; padding: 5px;">Cantidad: {{$product->quantity}}</span>
+            <span style="background-color: white; color: red; padding: 5px; border-radius: 9px;">Cantidad: {{$product->quantity}}</span>
            
             <form class="formCarrito" action="/eliminar" method="post">
                 @csrf
@@ -30,7 +30,7 @@ QueranJeans - CARRITO
             </div>
         </li>
         @php
-            $total += $product->price;
+            $total += $product->price * $product->quantity;
         @endphp
         @empty
         <h3 style="text-align: center;">Sin productos en el Carrito</h3>
