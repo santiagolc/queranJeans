@@ -44,7 +44,8 @@ QueranJeans - Checkout
                         @endif 
                         </div>     
                     @empty
-                    <li>   <span>Aun no tienes compras!</span></li>
+                    <li style="text-align: center;"><span>Aun no tienes compras!</span></li>
+                    <img src="/images/logob&n.png" style="width: 200px; height: 200px; align:center;" alt="">
                  </div>
                 @endforelse  
             </ul>   

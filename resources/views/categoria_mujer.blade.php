@@ -44,7 +44,7 @@ QueranJeans - MUJERES
                 <div class="productos">
 
                 @foreach ($products as $product)
-
+                
                 <article class="producto">
                 <img src='{{$product->image}}' alt='{{$product->name}}'>        
                 <div class="datos">

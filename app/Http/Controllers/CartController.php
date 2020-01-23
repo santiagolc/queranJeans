@@ -161,8 +161,8 @@ class CartController extends Controller
             $closedCartObject->{$carritoInactivo->id} = $objectArray;
             $carritoInactivo->updated_at;
         } 
-        $productData = Product::all();
-        $vac = compact('closedCartObject', 'productData');
+       
+        $vac = compact('closedCartObject');
         
         return view('tuscompras', $vac); 
     }

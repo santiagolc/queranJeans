@@ -30,6 +30,7 @@ class ProductController extends Controller
     }
 
     public function mostrarProductosMujer(){
+        //dd(Product::where('category', '=', 'mujer')->get());
         $products = Product::where('category', '=', 'mujer')->get();
         return view('categoria_mujer', compact('products'));
     }

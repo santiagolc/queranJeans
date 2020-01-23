@@ -18,7 +18,7 @@ QueranJeans - AGREGAR PRODUCTOS
         <li>
             <div class="productoEnCarro">
             <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
-            <span>{{$product->name}} {{$product->category}}</span>
+            <span>{{$product->name}}</span><span>Sexo: {{$product->category}}</span>
             <span>${{$product->price}}</span>
             <span>Oferta: {{$product->offer}}</span>
             <span>Desc: %{{$product->sale}}</span>

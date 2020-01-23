@@ -47,7 +47,7 @@
                 <i class="large material-icons">shopping_cart</i>
                 <span style="font-size:20px;">Carrito</span> 
                 @if($productQuantity>0)
-                    <span>({{$productQuantity}})</span></a>
+                    <span style="font-size: 18px;">({{$productQuantity}})</span></a>
                 @endif
             </li>   
 
@@ -57,7 +57,7 @@
                 } 
             @endphp
 
-            <li><a href="/profile">{{ Auth::user()->name }}</a></li>
+            <li><a href="/profile"><span>{{ Auth::user()->name }}</span></a></li>
             
             <li class="avatarHeader"><img src="/{{ Auth::user()->avatar }}" alt=""></li>
            
