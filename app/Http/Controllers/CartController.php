@@ -12,10 +12,10 @@ class CartController extends Controller
 {
 
     public function mostrarCarrito(){
-        //tomo todos los carritos activos con el Id del usuario logueado
+        //tomo todos los carritos activos con el Id del usuario logueado.
         $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get(); 
        
-        //si hay un carrito activo en la pocision [0] lo guardo en la variable $carritoActivo sino instancio un ibjeto de tipo carrito y lo guardo en la misma variable.
+        //si hay un carrito activo en la pocision [0] lo guardo en la variable $carritoActivo sino instancio un objeto de tipo carrito y lo guardo en la misma variable.
         if(isset($carrito[0])){
             $carritoActivo = $carrito[0];
         } else {
@@ -80,18 +80,46 @@ class CartController extends Controller
         }
         //En la variable $total guardo la cantidad de productos que hay en el carrito.
         $total = count($products);
-        
         //Comparto $result y $total a la vista de "carrito"/
         return view('carrito', compact('result', 'total'));
     }
 
     public function finalizarCompra(Request $request) {
-        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
-        $carritoActivo = $carrito[0];
-        $carritoActivo->status = 0;
-        $carritoActivo->save();
-        $carritoCerrado = $carritoActivo;
-        return view("/finalizarcompra", compact('carritoCerrado'));
+        $cartToClose = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
+        $cartToClose = $cartToClose[0];
+        $cartToClose->status = 0;
+        $cartToClose->save();
+        $productsInLastClosedCart = Cart_Product::where("cart_id", $cartToClose->id)->get();
+        $closedCartProductIds = [];
+        foreach($productsInLastClosedCart as $closedProduct){
+            $closedCartProductIds[] = $closedProduct->product_id;
+        }
+        $closedCartUniqueProductIds = array_unique($closedCartProductIds);
+        $closedCartProductObject = (object)[];
+        foreach($closedCartUniqueProductIds as $newId) {
+            $closedCartCount = 0;
+            foreach($productsInLastClosedCart as $productInLastClosedCart) {
+                if($productInLastClosedCart->product_id==$newId) {
+                    $closedCartCount ++;
+                }
+            }
+            $closedCartProductObject->{$newId} = $closedCartCount;
+        }
+        $closedCartsObjectArray = [];
+        $updateDate = $cartToClose->updated_at->toDateTimeString();
+        $dateTime = date("dS M Y",strtotime($updateDate));
+        foreach($closedCartProductObject as $oneId => $amount)
+            foreach($productsInLastClosedCart as $productInLastClosedCart) {
+                if($productInLastClosedCart->product_id==$oneId) {
+                    $closedProductSelected = Product::where('id', $productInLastClosedCart->product_id)->get()[0];
+                    $closedProductSelected->quantity = $amount;
+                    $closedProductSelected->cart_id = $cartToClose->id;
+                    $closedProductSelected->date = $dateTime;
+                    $closedCartsObjectArray[] = $closedProductSelected;
+                break;
+                }
+            }
+       return view("finalizarcompra", compact('closedCartsObjectArray'));
     }
 
     public function eliminarProducto(Request $request) {
@@ -104,22 +132,6 @@ class CartController extends Controller
         $relacion->first()->delete();
         return redirect("/carrito");
         
-    }
-
-    public function mostrarCarritoFinalizado() {
-        $carritos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
-        //dd($carritos);
-        $carrito = $carritos[0];
-        return view('finalizarcompra', compact('carritos'));
-    }
-
-    public function mostrarComprasFinalizadas() {
-        $carritosCerrados = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
-        foreach($carritosCerrados as $carrito) {
-            $productArray = Cart_Product::where("cart_id", $carrito->id)->get();
-        }
-        $productName = Product::all();
-        return view('tuscompras', compact('carritosCerrados','productArray', 'productName')); 
     }
 
      public function mostrarComprasCerradas() {
@@ -135,7 +147,7 @@ class CartController extends Controller
 
             $inactivProductIdCount = (object)[];
 
-            foreach($inactivProductIds as $id) {
+            foreach($inactivProductsUniqueIds as $id) {
                 $inactivCount = 0;
                 foreach($inactivProducts as $inactivProduct) {
                     if($inactivProduct->product_id==$id) {
@@ -145,21 +157,20 @@ class CartController extends Controller
                 $inactivProductIdCount->{$id} = $inactivCount;
             }
             $updateDate = $carritoInactivo->updated_at->toDateTimeString();
+            $dateTime = date("dS M Y",strtotime($updateDate));
             $objectArray = [];
             foreach($inactivProductIdCount as $id =>$inactivQuantity) {
                  foreach($inactivProducts as $inactivProduct){
                      if($inactivProduct->product_id == $id){
                          $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
                          $selectedInactivProduct->quantity = $inactivQuantity;
-                         $selectedInactivProduct->date = $updateDate;
-                         //$selectedInactivProduct->totalProductsInCart = $productCount;
+                         $selectedInactivProduct->date = $dateTime;
                          $objectArray[] = $selectedInactivProduct;
                      break;
                      }
                  }
             }
             $closedCartObject->{$carritoInactivo->id} = $objectArray;
-            $carritoInactivo->updated_at;
         } 
        
         $vac = compact('closedCartObject');

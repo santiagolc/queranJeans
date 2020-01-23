@@ -24,8 +24,7 @@ Route::post("/edit", "EditProfileController@update")->middleware("auth");
 Route::post("/agregar", "CartProductController@agregar")->middleware("mustBeLogged");
 Route::get("/carrito", "CartController@mostrarCarrito")->middleware("auth");
 Route::post('/eliminar', "CartController@eliminarProducto")->middleware("auth");
-Route::post('/finalizarcompra', "CartController@finalizarCompra")->middleware("auth");
-Route::get('/finalizarcompra', "CartController@mostrarCarritoFinalizado")->middleware("auth");
+Route::post('/finalizarcompra', "CartController@finalizarCompra")->middleware("auth")->middleware("mustHaveOpenCart");
 
 //Rutas para productos y categorias
 Route::get('/hombre', 'ProductController@mostrarProductosHombre');
