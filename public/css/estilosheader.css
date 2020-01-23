@@ -24,6 +24,8 @@ nav a{
 nav ul{
     display: flex;
     align-items: center;
+    position: relative;
+    left: 80px;
 }
 
 nav ul li{
@@ -45,7 +47,6 @@ nav ul li a{
 .avatarHeader img {
     width: 60px;
     height: 60px;
-    margin-left: 10%;
     border-radius: 50px;
 }
 
