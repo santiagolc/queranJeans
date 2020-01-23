@@ -56,17 +56,19 @@ class RegisterController extends Controller
         $messages = [
             'name.required' => 'No olvides darnos tu nombre!',
             'name.string' => 'Solo letras!',
-            'name.min' => 'Te pido minimo 3 letas!',
+            'name.min' => 'Te pido minimo 3 letras!',
 
             'surname.required' => 'No olvides darnos tu apellido!',
             'surname.string' => 'Solo letras!',
-            'surname.min' => 'Te pido minimo 3 letas!',
+            'surname.min' => 'Te pido minimo 3 letras!',
 
             'email.required' => 'No olvides darnos tu email!',
             'email.email' => 'Debe ser un formato de email!',
+            'email.unique' => 'Ingresa otro email, ese ya existe en nuestra base de datos!',
 
             'password.required' => 'No olvides crearte una contraseña!',
             'password.min' => 'Tu contraseña debe tener al menos 8 caracteres!',
+            'password.confirmed' => 'Tenes que escribir la misma contraseña!',
         ];
 
         return Validator::make($data, [

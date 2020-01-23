@@ -11,7 +11,7 @@ QueranJeans - Checkout
 @php
     $total = 0;
 @endphp
-<div class="cartShow" style="margin-top:200px;">
+<div class="cartShow">
     <h1>Esta es la compra que realizaste!</h1>
     <ul>
         @forelse($carritoCerrado->products as $product) 
@@ -27,7 +27,7 @@ QueranJeans - Checkout
         @endforelse
        
         <h1>Total: ${{$total}}</h1>
-        <form action="/pagar" method="post">
+        <form class="formFinalizar" action="/pagar" method="post">
             @csrf
            <button type="submit">Pagar</button>
         </form>

@@ -51,14 +51,14 @@ QueranJeans - LOGIN
             </div>
         </div>
 
-        <div class="form-group row mb-0" style="margin-bottom:100px;>
-            <div class="col-md-8 offset-md-4"><br>
-                <button type="submit" class="btn btn-primary">
+        <div class="form-group row mb-0" style="margin-bottom:100px;">
+            <div>
+                <button class="boton1" type="submit" class="btn btn-primary">
                     {{ __('Ingresar') }}
                 </button>
                 <br>
                 @if (Route::has('password.request'))
-                 <a class="btn btn-link" href="{{ route('password.request') }}">
+                 <a class="linkOlvidaste" href="{{ route('password.request') }}">
                         {{ __('¿Olvidaste tu contraseña?') }}
                     </a>
                 @endif
