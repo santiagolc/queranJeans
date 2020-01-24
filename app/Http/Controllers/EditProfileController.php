@@ -22,10 +22,6 @@ class EditProfileController extends Controller
     {
         if($request->hasFile('avatar')) {
 
-            
-
-            $this->validate($request, $datos, $mensajes);
-
             $profileImage = $request->file('avatar');
             $profileImageSaveAsName = time() . "." . $profileImage->getClientOriginalExtension();
             $upload_path = 'avatars/';

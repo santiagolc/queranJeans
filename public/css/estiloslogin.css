@@ -28,28 +28,6 @@ text-decoration: none;
 color: black;
 }
 
-.boton1 {
-	box-shadow: 0px 4px 0px 0px #01060a;
-	background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
-	background-color:#8c8c8c;
-	border-radius:5px;
-	border:1px solid #080808;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-weight:bold;
-	padding:8px 16px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #00050a;
-}
-.boton1:hover {
-	background:linear-gradient(to bottom, #424242 5%, #8c8c8c 100%);
-	background-color:#424242;
-}
-.boton1:active {
-	position:relative;
-	top:1px;
-}
 
 /* media querie para tablets */    
 @media (max-width: 768px){

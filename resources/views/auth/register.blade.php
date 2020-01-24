@@ -69,31 +69,18 @@ QueranJeans - REGISTRO
         </div>
 
         <div class="form-group row">
-            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirma tu Contraseña') }}</label>
+            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar tu Contraseña') }}</label>
 
             <div class="col-md-6">
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
                 <p class="error" id="passwordMatcherror">Los passwords no coinciden</p>
             </div>
         </div>
-            </br>
-        <div class="form-group row" style="display:none;">
-            <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Subi tu Avatar') }}</label>
-
-            <div class="col-md-6">
-                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" autocomplete="avatar" autofocus>
-
-                @error('avatar')
-                <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
-                        {{ $message }}
-                    </span>
-                @enderror
-            </div>
-        </div>
             
+        
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary" disabled id="submitButton">
+                <button type="submit" class="boton1" disabled id="submitButton">
                     {{ __('Registrate') }}
                 </button>
             </div>

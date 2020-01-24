@@ -44,7 +44,7 @@ QueranJeans - CARRITO
               
                
             } else {
-                echo '<button type="submit">Finalizar Compra</button>';  
+                echo '<button class="boton1" type="submit">Finalizar Compra</button>';  
                 
             }
             @endphp

@@ -30,7 +30,7 @@ QueranJeans - HOME
                     <form class="botonCarrito" action="/agregar" method='POST'>
                     @csrf
                     <input type="hidden" name="product_id" value='{{$product->id}}'>
-                    <button type='submit'>Agegar</button>
+                    <button class="boton1" type='submit'>Agregar</button>
                     </form>
                    
                 </div>

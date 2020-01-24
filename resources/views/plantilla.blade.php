@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/estiloscategorias.css">
     <link rel="stylesheet" href="/css/estiloscarrito.css">
     <link rel="stylesheet" href="/css/estilosfooter.css">
+    <link rel="stylesheet" href="/css/estilosEditarPerfil.css">
 
 
     

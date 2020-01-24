@@ -1,6 +1,15 @@
 /* FORM -------------- */
 .containerLogin{
-  height: 304px;
+  height: 335px;
+}
+
+.linkOlvidaste{
+  text-decoration: none;
+  color: black;
+}
+
+.linkOlvidaste:hover{
+  color: red;
 }
 
 form {
@@ -11,6 +20,16 @@ form {
 
 .formulario {
     padding: 10px 0;
+}
+
+.formFinalizar{
+  margin-top: 29px;
+}
+
+.cartShow{
+  margin-top: 180px;
+  text-align: center;
+  height: 280px;
 }
 
 .nacimiento select {
@@ -28,7 +47,6 @@ form {
 } 
 
 .boton1 {
-	box-shadow: 0px 4px 0px 0px #01060a;
 	background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
 	background-color:#8c8c8c;
 	border-radius:5px;
@@ -39,7 +57,9 @@ form {
 	font-weight:bold;
 	padding:8px 16px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #00050a;
+  text-shadow:0px 1px 0px #00050a;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .boton1:hover {
@@ -62,7 +82,6 @@ input[type="file"]  {
   }
 
 label[for="avatar"] {
-  box-shadow: 0px 4px 0px 0px #01060a;
 	background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
 	background-color:#8c8c8c;
 	border-radius:5px;

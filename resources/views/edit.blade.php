@@ -24,6 +24,6 @@ QueranJeans - EDITAR PERFIL
     <label for="avatar">Avatar</label><br>
     <input id="avatar" type="file" class="form-control form-control-sm" name="avatar"><br>
   
-    <input type="submit" name="" id="" class="btn-sm btn-primary">
+    <input class="boton1" type="submit" name="" id="" class="btn-sm btn-primary">
 </form>
 @endsection
