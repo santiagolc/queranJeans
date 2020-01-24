@@ -23,6 +23,11 @@
 
 /* SECTION --------------- */
 
+    .error {
+        color: red;
+        display:none;
+    }
+
     .titulo{
         text-align: center;
     }
