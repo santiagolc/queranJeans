@@ -7,7 +7,7 @@ QueranJeans - EDITAR PERFIL
 @endsection
 
 @section("principal")
-<form action="/edit" method="POST" enctype="multipart/form-data">
+<form class="formEditar" action="/edit" method="POST" enctype="multipart/form-data">
 
     <input type="hidden" name="_token" value="{{csrf_token() }}">
 
@@ -15,15 +15,15 @@ QueranJeans - EDITAR PERFIL
 
     <label for="name">Nombre</label><br>
     <input type="text" name="name" id="" value="{{$user->name}}"> 
-    <span style="color:red; font-size:12px;">{{$errors->first('name')}}</span> <br><br>
+    <span style="color:red; font-size:12px;">{{$errors->first('name')}}</span> <br>
 
     <label for="name">Apellido</label><br>
     <input type="text" name="surname" id="" value="{{$user->surname}}">
-    <span style="color:red; font-size:12px;">{{$errors->first('surname')}}</span> <br><br>
+    <span style="color:red; font-size:12px;">{{$errors->first('surname')}}</span> <br>
 
-    <label for="avatar">Avatar</label><br>
-    <input id="avatar" type="file" class="form-control form-control-sm" name="avatar"><br>
-  
+    <label for="avatar">Avatar</label>
+    <input id="avatar" type="file" class="form-control form-control-sm" name="avatar"><br><br>
+    
     <input class="boton1" type="submit" name="" id="" class="btn-sm btn-primary">
 </form>
 @endsection

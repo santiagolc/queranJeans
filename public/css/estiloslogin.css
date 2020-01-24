@@ -1,13 +1,9 @@
-
 .cartelExitoso {
     text-align: center;
 }
 
-/* MAIN */
-
-main{
-    margin-top: 140px;
-    margin-bottom: 10px;
+.formLogin{
+    text-align: center;
 }
 
 .labelblock {
@@ -31,16 +27,23 @@ color: black;
 
 /* media querie para tablets */    
 @media (max-width: 768px){
-    main {
-        margin-top: 120px;
+   
+    .formLogin {
+        margin-top: 140px;
     }
 
 }
 
 /* media querie para mobile */
-@media (max-width: 425px){
-    main {
-        margin-top: 10px;
+@media (max-width: 450px){
+    
+    .formLogin {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .formLogin label, .linkOlvidaste{
+        font-size: 20px;
     }
 
 }

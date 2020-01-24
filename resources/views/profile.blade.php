@@ -8,7 +8,7 @@ QueranJeans - PERFIL
 
 @section("principal")
 
-    <div class="perfil" style="display: flex; flex-direction: column; align-items: center; margin-top:200px;">
+    <div class="perfil">
             <h2 style="text-decoration: underline; margin-bottom: 30px;">Tu perfil:</h2> 
             <h2>Nombre Completo: {{$user->name}} {{$user->surname}}</h2>
             <h2>Email: {{$user->email}}</h2><br>

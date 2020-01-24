@@ -1,4 +1,5 @@
 /* FORM -------------- */
+
 .containerLogin{
   height: 335px;
 }
@@ -12,7 +13,7 @@
   color: red;
 }
 
-form {
+.formRegistro {
   text-align: center;
   margin-top: 150px;
   margin-bottom: 20px;
@@ -107,27 +108,32 @@ label[for="avatar"]:active {
 
 /* media querie para tablets */    
 @media (max-width: 768px){
-    form {
-      margin-top: 130px;
-    }
+   
+  .formRegistro {
+    margin-top: 130px;
+  }
 }
 
 /* media querie para mobile */
-@media (max-width: 425px){
-    form {
-      margin-top: 20px;
-    }
+@media (max-width: 450px){
+   
+  .formRegistro {
+    margin-top: 35px;
+  }
 
-    .avatar input{
-      font-size: 0.8em;
-      width: 300px;
-    
-    } 
+  .formRegistro label{
+    font-size: 20px;
+  }
 
-    .nacimiento{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+  .avatar input{
+    font-size: 0.8em;
+    width: 300px;
+  } 
+
+  .nacimiento{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
 }

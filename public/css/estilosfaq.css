@@ -37,7 +37,7 @@
 }
 
 /* media querie para mobile */
-@media (max-width: 425px){
+@media (max-width: 450px){
 
     .preguntas{
         margin-top: 20px;
@@ -48,7 +48,7 @@
     }
 
     main h3, main p, main ol li, main a{
-        font-size: 28px;
+        font-size: 20px;
     }
 
 }

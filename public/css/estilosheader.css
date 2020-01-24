@@ -25,7 +25,7 @@ nav ul{
     display: flex;
     align-items: center;
     position: relative;
-    left: 80px;
+    left: 8%;
 }
 
 nav ul li{
@@ -35,8 +35,9 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     padding: 10px;
-    font-size: 20px;
+    font-size: 20px ;
 }
+ 
 
 .avatarHeader {
     display: flex;
@@ -67,6 +68,15 @@ nav ul li a:hover{
 }
 
 /* Media queries Tablets */
+
+@media (max-width: 1100px){
+
+    nav ul{
+        left: 2%;
+    }
+
+}
+
 @media (max-width: 768px){
 
     nav{
@@ -81,13 +91,21 @@ nav ul li a:hover{
     }
 
     nav ul li a{
-    text-align: center;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    nav ul li a span{
+        font-size: 16px;
+    }
+    .material-icons {
+        font-size: 20px !important;
     }
 }
 
 
 /* Media queries Mobile */
-@media (max-width: 425px){
+@media (max-width: 450px){
 
     header{
         position: inherit;
@@ -98,6 +116,11 @@ nav ul li a:hover{
 
         flex-direction: column;
         align-items: center;
+    }
+
+    .logo{
+        position: relative;
+        left: 5px;
     }
 
     nav span{

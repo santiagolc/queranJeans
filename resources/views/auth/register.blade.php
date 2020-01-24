@@ -8,7 +8,7 @@ QueranJeans - REGISTRO
 
 @section("principal")
 <div class="containerRegistro">
-    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+    <form class="formRegistro" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group row">

@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="/css/estiloscarrito.css">
     <link rel="stylesheet" href="/css/estilosfooter.css">
     <link rel="stylesheet" href="/css/estilosEditarPerfil.css">
+    <link rel="stylesheet" href="/css/estilosperfil.css">
+    <link rel="stylesheet" href="/css/estilostuscompras.css">
+
+
 
 
     
@@ -46,9 +50,9 @@
                 @endphp
                 <a href="/carrito">
                 <i class="large material-icons">shopping_cart</i>
-                <span style="font-size:20px;">Carrito</span> 
+                <span>Carrito</span> 
                 @if($productQuantity>0)
-                    <span style="font-size: 18px;">({{$productQuantity}})</span></a>
+                    <span>({{$productQuantity}})</span></a>
                 @endif
             </li>   
 
