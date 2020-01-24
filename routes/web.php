@@ -41,7 +41,7 @@ Route::get('/tuscompras', 'CartController@mostrarComprasFinalizadas')->middlewar
 Route::get('/tuscompras', 'CartController@mostrarComprasCerradas')->middleware("auth");
 
 
-Auth::routes(['verify' =>true]);
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

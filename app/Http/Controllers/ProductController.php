@@ -74,7 +74,7 @@ class ProductController extends Controller
 
         if($request->hasFile('avatar')) {
             $productImage = $request->file('avatar');
-            $productName = $request->get('id');
+            $productName = time();
             $productImageSaveAsName = $productName . "." . $productImage->getClientOriginalExtension();
             $upload_path = 'images/';
             $product_image_url = $upload_path . $productImageSaveAsName;
@@ -142,7 +142,7 @@ class ProductController extends Controller
 
         if($request->hasFile('avatar')) {
             $productImage = $request->file('avatar');
-            $productName = $request->get('id');
+            $productName = time();
             $productImageSaveAsName = $productName . "." . $productImage->getClientOriginalExtension();
             $upload_path = 'images/';
             $image = 'images/'.$productImageSaveAsName;

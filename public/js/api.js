@@ -1,14 +1,22 @@
-window.addEventListener("load", function() {
-fetch("https://restcountries.eu/")
+
+fetch("https://apis.datos.gob.ar/georef/api/provincias")
+
     .then(function(response) {
+
       return response.json();
+      
     })
     .then(function(json) {
-      ul = document.querySelector("ul")
-      tipos = json.results
+
+     var ul = document.getElementById("elUl");
+     var tipos = json;
+      console.log(tipos);
     
-      for (var i = 0; i < tipos.length; i++) {
-        ul.innerHTML += "<li>" + tipos[i].name + "</li>"
+      for (var i = 0; i < tipos.provincias.length; i++) {
+        ul.innerHTML += "<li>" + tipos.provincias[i].nombre + "</li>" 
       }
-    })
-}
+
+    }) .catch(function(error){
+      console.log(error);
+})
+

@@ -16,7 +16,7 @@ QueranJeans - REGISTRO
 
             <div class="col-md-6">
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
-                <p class="error" id="shortName">El nombre debe tener al menos 6 caracteres</p>
+                <p class="error" id="shortName">Tu nombre es muy corto!</p>
                 @error('name')
                     <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}
@@ -30,7 +30,7 @@ QueranJeans - REGISTRO
 
             <div class="col-md-6">
                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}"  autocomplete="surname" autofocus>
-                <p class="error" id="shortSurnameError">El apellido debe tener al menos 6 caracteres</p>
+                <p class="error" id="shortSurnameError">El apellido es muy corto.</p>
                 @error('surname')
                 <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}
@@ -80,7 +80,7 @@ QueranJeans - REGISTRO
         
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
-                <button type="submit" class="boton1" disabled id="submitButton">
+                <button type="submit" id="submitButton" disabled>
                     {{ __('Registrate') }}
                 </button>
             </div>

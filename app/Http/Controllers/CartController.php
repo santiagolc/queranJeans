@@ -84,6 +84,22 @@ class CartController extends Controller
         return view('carrito', compact('result', 'total'));
     }
 
+    public function fechaCastellano ($fecha) {
+        $fecha = substr($fecha, 0, 10);
+        $numeroDia = date('d', strtotime($fecha));
+        $dia = date('l', strtotime($fecha));
+        $mes = date('F', strtotime($fecha));
+        $anio = date('Y', strtotime($fecha));
+        $dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+        $dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+        $nombredia = str_replace($dias_EN, $dias_ES, $dia);
+        $meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+        $meses_EN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        $nombreMes = str_replace($meses_EN, $meses_ES, $mes);
+        return $nombredia." ".$numeroDia." de ".$nombreMes." de ".$anio;
+      }
+
+
     public function finalizarCompra(Request $request) {
         $cartToClose = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
         $cartToClose = $cartToClose[0];
@@ -106,8 +122,9 @@ class CartController extends Controller
             $closedCartProductObject->{$newId} = $closedCartCount;
         }
         $closedCartsObjectArray = [];
-        $updateDate = $cartToClose->updated_at->toDateTimeString();
-        $dateTime = date("dS M Y",strtotime($updateDate));
+
+        $fecha = $cartToClose->updated_at->toDateTimeString();
+        $dateTime = $this->fechaCastellano($fecha); 
         foreach($closedCartProductObject as $oneId => $amount)
             foreach($productsInLastClosedCart as $productInLastClosedCart) {
                 if($productInLastClosedCart->product_id==$oneId) {
@@ -134,6 +151,7 @@ class CartController extends Controller
         
     }
 
+   
      public function mostrarComprasCerradas() {
         $carritosInactivos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
         $closedCartObject = (object)[];
@@ -156,13 +174,16 @@ class CartController extends Controller
                 }
                 $inactivProductIdCount->{$id} = $inactivCount;
             }
-            $updateDate = $carritoInactivo->updated_at->toDateTimeString();
-            $dateTime = date("dS M Y",strtotime($updateDate));
+
+            $fecha = $carritoInactivo->updated_at->toDateTimeString();
+            $anotherCounter = 0;
+            $dateTime = $this->fechaCastellano($fecha); 
             $objectArray = [];
             foreach($inactivProductIdCount as $id =>$inactivQuantity) {
                  foreach($inactivProducts as $inactivProduct){
                      if($inactivProduct->product_id == $id){
                          $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
+                         $anotherCounter += $inactivQuantity;
                          $selectedInactivProduct->quantity = $inactivQuantity;
                          $selectedInactivProduct->date = $dateTime;
                          $objectArray[] = $selectedInactivProduct;
@@ -172,6 +193,8 @@ class CartController extends Controller
             }
             $closedCartObject->{$carritoInactivo->id} = $objectArray;
         } 
+
+        
        
         $vac = compact('closedCartObject');
         

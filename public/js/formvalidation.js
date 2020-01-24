@@ -45,7 +45,7 @@ function validateForm() {
 //Esto ultimo se hizo porque sino cada vez que salias de un formulario el de abajo le saltaba el cartel de error, y aun no se le habia llenado el campo. Despues de cada funcion se retorna la flag.
 function validateNameField() {
     var result = true;
-    if(nameField.value.length<6) {
+    if(nameField.value.length<3) {
         result = false;
         if(nameField.value.length>0) {
             shortNameError.style.display = "block";
@@ -58,7 +58,7 @@ function validateNameField() {
 
 function validateSurnameField() {
     var result = true;
-    if(surnameField.value.length<6) {
+    if(surnameField.value.length<3) {
         result = false;
         if(surnameField.value.length>0) {
             shortSurnameError.style.display = "block";
@@ -113,7 +113,7 @@ function validateConfirmPasswordField() {
     return result;
 }
 
-//se eligio como evento un evento de teclado llamado "keyup" que sucede cuando soltas una tecla, la dejas de apretar. Eso esta buenisimo porque el evento solo se va a disparar cuando se escriba en el input.
+//se eligio como evento un evento de teclado llamado "keyup" que sucede cuando soltas una tecla, la dejas de apretar. Eso esta buenisimo porque el evento solo se va a disparar cuando se escriba en el 
 nameField.addEventListener("keyup", validateForm);
 
 surnameField.addEventListener("keyup", validateForm);

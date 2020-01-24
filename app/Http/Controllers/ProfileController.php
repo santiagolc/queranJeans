@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Cart;
 
 use Illuminate\Http\Request;
 use Auth;
@@ -13,6 +14,12 @@ class ProfileController extends Controller
     }
 
     public function vista(){
-        return view('profile', array('user' => Auth::user()) );
+        $cart = Cart::where('user_id', \Auth::id())-> where('status', "=", 0)->get();
+        
+        $user=  Auth::user();
+        $vac = compact("user", "cart");
+        //dd($cart);
+        return view('profile', $vac );
+        
     }
 }
