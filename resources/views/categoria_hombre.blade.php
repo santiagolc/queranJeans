@@ -14,26 +14,14 @@ QueranJeans - HOMBRES
 <aside class="lateralizq">
             <div class="lista">
                 <ul>CATEGORIAS
-                    <li>JEANS
-                        <ul>
-                            <li class="cat">
-                                <a href="hombre">HOMBRE</a>
-                            </li>
-                            <li class="cat">
-                                <a href="mujer">MUJER</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>REMERAS
-                        <ul>
-                            <li class="cat">
-                                <a href="hombre">HOMBRE</a>
-                            </li>
-                            <li class="cat">
-                                <a href="mujer">MUJER</a>
-                            </li>
-                        </ul>
-                    </li>
+                    <ul>
+                        <li class="cat">
+                            <a href="hombre">HOMBRE</a>
+                        </li>
+                        <li class="cat">
+                            <a href="mujer">MUJER</a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </aside>

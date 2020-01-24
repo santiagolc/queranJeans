@@ -8,7 +8,7 @@ QueranJeans - EDITAR PRODUCTO
 
 @section("principal")
 
-<form action="/producto/update/{{$product->id}}" method="POST" enctype="multipart/form-data">
+<form class="formActualizarProducto" action="/producto/update/{{$product->id}}" method="POST" enctype="multipart/form-data">
 
     <input type="hidden" name="_token" value="{{csrf_token() }}">
     
@@ -16,27 +16,27 @@ QueranJeans - EDITAR PRODUCTO
     
     <label for="name">Nombre del Producto:</label><br>
     <input type="text" name="name" value="{{$product->name}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('name')}} </span><br><br>
+    <span style="color:red; font-size:16px;"> {{$errors->first('name')}} </span><br>
 
    
     <label for="price">Precio (numero):</label><br>
     <input type="text" name="price" value="{{$product->price}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('price')}} </span><br><br>
+    <span style="color:red; font-size:16px;"> {{$errors->first('price')}} </span><br>
 
    
     <label for="offer">Oferta: (si/no)</label><br>
     <input type="text" name="offer" value="{{$product->offer}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('offer')}} </span><br><br>
+    <span style="color:red; font-size:16px;"> {{$errors->first('offer')}} </span><br>
 
 
     <label for="sale">Descuento (0-100):</label><br>
     <input type="text" name="sale" value="{{$product->sale}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('sale')}} </span><br><br>
+    <span style="color:red; font-size:16px;"> {{$errors->first('sale')}} </span><br>
 
 
     <label for="category">Categoria:</label><br>
     <input type="text" name="category" value="{{$product->category}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('category')}} </span><br><br>
+    <span style="color:red; font-size:16px;"> {{$errors->first('category')}} </span><br>
 
 
     <label for="avatar">Imagen</label><br>

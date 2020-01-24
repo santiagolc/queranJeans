@@ -1,13 +1,12 @@
 .listaProductos{
-   margin-top: 186px;
-   
+   margin-top: 170px;
+   min-height: 228px;
 }
 
 .formCarrito{
-    display: inline;
     margin-top: 0px; 
     margin-bottom: 0px;
-   
+    text-align: center;
 }
 
 .listaProductos li{
@@ -22,7 +21,7 @@
 .agregarProducto{
     position: relative;
     left: 40%;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
 }
 
 .productoEnCarro{

@@ -16,7 +16,7 @@ QueranJeans - Checkout
                 <div class="colores">
 
                     
-                    <li style="list-style: none; margin: 10px; padding: 10px; text-decoration: underline;">
+                    <li style="">
                         <span>Compra: #{{$cartId}}</span><br>
                         <span>Cantidad de Productos en el carrito: {{count($array)}}</span><br>
                         <span>Fecha de Compra: {{$array[0]->date}}</span>
