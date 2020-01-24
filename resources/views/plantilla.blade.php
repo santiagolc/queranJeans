@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="/css/estilosEditarPerfil.css">
     <link rel="stylesheet" href="/css/estilosperfil.css">
     <link rel="stylesheet" href="/css/estilostuscompras.css">
+    <link rel="stylesheet" href="/css/estiloseditarproductos.css">
+
 
 
 

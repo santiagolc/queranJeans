@@ -35,8 +35,8 @@ QueranJeans - CARRITO
         @empty
         <h3 style="text-align: center;">Sin productos en el Carrito</h3>
         @endforelse
-        <h3 style="text-align: center;">Total: ${{$total}}</h3>
-        <form action="/finalizarcompra" method="post">
+        <h3 style="text-align: center;">Total: ${{$total}}</h3><br>
+        <form class="formCarrito" action="/finalizarcompra" method="post">
             @csrf
             @php
             if(empty($carritoActivo->products->count())){
@@ -49,9 +49,6 @@ QueranJeans - CARRITO
             }
             @endphp
         </form>
-     
-       
-
     </ul>
 </div>
 

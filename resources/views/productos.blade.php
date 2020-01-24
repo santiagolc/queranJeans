@@ -9,11 +9,10 @@ QueranJeans - AGREGAR PRODUCTOS
 @section("principal")
 
 <div class="listaProductos">
-    
+
     <button class="agregarProducto"><a href="/producto/nuevo" style="text-decoration: none; color: black;">Agregar un Producto</a></button>
     
     <ul>
-      
         @forelse($products as $product) 
         <li>
             <div class="productoEnCarro">
@@ -23,8 +22,7 @@ QueranJeans - AGREGAR PRODUCTOS
             <span>Oferta: {{$product->offer}}</span>
             <span>Desc: %{{$product->sale}}</span>
 
-
-           <button><i class="large material-icons">update</i><a href="/producto/{{$product->id}}" style="text-decoration: none; color: black;">Actualizar</a></button>
+            <button><i class="large material-icons">update</i><a href="/producto/{{$product->id}}" style="text-decoration: none; color: black;">Actualizar</a></button>
           
             <form class="formCarrito" action="/producto/delete/{{$product->id}}" method="POST">
                 @csrf
@@ -36,8 +34,6 @@ QueranJeans - AGREGAR PRODUCTOS
         @empty
         <h3 style="text-align: center;">No hay productos en la base de datos</h3>
         @endforelse
-        
-
     </ul>
 </div>
 
