@@ -1,3 +1,4 @@
+//capturo todos los elementos y sus errores
 var theButton = document.getElementById("submitButton");
 
 var nameField = document.getElementById("name");
@@ -18,7 +19,7 @@ var passwordConfirmError = document.getElementById("passwordMatcherror");
 
 
 
-
+//creo function que empieza con una flag en true, dentro contiene funciones creadas mas abajo, si hay un error en una de estas cambia a false, al final ese flag define el estado del boton de submit (si queda disbaled o no)
 function validateForm() {
     var result = true;
     if(!validateNameField()) {
@@ -40,6 +41,8 @@ function validateForm() {
     return result;
 }
 
+//se crea funcion validateNamefield con flag true. Por cada campo se comprueban sus errores (x ejemplo: si esta vacio, si es corto lo que se ingreso, ademas dentro se arman otros if's que verifican que se haya escrito al menos un caracter antes de mandar mensaje de error. (sigue en otro renglon)
+//Esto ultimo se hizo porque sino cada vez que salias de un formulario el de abajo le saltaba el cartel de error, y aun no se le habia llenado el campo. Despues de cada funcion se retorna la flag.
 function validateNameField() {
     var result = true;
     if(nameField.value.length<6) {
@@ -110,6 +113,7 @@ function validateConfirmPasswordField() {
     return result;
 }
 
+//se eligio como evento un evento de teclado llamado "keyup" que sucede cuando soltas una tecla, la dejas de apretar. Eso esta buenisimo porque el evento solo se va a disparar cuando se escriba en el input.
 nameField.addEventListener("keyup", validateForm);
 
 surnameField.addEventListener("keyup", validateForm);
@@ -120,12 +124,3 @@ passwordField.addEventListener("keyup", validateForm);
 
 passwordConfirmField.addEventListener("keyup", validateForm);
 
-/* 
-nameField.addEventListener("blur", function(e){
-    if(e.target.value.length<6) {
-        shortNameError.style.display = "block";
-    } else {
-        shortNameError.style.display = "none";
-    }
-})
- */

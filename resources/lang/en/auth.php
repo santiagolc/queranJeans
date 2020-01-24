@@ -14,6 +14,5 @@ return [
     */
 
     'failed' => 'Nombre de usuario o contraseña invalidos',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'throttle' => 'Muchos intentos de logueo. Por favor prueba nuevamente en  :seconds segundos.',
 ];

@@ -6,10 +6,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use App\Notifications\ResetPassword as MailResetPasswordNotification;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    public function sendPasswordResetNotification($token)
+    {
+        // Your your own implementation.
+        $this->notify(new MailResetPasswordNotification($token));
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -37,4 +44,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }

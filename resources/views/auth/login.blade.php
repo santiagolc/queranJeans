@@ -9,6 +9,9 @@ QueranJeans - LOGIN
 @section("principal")
 
 <div class="containerLogin">
+        <span style="align: center;">
+            <img class="imgAvatarEdit" src='/images/logob&n.png' alt="avatar usuario" style="object-position: center center; background-color: grey; width:200px; height: 200px; border-radius: 250px; border: 1px solid grey;">
+        </span>
     <form class="formLogin" method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group row">
