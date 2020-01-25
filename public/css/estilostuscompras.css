@@ -1,6 +1,6 @@
 .cartShow{
     margin-top: 170px;
-    min-height: 4460px;
+    min-height: 4160px;
 }
 
 .tituloCompras{
@@ -21,34 +21,34 @@
     list-style: none; 
     margin: 10px; 
     padding: 10px; 
-    text-decoration: underline;
+   text-align: center;
 }
 
-
-
-
-
-
-
-
-
+span a{
+    text-decoration: none;
+    color: black;
+}
 
 
 /* media querie para tablets */
 @media (max-width: 768px){
     
-    main{
-        margin-top: 250px;
-        margin-bottom: 250px;
+    .cartShow {
+        margin-top: 150px;
+        min-height: 4130px;
     }
+
 }
 
-
 /* media querie para mobile */
-@media (max-width: 425px){
+@media (max-width: 450px){
 
-    main{
-        margin-top: 40%;
-        margin-bottom: 40%;
+    .cartShow {
+        margin-top: 40px;
+        min-height: 2620px;
+    }
+
+    .paraBloquear{
+        display: none;
     }
 }

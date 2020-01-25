@@ -21,7 +21,6 @@ QueranJeans - PERFIL
             <br>
             <a class="linkEditar" href="edit">Hace Click aca para editar tus datos!</a>
             <u id="elUl"></ul>
-        </div>  
         <script src="/js/api.js"></script>      
     </div>
 @endsection

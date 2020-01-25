@@ -60,7 +60,7 @@
 
             @php
                 if(Auth::user()->admin==1){
-                    echo '<li><a href="/productos"><i class="large material-icons">add_circle</i>Administrar Productos</a></li>';  
+                    echo '<li class="esconderMobile"><a href="/productos"><i class="large material-icons">add_circle</i>Administrar Productos</a></li>';  
                 } 
             @endphp
 

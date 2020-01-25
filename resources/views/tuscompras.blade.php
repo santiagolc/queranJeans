@@ -25,7 +25,7 @@ QueranJeans - Checkout
                             $total = 0;
                         @endphp
                         @forelse($array as $index => $product)
-                    <li style="list-style: none; padding: 10px; background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);">
+                    <li class="paraBloquear" style="list-style: none; padding: 10px; ">
                         <div class="productoEnCarro">
                             <img src="{{$product->image}}" alt="" style="width:100px; height:100px; border: 2px solid black; border-radius: 5px;">
                             <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>

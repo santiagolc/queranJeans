@@ -27,7 +27,9 @@ aside ul, aside li{
 
 li a:hover{
     background: white;
-    color: rgb(24, 24, 24)
+    color: rgb(24, 24, 24);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .categoria{

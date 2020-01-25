@@ -1,6 +1,6 @@
 .listaProductos{
    margin-top: 170px;
-   min-height: 228px;
+   min-height: 284px;
 }
 
 .formCarrito{
@@ -35,3 +35,23 @@
     margin-bottom: 0px;
 }
 
+/* media querie para tablets */
+@media (max-width: 768px){
+    
+    
+}
+
+
+/* media querie para mobile */
+@media (max-width: 450px){
+
+    .carritoNormal{
+        display: none;
+    }
+
+    .carritoMobile{
+        display: flex;
+        flex-direction: column;
+
+    }
+}

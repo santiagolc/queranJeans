@@ -46,36 +46,19 @@ QueranJeans - HOME
                 <article class="jean">
                 <img src='/images/jean1.jpg' alt='jeans hombre'>
                 <div class="datos2">
-                    <span>Jeans Hombre</span>
+                    <span>Hombre</span>
                     <a href='hombre'>ver</a>
                 </div>
                 </article> 
                 <article class="jean">
                 <img src='/images/jean2.jpg' alt='jeans mujer'>
                 <div class="datos2">
-                    <span>Jeans Mujer</span>
+                    <span>Mujer</span>
                     <a href='mujer'>ver</a>
                 </div>
                 </article> 
             </div>
 
-            <div class="remeras">
-                <article class="remera">
-                <img src="/images/remera1.jpg" alt="remeras hombre">
-                <div class="datos2">
-                    <span>Remeras Hombre</span>
-                    <a href="hombre">ver</a>
-                </div>
-                </article>
-                <article class="remera">
-                <img src="/images/remera2.jpg" alt="remeras mujer">
-                <div class="datos2">
-                    <span>Remeras Mujer</span>
-                    <a href="mujer">ver</a>
-                </div>
-                </article>
-            </div>
-
         </section>
      
-    @stop
+@stop

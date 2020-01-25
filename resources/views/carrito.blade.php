@@ -15,11 +15,12 @@ QueranJeans - CARRITO
             $total = 0;
         @endphp
         @forelse($result as $product) 
+        
         <li>
             <div class="productoEnCarro">
             <img src="{{$product->image}}" alt="" style="width:100px; height:100px; border: 2px solid black; border-radius:10px;">
-            <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
-            <span>${{$product->price}}</span>
+            <span ><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
+            <span  >${{$product->price}}</span>
             <span style="background-color: white; color: red; padding: 5px; border-radius: 9px;">Cantidad: {{$product->quantity}}</span>
            
             <form class="formCarrito" action="/eliminar" method="post">
