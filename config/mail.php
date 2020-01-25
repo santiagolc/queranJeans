@@ -33,7 +33,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | SMTP Host Port
+    | SMTP Host Port  hola
     |--------------------------------------------------------------------------
     |
     | This is the SMTP port used by your application to deliver e-mails to
