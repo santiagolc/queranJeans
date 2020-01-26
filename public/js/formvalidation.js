@@ -89,7 +89,7 @@ function validateEmailField() {
 
 function validatePasswordField() {
     var result = true;
-    if(passwordField.value.length<6) {
+    if(passwordField.value.length<4) {
         result = false;
         if(passwordField.value.length>0) {
             shortPasswordError.style.display = "block";

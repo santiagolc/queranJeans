@@ -11,11 +11,11 @@ QueranJeans - PERFIL
     <div class="perfil">
             <h2 style="text-decoration: underline; margin-bottom: 30px;">Tu perfil:</h2> 
             <h2>Nombre Completo: {{$user->name}} {{$user->surname}}</h2>
-            <h2>Email: {{$user->email}}</h2><br>
+            <h2>Email: {{$user->email}}</h2>
             @if($user->province!=null)
                 @forelse($array as $index => $province)
                     @if($user->province == $index)
-                        <h2>Tu provincia es: {{$array[$index]}}</h2>
+                        <h2>Tu provincia es: {{$array[$index]}}</h2><br>
                     @endif
                 @empty
                 @endforelse
