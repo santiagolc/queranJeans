@@ -12,16 +12,15 @@ QueranJeans - PERFIL
             <h2 style="text-decoration: underline; margin-bottom: 30px;">Tu perfil:</h2> 
             <h2>Nombre Completo: {{$user->name}} {{$user->surname}}</h2>
             <h2>Email: {{$user->email}}</h2><br>
-            
-            @if(($cart!=[]))
-                <a class="linkTusCompras" href="tuscompras">Tus compras</a>
-            @endif 
+            @if(count($cart)>0)
+                <a href="/tuscompras">Tus compras</a>
+            @else 
+                <h2 style="color: grey;">Aun no tienes Compras Realizadas</h2>
+            @endif
             <br>
             <img class="imgAvatarEdit" src='{{$user->avatar}}' alt="avatar usuario" style="width:300px; height: 300px; border-radius: 150px; border: 1px solid grey;">
             <br>
             <a class="linkEditar" href="edit">Hace Click aca para editar tus datos!</a>
-            <u id="elUl"></ul>
-        </div>  
-        <script src="/js/api.js"></script>      
+        </div>     
     </div>
 @endsection

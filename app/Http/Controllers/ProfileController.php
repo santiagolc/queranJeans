@@ -15,10 +15,8 @@ class ProfileController extends Controller
 
     public function vista(){
         $cart = Cart::where('user_id', \Auth::id())-> where('status', "=", 0)->get();
-        
         $user=  Auth::user();
         $vac = compact("user", "cart");
-        //dd($cart);
         return view('profile', $vac );
         
     }

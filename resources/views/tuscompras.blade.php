@@ -18,7 +18,6 @@ QueranJeans - Checkout
                     
                     <li style="">
                         <span>Compra: #{{$cartId}}</span><br>
-                        <!-- <span>Cantidad de Productos en el carrito: {{count($array)}}</span><br> -->
                         <span>Fecha de Compra: {{$array[0]->date}}</span>
                     </li>
                         @php

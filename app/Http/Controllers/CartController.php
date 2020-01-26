@@ -176,14 +176,13 @@ class CartController extends Controller
             }
 
             $fecha = $carritoInactivo->updated_at->toDateTimeString();
-            $anotherCounter = 0;
+            
             $dateTime = $this->fechaCastellano($fecha); 
             $objectArray = [];
             foreach($inactivProductIdCount as $id =>$inactivQuantity) {
                  foreach($inactivProducts as $inactivProduct){
                      if($inactivProduct->product_id == $id){
                          $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
-                         $anotherCounter += $inactivQuantity;
                          $selectedInactivProduct->quantity = $inactivQuantity;
                          $selectedInactivProduct->date = $dateTime;
                          $objectArray[] = $selectedInactivProduct;
@@ -194,8 +193,6 @@ class CartController extends Controller
             $closedCartObject->{$carritoInactivo->id} = $objectArray;
         } 
 
-        
-       
         $vac = compact('closedCartObject');
         
         return view('tuscompras', $vac); 

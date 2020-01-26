@@ -31,10 +31,15 @@ class EditProfileController extends Controller
             $user = Auth::user();
             $user->name = $request->name;
             $user->surname = $request->surname;
+            $user->province = $request->locality;
             $user->avatar = $profile_image_url;
             $user->save();
 
-            return view('profile', array('user' => Auth::user()) );
+            $cart = Cart::where('user_id', \Auth::id())-> where('status', "=", 0)->get();
+            $user=  Auth::user();
+            $vac = compact("user", "cart");
+
+            return view('profile', $vac );
         }
 
         $datos = [
