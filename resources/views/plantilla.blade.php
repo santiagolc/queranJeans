@@ -56,7 +56,7 @@
                 <i class="large material-icons">shopping_cart</i>
                 <span>Carrito</span> 
                 @if($productQuantity>0)
-                    <span>({{$productQuantity}})</span></a>
+                    <span style="font-size: 22px;">( {{$productQuantity}} )</span></a>
                 @endif
             </li>   
 

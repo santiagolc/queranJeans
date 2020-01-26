@@ -34,11 +34,11 @@ QueranJeans - CARRITO
             @php
                 $total += $product->price * $product->quantity;
             @endphp
-            <span class="totalCarrito">Total: ${{$total}}</span>
 
             @empty
                 <h3 style="text-align: center;">Sin productos en el Carrito</h3>
             @endforelse
+            <span class="totalCarrito">Total: ${{$total}}</span>
 
     </section>
     <form class="botonFinalizar" action="/finalizarcompra" method="post">

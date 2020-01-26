@@ -8,11 +8,12 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
     })
     .then(function(json) {
 
-     var select = document.getElementById("locality-dropdown");
-     var tipos = json;
+      var select = document.getElementById("locality-dropdown");
+
+      var tipos = json;
     
       for (var i = 0; i < tipos.provincias.length; i++) {
-        select.innerHTML += "<option value="+tipos.provincias[i].nombre+">"+tipos.provincias[i].nombre +"</option>" 
+        select.innerHTML += "<option value="+tipos.provincias[i].id+">"+tipos.provincias[i].nombre +"</option>" 
       }
 
     }) .catch(function(error){

@@ -26,7 +26,9 @@ QueranJeans - EDITAR PERFIL
     <input id="avatar" type="file" class="form-control form-control-sm" name="avatar"><br>
 
     <label for="provincia">En que provincia vivis?</label><br>
-    <select id="locality-dropdown" name="locality"></select> <br>
+    <select id="locality-dropdown" name="locality" style="width: 50%;">
+        <option disabled selected value style="text-align: center;"> -- Elije tu provincia -- </option>
+    </select> <br>
 
     <input class="boton1" type="submit" name="" id="" class="btn-sm btn-primary">
 </form>
