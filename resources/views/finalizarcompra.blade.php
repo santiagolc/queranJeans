@@ -32,7 +32,7 @@ QueranJeans - Checkout
                             <img src="{{$product->image}}" alt="">
                             <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
                             <span>${{$product->price}}</span>
-                            <span class="cantProductosComprados">{{$product->quantity}}</span>
+                            <span class="cantProductosComprados" style="background-color: white;">{{$product->quantity}}</span>
                         </div>
                     </li>
 
@@ -45,7 +45,11 @@ QueranJeans - Checkout
                     @endforelse 
 
                 @if(isset($closedCartsObjectArray))
-                        <span>Precio Total: ${{$total}}</span>
+                    <ul>
+                        <li style="text-align: right; padding: 10px; margin-right:10%;">
+                            <span style="text-align: center;">Precio Total: ${{$total}}</span>
+                        </li>
+                    </ul>
                 @endif 
             </div>   
         </ul>

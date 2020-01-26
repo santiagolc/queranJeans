@@ -16,7 +16,7 @@ QueranJeans - CARRITO
                 $total = 0;
             @endphp
 
-            <h2 style="text-align: center;">Numero de Orden de Compra: #{{$carrito[0]->id}}</h2>
+            <h2 style="text-align: center;">Numero de Orden de Compra: #{{$cartId}}</h2>
             @forelse($result as $product) 
           
             <article class="productoCarrito">
@@ -40,7 +40,7 @@ QueranJeans - CARRITO
             @empty
                 <h3 style="text-align: center;">Sin productos en el Carrito</h3>
             @endforelse
-            <span class="totalCarrito" style="text-align: right; padding: 9px;">Total: ${{$total}}</span>
+            <span class="totalCarrito" style="text-align: center; padding: 9px;">Total: ${{$total}}</span>
 
     </section>
     <form class="botonFinalizar" action="/finalizarcompra" method="post">

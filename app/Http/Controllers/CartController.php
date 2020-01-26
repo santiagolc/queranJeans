@@ -21,6 +21,8 @@ class CartController extends Controller
             $carritoActivo = new Cart;
         }
 
+
+        
         //busco todos los productos en la tabla cart_product cuyo cart_id sea el mismo que el id del $carritoActivo y lo guardo en $products (plural).
         $products = Cart_Product::where("cart_id", $carritoActivo->id)->get();
         
@@ -79,8 +81,17 @@ class CartController extends Controller
         }
         //En la variable $total guardo la cantidad de productos que hay en el carrito.
         $total = count($products);
+
+        $allCarts = Cart::all();
+        if (!$allCarts->isEmpty()){ 
+            $lastCartId =  $allCarts->last();
+            $cartId = $lastCartId->id + 1;
+        } else {
+            $cartId = 1;
+        }
+       
         //Comparto $result y $total a la vista de "carrito"/
-        return view('carrito', compact('result', 'total', 'carrito'));
+        return view('carrito', compact('result', 'total', 'cartId'));
     }
 
     public function fechaCastellano ($fecha) {
@@ -153,6 +164,7 @@ class CartController extends Controller
    
      public function mostrarComprasCerradas() {
         $carritosInactivos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        $carritosInactivos = $carritosInactivos->reverse();
         $closedCartObject = (object)[];
         foreach($carritosInactivos as $carritoInactivo) {
             $inactivProducts = Cart_Product::where("cart_id", $carritoInactivo->id)->get();
