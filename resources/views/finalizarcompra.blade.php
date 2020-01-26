@@ -18,7 +18,6 @@ QueranJeans - Checkout
             <div class="laCompra">
                 <li class="datosCompra">
                     <span>ID compra: #{{$closedCartsObjectArray[0]->cart_id}}</span><br>
-                    <span>Productos en el carrito: {{count($closedCartsObjectArray)}}</span><br>
                     <span>Fecha de Compra: {{$closedCartsObjectArray[0]->date}}</span>
                 </li>
                 

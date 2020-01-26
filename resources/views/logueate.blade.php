@@ -16,9 +16,9 @@ QueranJeans - PERFIL
                 <img class="imgAvatarEdit" src='/images/logob&n.png' alt="avatar usuario" style="object-position: center center; background-color: grey; width:200px; height: 200px; border-radius: 250px; border: 1px solid grey;">
             </span>
             <br>
-            <a href="edit" style="font-weight: bold; text-transform: uppercase; text-decoration: none; color: black;">Logueate!</a><br>
+            <a href="edit" style="font-weight: bold; text-transform: uppercase; text-decoration: none; color: purple; border: 1px solid grey; border-radius: 4px; padding: 4px;">Logueate!</a><br>
             <br>
-            <a href="edit" style="font-weight: bold; text-transform: uppercase; text-decoration: none; color: black;">Registrate!</a>
+            <a href="edit" style="font-weight: bold; text-transform: uppercase; text-decoration: none; color: purple; border: 1px solid grey; border-radius: 4px; padding: 4px;">Registrate!</a>
         </div>        
     </div>
 @endsection

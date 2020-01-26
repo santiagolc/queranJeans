@@ -10,10 +10,9 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-
     public function mostrarCarrito(){
         //tomo todos los carritos activos con el Id del usuario logueado.
-        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get(); 
+        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
        
         //si hay un carrito activo en la pocision [0] lo guardo en la variable $carritoActivo sino instancio un objeto de tipo carrito y lo guardo en la misma variable.
         if(isset($carrito[0])){
@@ -81,7 +80,7 @@ class CartController extends Controller
         //En la variable $total guardo la cantidad de productos que hay en el carrito.
         $total = count($products);
         //Comparto $result y $total a la vista de "carrito"/
-        return view('carrito', compact('result', 'total'));
+        return view('carrito', compact('result', 'total', 'carrito'));
     }
 
     public function fechaCastellano ($fecha) {
