@@ -103,7 +103,7 @@ nav ul li a:hover{
         display: none;
     }
     
-    .material-icons {
+    nav .material-icons {
         font-size: 20px !important;
     }
 }

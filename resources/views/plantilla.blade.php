@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="/css/estilosperfil.css">
     <link rel="stylesheet" href="/css/estilostuscompras.css">
     <link rel="stylesheet" href="/css/estiloseditarproductos.css">
+    <link rel="stylesheet" href="/css/estiloscomprafinalizada.css">
+
 
 
 
@@ -92,9 +94,9 @@
         </div>
         <a class="faq" href="/faq">Preguntas Frecuentes</a>
         <ul class="redes">
-            <li><a href="https://facebook.com" target="_blank"><img src="images/facebook.png" alt=""> Facebook</a></li>
-            <li><a href="https://instagram.com" target="_blank"><img src="images/instagram.png" alt=""> Instagram</a></li>
-            <li><a href="https://twitter.com" target="_blank"><img src="images/twitter.png" alt=""> Twitter</a></li>
+            <li><a href="https://facebook.com" target="_blank"><img src="/images/facebook.png" alt=""> Facebook</a></li>
+            <li><a href="https://instagram.com" target="_blank"><img src="/images/instagram.png" alt=""> Instagram</a></li>
+            <li><a href="https://twitter.com" target="_blank"><img src="/images/twitter.png" alt=""> Twitter</a></li>
         </ul>
 </footer>
 </body>

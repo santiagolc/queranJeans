@@ -1,9 +1,48 @@
-.formProductoNuevo{
-    text-align: center;
-    margin-top: 150px;
+.contenedorProductos{
+    margin-top: 170px;
 }
 
-.formActualizarProducto{
+.formProductoNuevo, .formActualizarProducto{
     text-align: center;
-    margin-top: 150px;
+    margin-top: 170px;
+}
+
+.agregarProducto{
+    position: relative;
+    left: 40%;
+    margin-bottom: 3%;
+}
+
+.agregarProducto a, .administrarProducto button a{
+    text-decoration: none;
+    color: black;
+}
+
+.administrarProducto button a:hover{
+    background: none;
+    padding: none;
+}
+
+.administrarProducto{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightgray; 
+    width: 95%;
+    border-radius: 20px;
+    margin: 0% 2.5% 1% 2.5%;
+}
+
+.administrarProducto img{
+    width: 12%; 
+    border-radius: 10px;
+}
+
+.agregarProducto{
+    text-decoration: none;
+    color: black;
+}
+
+.formCarrito button{
+    cursor: pointer;
 }

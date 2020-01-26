@@ -51,7 +51,7 @@ QueranJeans - LOGIN
             </div>
         </div>
 
-        <div class="form-group row mb-0" style="margin-bottom:100px;">
+        <div class="form-group row mb-0">
             <div>
                 <button class="boton1" type="submit" class="btn btn-primary">
                     {{ __('Ingresar') }}

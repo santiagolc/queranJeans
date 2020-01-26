@@ -8,21 +8,21 @@ QueranJeans - AGREGAR PRODUCTOS
 
 @section("principal")
 
-<div class="listaProductos">
+<div class="contenedorProductos">
 
-    <button class="agregarProducto"><a href="/producto/nuevo" style="text-decoration: none; color: black;">Agregar un Producto</a></button>
+    <button class="agregarProducto" ><a href="/producto/nuevo">Agregar un Producto</a></button>
     
     <ul>
         @forelse($products as $product) 
         <li>
-            <div class="productoEnCarro">
-            <img src="{{$product->image}}" alt="" style="width:100px; height:100px;">
+            <div class="administrarProducto">
+            <img src="{{$product->image}}" alt="">
             <span>{{$product->name}}</span><span>Sexo: {{$product->category}}</span>
             <span>${{$product->price}}</span>
             <span>Oferta: {{$product->offer}}</span>
             <span>Desc: %{{$product->sale}}</span>
 
-            <button><i class="large material-icons">update</i><a href="/producto/{{$product->id}}" style="text-decoration: none; color: black;">Actualizar</a></button>
+            <button><i class="large material-icons">update</i><a href="/producto/{{$product->id}}">Actualizar</a></button>
           
             <form class="formCarrito" action="/producto/delete/{{$product->id}}" method="POST">
                 @csrf

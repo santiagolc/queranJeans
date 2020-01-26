@@ -1,27 +1,15 @@
-.cartShow{
+.contenedorTusCompras{
     margin-top: 170px;
-    min-height: 4160px;
 }
 
 .tituloCompras{
     text-align: center; 
-    text-decoration: underline;
 }
 
-.colores{
-    border: 2px solid black; 
-    margin-top: 30px; 
-    margin-left: 5%; 
-    margin-right:5%;
-    border-radius: 10px; 
-    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
-}
-
-.cartShow ul li{
+.contenedorTusCompras li{ 
     list-style: none; 
     margin: 10px; 
-    padding: 10px; 
-   text-align: center;
+    text-align: center;
 }
 
 span a{
@@ -29,11 +17,16 @@ span a{
     color: black;
 }
 
+.productoComprado img{
+    width: 12%;    
+    border: 1px solid black; 
+    border-radius: 5px;
+}
 
 /* media querie para tablets */
 @media (max-width: 768px){
     
-    .cartShow {
+    .contenedorTusCompras{
         margin-top: 150px;
         min-height: 4130px;
     }
@@ -43,7 +36,7 @@ span a{
 /* media querie para mobile */
 @media (max-width: 450px){
 
-    .cartShow {
+    .contenedorTusCompras{ 
         margin-top: 40px;
         min-height: 2620px;
     }

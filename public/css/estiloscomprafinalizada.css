@@ -1,0 +1,107 @@
+.contenedorFinalizada{
+    margin-top: 150px;
+}
+
+.contenedorFinalizada h1{
+    text-align: center;
+}
+
+.laCompra{
+    border: 2px solid black; 
+    margin-top: 30px; 
+    margin-left: 5%; 
+    margin-right: 5%;
+    border-radius: 10px; 
+    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+}
+
+.datosCompra{
+    list-style: none; 
+    margin: 10px; 
+    padding: 10px; 
+}
+
+.productosComprados{
+    list-style: none; 
+    padding: 10px; 
+}
+
+.productoComprado{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightgray; 
+    width: 70%;
+    border-radius: 20px;
+    margin: 0% 15% 1% 15%;
+}
+
+.productosComprados img{
+    width: 12%; 
+    border-radius: 10px;
+}
+
+.cantProductosComprados{
+    background-color: grey;
+    color: black;
+    padding: 2px 14px 2px 14px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+.spanTotal{
+    display: block;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+/* media querie para tablets */
+@media (max-width: 768px){
+
+    .contenedorFinalizada{
+        margin-top: 135px;
+    }
+
+    .contenedorFinalizada h1{
+        margin-bottom: 3%;
+    }
+
+    .productoComprado{
+        width: 80%;
+        margin: 0% 10% 1% 10%;
+    }
+
+    .productoComprado span a, .productoComprado span{
+        font-size: 18px;
+    }
+    
+    .cantProductosComprados{
+        padding: 2px 10px 2px 10px;
+    }
+
+    .productosComprados img{
+        width: 16%; 
+    }
+
+}
+
+/* media querie para mobile */
+@media (max-width: 450px){
+
+    .contenedorFinalizada {
+        margin-top: 14px;
+    }
+
+    .contenedorFinalizada h1, .datosCompra span{
+        font-size: smaller;   
+    }
+
+    .productoComprado{
+       display: none;
+    }
+
+    .spanTotal{
+        margin-bottom: 4%;
+    }
+
+}
