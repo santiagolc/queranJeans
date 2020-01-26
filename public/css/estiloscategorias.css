@@ -1,9 +1,9 @@
 .lista a{
     color: white;
+    text-decoration: none;
 }
 
 .contenedor{
-    
     display: flex;
     flex-wrap: wrap;
 }
@@ -27,11 +27,18 @@ aside ul, aside li{
 
 li a:hover{
     background: white;
-    color: rgb(24, 24, 24)
+    color: rgb(24, 24, 24);
+    border-radius: 5px;
+    
 }
 
 .categoria{
     width: 1048px;
+    margin-top: 9%;
+}
+
+.categoria section{
+    margin-top: 2%;
 }
 
 .productos{
@@ -61,7 +68,7 @@ li a:hover{
 }
 
 .producto .datos span, .producto .datos a{
-    font-size: 20px;
+    font-size: 18px;
     color: white;
 }
 
@@ -69,11 +76,6 @@ li a:hover{
     border-radius: 10px;
     border: 1px solid white;
     padding: 2px;
-}
-
-.datos a:hover{
-    background: white;
-    color: rgb(24, 24, 24)
 }
 
 footer{

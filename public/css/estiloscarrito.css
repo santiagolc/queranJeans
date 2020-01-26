@@ -1,37 +1,123 @@
-.listaProductos{
-   margin-top: 170px;
-   min-height: 228px;
+.botonMobile{
+    display: none;
+}
+
+.contenedorCarrito{
+    min-height: 304px;
+}
+
+.carrito{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.productoCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightgray;
+    width: 50%;
+    border-radius: 20px;
+    margin: 0% 25% 1% 25%;
 }
 
 .formCarrito{
-    margin-top: 0px; 
-    margin-bottom: 0px;
+    display: inline-block;
     text-align: center;
 }
 
-.listaProductos li{
-    list-style: none;
-    background-color: lightgrey;
-    height: 100px;
-    width: 1200px;
-    margin-left: 80px;
-    margin-bottom: 15px;
+.productoCarrito img{
+    width: 15%; 
+    border: 1px solid black; 
+    border-radius: 10px;
 }
 
-.agregarProducto{
-    position: relative;
-    left: 40%;
-    margin-bottom: 3%;
+.spanCantidad{
+    background-color: 
+    white; 
+    color:black; 
+    padding: 2px 18px 2px 18px; 
+    border: 1px solid black; 
+    border-radius: 50px;
 }
 
-.productoEnCarro{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.totalCarrito{
+    text-align: center;
 }
 
-.finalizarCompra{
-    margin-top: 0px; 
-    margin-bottom: 0px;
+.botonFinalizar{
+text-align: center;}
+
+
+
+/* media querie para tablets */
+@media (max-width: 768px){
+   
+    .botonMobile{
+        display: block;
+        padding: 10px 10px 0px 10px;
+    }
+
+    .botonMobile i{
+        font-size: 30px;
+        
+    }
+
+    .botonWeb{
+        display: none;
+    }
+
+    .productoCarrito{
+        width: 80%;
+        margin: 0% 10% 1% 10%;
+    }
+
+    .nombreProducto{
+        max-width: 260px;
+    }
+    
 }
 
+
+/* media querie para mobile */
+@media (max-width: 450px){
+
+    .botonMobile{
+        display: block;
+        padding: 5px 5px 0px 5px;
+    }
+
+    .botonMobile i{
+        font-size: 25px;
+    }
+
+    .botonWeb{
+        display: none;
+    }
+
+    .carrito{
+        margin-top: 40px;
+    }
+
+    .productoCarrito{
+        width: 95%;
+        margin: 0% 2.5% 1% 2.5%;
+    }
+
+    .nombreProducto {
+        max-width: 150px;
+    }
+
+  
+    .productoCarrito span a, .productoCarrito span{
+        font-size: 20px;
+    }
+
+    .spanCantidad{
+        padding: 2px 14px 2px 14px;
+    }
+    
+    
+}

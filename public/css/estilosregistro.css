@@ -1,9 +1,5 @@
 /* FORM -------------- */
 
-.containerLogin{
-  min-height: 413px;
-}
-
 .linkOlvidaste{
   text-decoration: none;
   color: black;
@@ -27,24 +23,8 @@
   margin-top: 29px;
 }
 
-.cartShow{
-  margin-top: 180px;
-  text-align: center;
-  height: 280px;
-}
-
-.nacimiento select {
-    font-size: 20px;
-}
-
-.nacimiento{
-  display: flex;
-  justify-content: center;
-}
-
 .avatar input{
   width: 370px;
-
 } 
 
 .boton1 {
@@ -67,11 +47,11 @@
 	background:linear-gradient(to bottom, #424242 5%, #8c8c8c 100%);
 	background-color:#424242;
 }
+
 .boton1:active {
 	position:relative;
 	top:1px;
 }
-
 
 input[type="file"]  {
   width: 0.1px;

@@ -44,7 +44,7 @@
     margin-top: 20px;
   }
 
-  .formEditar label{
+  .formEditar label, .formEditar input{
     font-size: 20px;
   }
 
@@ -52,7 +52,6 @@
     margin-bottom: 15px;
   }
 
-  
   .avatar input{
     font-size: 0.8em;
     width: 300px;

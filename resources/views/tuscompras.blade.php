@@ -9,27 +9,27 @@ QueranJeans - Checkout
 @section("principal")
 
 
-<div class="cartShow">
+<div class="contenedorTusCompras">
     <h1 class="tituloCompras">Estas son las compras que realizaste en queranJeans:</h1>
         <ul>
                 @forelse($closedCartObject as $cartId => $array)
-                <div class="colores">
-
-                    
-                    <li style="">
-                        <span>Compra: #{{$cartId}}</span><br>
+                <div class="laCompra">
+                    <li class="infoCompra">
+                        <span>ID Compra: #{{$cartId}}</span><br>
                         <span>Fecha de Compra: {{$array[0]->date}}</span>
                     </li>
                         @php
                             $total = 0;
                         @endphp
                         @forelse($array as $index => $product)
-                    <li style="list-style: none; padding: 10px; background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);">
-                        <div class="productoEnCarro">
-                            <img src="{{$product->image}}" alt="" style="width:100px; height:100px; border: 2px solid black; border-radius: 5px;">
+                    <li class="paraBloquear">
+                        <div class="productoComprado">
+                            <img src="{{$product->image}}" alt="">
                             <span><a href="/{{$product->category}}">{{$product->name}} {{$product->category}} </a></span>
                             <span>${{$product->price}}</span>
-                            <span style="background-color: white; color: red; padding: 5px; border-radius: 10px;">Cantidad: {{$product->quantity}}</span>
+                            
+                            <!-- <span>Cantidad de Productos en el carrito: {{count($array)}}</span><br> -->
+                            <span class="cantProductosComprados">{{$product->quantity}}</span>
                         </div>
                     </li>
                             @php
@@ -38,13 +38,12 @@ QueranJeans - Checkout
                         @empty
                         @endforelse
                         @if(isset($closedCartObject))
-                        <li style="text-align: right; margin-right: 5%; list-style: none; padding: 2%;"> <span>Precio Total: ${{$total}}</span><br></li>
+                        <li style="text-align: center;"> <span>Precio Total: ${{$total}}</span><br></li>
                         @endif 
                         </div>     
                     @empty
-                    <li style="text-align: center; list-style: none; padding: 10px;"><span>Aun no tienes compras!</span></li>
-                    <img src="/images/logob&n.png" style="width: 200px; height: 200px; align:center;" alt="">
-                    </div> 
+                    <li style="text-align: center;"><span>Aun no tienes compras!</span></li>
+                </div> 
                 @endforelse  
             
         </ul>  

@@ -1,10 +1,10 @@
-*{
+    *{
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     font-family: 'Poppins', sans-serif;
     font-size: 25px;
-}
+    }
 
     body{
         background: rgb(246, 246, 246);
@@ -150,23 +150,6 @@
         color: rgb(24, 24, 24);
     }
 
-    .remeras{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .remera{
-        width: 40%;
-        height: 665px;
-        margin-bottom: 20px;
-        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-    }
-
-    .remera img{
-        width: 100%;
-    }
-
 @media (max-width: 1100px){
 
     .banner{
@@ -197,10 +180,6 @@
 
     .jean{
         height: 725px;
-    }
-
-    .remera{
-        height: 540px;
     }
 
 }
@@ -256,12 +235,6 @@
         height: 576px;
     }
 
-    .remera{
-        width: 45%;
-        height: 428px;
-        margin: 1%;
-    }
-
 }
 
 @media (max-width: 450px){
@@ -281,7 +254,7 @@
     .oferta{
         width: 90%;
         margin: 5%;
-        height: 468px;
+        height: 502px;
     }
 
     .oferta .datos span, .oferta .datos a {
@@ -303,11 +276,7 @@
     }
 
     .jean {
-       height: 630px;
-    }
-
-    .remera{
-        height: 468px;
+       height: 675px;
     }
 
 }
