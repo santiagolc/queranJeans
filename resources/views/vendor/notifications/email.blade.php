@@ -44,7 +44,7 @@
 {{ $salutation }}
 @else
 @lang('Saludos'),<br>
-{{  }}
+{{$salutation  }}
 @endif
 
 {{-- Subcopy --}}
