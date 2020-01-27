@@ -7,7 +7,7 @@ QueranJeans - RESTAURAR CONTRASEÑA
 @endsection
 
 @section("principal")
-<div class="container">
+<div class="contenedorContraseña">
     <div class="card-body">
         @if (session('status'))
             <div class="alert alert-success" role="alert" style="color: red;">

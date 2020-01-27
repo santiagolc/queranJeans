@@ -1,84 +1,261 @@
-.lista a{
-    color: white;
-    text-decoration: none;
+    .agregarMobile{
+        display: none;
+    }
+
+    .navCategorias{
+        display: none;
+    }
+
+    .agregarWeb{
+        background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
+        background-color:#8c8c8c;
+        border-radius:5px;
+        border:1px solid #080808;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        padding: 4px 6px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #00050a;
+    }
+
+    .agregarWeb:hover {
+        background:linear-gradient(to bottom, #424242 5%, #8c8c8c 100%);
+        background-color:#424242;
+    }
+
+    .agregarWeb:active {
+        position:relative;
+        top:1px;
+    }
+
+    .lista a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .contenedorCategorias{
+        display: flex;
+        margin-top: 12%;
+        margin-bottom: 1%;
+    }
+
+    .lateralizq{
+        background: rgba(0,0,0,0.6);
+        width: 300px;
+        height: 1656px;
+    }
+
+    .lista{
+        text-align: center;
+        margin-top: 15%;
+    }
+
+    aside ul, aside li{
+        padding: 10%;
+        list-style: none;
+    }
+
+    li a:hover{
+        background: white;
+        color: rgb(24, 24, 24);
+        border-radius: 5px;
+    }
+
+    .categoria{
+        width: 1048px;
+    }
+
+    .productos{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1%;
+    }
+
+    .producto{
+        width: 31%;
+        margin: 0% 1% 2% 1%;
+        height: 398px;
+        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    }
+
+    .producto img{
+        width: 100%;
+    }
+
+    .producto .datos{
+        background: rgba(0,0,0,0.6);
+        position: relative;
+        text-align: center;
+        bottom: 35%;
+        width: 100%;
+        padding:10px;
+    }
+
+    .producto .datos span, .producto .datos a{
+        font-size: 18px;
+        color: white;
+    }
+
+    .producto .datos a{
+        border-radius: 10px;
+        border: 1px solid white;
+        padding: 2px;
+    }
+
+@media (max-width: 1200px){
+
+    .contenedorCategorias{
+        margin-top: 13%;
+    }
+
+    .producto{
+        height: 354px;
+    }
+
+    .producto .datos{
+        bottom: 40%;
+    }
+
+    .lateralizq{
+        height: 1475px;
+    }
+
+    .producto .datos span, .producto .datos a{
+        font-size: 16px;
+    }
+
+    .producto .datos .botonCarrito .agregarWeb{
+        font-size: 14px;
+    }
+
 }
 
-.contenedor{
-    display: flex;
-    flex-wrap: wrap;
+/* Media queries Tablets */
+@media (max-width: 768px){
+
+    .contenedorCategorias{
+        margin-top: 18%;
+    }
+
+    .agregarMobile{
+        display: block;
+        padding: 5px 5px 0px 5px;
+        background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
+        background-color:#8c8c8c;
+        border-radius:5px;
+        border:1px solid #080808;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #00050a;
+    }
+
+    .agregarMobile:hover {
+        background:linear-gradient(to bottom, #424242 5%, #8c8c8c 100%);
+        background-color:#424242;
+    }
+
+    .agregarMobile:active {
+        position:relative;
+        top: 1px;
+    }
+
+    .agregarMobile i{
+        font-size: 13px;
+    }
+
+    .agregarWeb{
+        display: none;
+    }
+
+    .producto{
+        height: 227px;
+    }
+
+    .producto .datos{
+        bottom: 60%;
+    }
+
+    .lateralizq{
+        height: 945px;
+    }
+
+    .lista ul, .lista ul li a{
+        font-size: smaller;
+    }
+
+    .producto .datos .botonCarrito .boton1{
+        padding: 4px 5px;
+    }
+
+    .producto .datos span, .producto .datos a{
+        font-size: 12px;
+    }    
+
 }
 
-.lateralizq{
-    background: rgba(0,0,0,0.6);
-    width: 300px;
-    height: 1636px;
-    margin-top:12%;
-}
+/* Media queries Mobile */
+@media (max-width: 450px){
 
-.lista{
-    text-align: center;
-    margin-top: 15%;
-}
+    .agregarMobile{
+        display: none;
+    }
 
-aside ul, aside li{
-    padding: 10%;
-    list-style: none;
-}
+    .agregarWeb{
+        display: block;
+    }
 
-li a:hover{
-    background: white;
-    color: rgb(24, 24, 24);
-    border-radius: 5px;
-    
-}
+    .navCategorias{
+        display: inline-block;
+        background: grey;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 4%;
+    }
 
-.categoria{
-    width: 1048px;
-    margin-top: 9%;
-}
+    .navCategorias div{
+        display: flex;
+        justify-content: space-between;
+    }
 
-.categoria section{
-    margin-top: 2%;
-}
+    .navCategorias span a{
+        color: white;
+        font-size: 20px;
+    }
 
-.productos{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 1%;
-}
+    .navCategorias span a:hover{
+        background: white;
+        color: black;
+        border-radius: 5px;
+    }
 
-.producto{
-    width: 31%;
-    margin: 2% 1% 4% 1%;
-    height: 398px;
-    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-}
 
-.producto img{
-    width: 100%;
-}
+    .lateralizq{
+        display: none;
+    }
 
-.producto .datos{
-    background: rgba(0,0,0,0.6);
-    position: relative;
-    text-align: center;
-    bottom: 35%;
-    width: 100%;
-    padding:10px;
-}
+    .contenedorCategorias{
+        display: inline;
+    }
 
-.producto .datos span, .producto .datos a{
-    font-size: 18px;
-    color: white;
-}
+    .categoria{
+        width: 450px;
+    }
 
-.producto .datos a{
-    border-radius: 10px;
-    border: 1px solid white;
-    padding: 2px;
-}
+    .producto {
+        height: 442px;
+        width: 80%;
+        margin: 0% 10% 3% 10%;
+    }
 
-footer{
-    margin-top: 2%;
-}
+    .producto .datos{
+        bottom: 35%;
+    }
 
+    .producto .datos span, .producto .datos a{
+        font-size: 18px;
+    } 
+
+}

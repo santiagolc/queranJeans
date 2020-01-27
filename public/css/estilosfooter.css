@@ -42,7 +42,6 @@ li a img{
     footer h3, footer a{
         font-size: 20px;
     }
-
 }
 
 /* Media querie para mobiles */
@@ -59,6 +58,4 @@ li a img{
         display: block;
         margin: 20px 0px 10px 0px;
     }
-
-
 }

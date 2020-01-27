@@ -1,0 +1,49 @@
+
+    .contenedorContraseña{
+        margin-top: 170px;
+        margin-bottom: 67px;
+        text-align: center;
+    }
+
+    #email{
+        margin-top: 20px;
+    }
+
+    .logueate{
+        margin-top: 200px;
+        text-align: center;
+        margin-bottom: 99px;
+    }
+
+    .logueateLinks{
+        font-weight: bold; 
+        text-decoration: none; 
+        color: black;
+    }
+
+    .logueateLinks:hover{
+        color: red;
+    }
+
+    .logueate h2{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+/* media querie para mobile */
+@media (max-width: 450px){
+
+    .contenedorContraseña{
+        margin-top: 60px;
+    }
+
+    .contenedorContraseña label, .contenedorContraseña button{
+        font-size: 20px;
+    }
+
+    .logueate {
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+}

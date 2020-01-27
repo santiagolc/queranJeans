@@ -25,13 +25,13 @@ class ProductController extends Controller
     }
 
     public function mostrarProductosHombre(){
-        $products = Product::where('category', '=', 'hombre')->get();
+        $products = Product::where('category', '=', 'hombre')->paginate(12);
         return view('categoria_hombre', compact('products'));
     }
 
     public function mostrarProductosMujer(){
         //dd(Product::where('category', '=', 'mujer')->get());
-        $products = Product::where('category', '=', 'mujer')->get();
+        $products = Product::where('category', '=', 'mujer')->paginate(12);
         return view('categoria_mujer', compact('products'));
     }
 
