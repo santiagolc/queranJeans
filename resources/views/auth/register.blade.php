@@ -59,7 +59,7 @@ QueranJeans - REGISTRO
 
             <div class="col-md-6">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
-                <p class="error" id="shortPassword">El password debe tener al menos 6 caracteres</p>
+                <p class="error" id="shortPassword">El password debe tener al menos 4 caracteres</p>
                 @error('password')
                 <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}

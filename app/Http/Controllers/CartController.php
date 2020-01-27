@@ -212,6 +212,7 @@ class CartController extends Controller
         
         return view('tuscompras', $vac); 
     }
+}
 
 
     /**
