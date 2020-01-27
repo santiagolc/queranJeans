@@ -7,6 +7,9 @@ footer{
     align-items: center;
     padding: 15px;
     bottom: 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
 }
 
 footer ul{

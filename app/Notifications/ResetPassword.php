@@ -42,12 +42,14 @@ class ResetPassword extends MailResetPasswordNotification
      */
    
     public function toMail($notifiable)
+   
 {
-        return (new MailMessage)
+    dd($notifiable);
+       /*  return (new MailMessage)
         ->subject('Cambiar Contraseña - ' . config('app.name'))
         ->line('Le enviamos este correo electrónico porque solicitó un cambio de contraseña para su cuenta.')
-        ->action('Cambiar contraseña', url('password/reset'))
-        ->line('Si no solicitó un cambio de contraseña, ignore este correo electrónico.');
+        ->action('Cambiar contraseña', url('password/reset/' + $notifiable))
+        ->line('Si no solicitó un cambio de contraseña, ignore este correo electrónico.'); */
 }
 
 
