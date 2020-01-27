@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'email.unique' => 'Ingresa otro email, ese ya existe en nuestra base de datos!',
 
             'password.required' => 'No olvides crearte una contraseña!',
-            'password.min' => 'Tu contraseña debe tener al menos 8 caracteres!',
+            'password.min' => 'Tu contraseña debe tener al menos 4 caracteres!',
             'password.confirmed' => 'Tenes que escribir la misma contraseña!',
         ];
 
@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'min:3', 'max:30'],
             'surname' => ['required', 'string', 'min:3', 'max:30'],
             'email' => ['required', 'email', 'max:100', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
             'avatar' => ['file'],
         ], $messages);
     }

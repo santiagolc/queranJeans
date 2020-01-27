@@ -15,6 +15,8 @@ QueranJeans - CARRITO
             @php
                 $total = 0;
             @endphp
+
+            <h2 style="text-align: center;">Numero de Orden de Compra: #{{$cartId}}</h2>
             @forelse($result as $product) 
           
             <article class="productoCarrito">
@@ -27,18 +29,18 @@ QueranJeans - CARRITO
                     @csrf
                     <input type="hidden" value="{{$product->id}}" name="product_id">
                     <button class="botonMobile" type="submit"><i class="large material-icons">delete</i></button>
-                    <button class="botonWeb" type="submit"><i class="large material-icons">delete</i>Eliminar</button>
+                    <button class="botonWeb" type="submit" style="border-radius: 10px;"><i class="large material-icons">delete</i>Eliminar</button>
                 </form>
             </article>
            
             @php
                 $total += $product->price * $product->quantity;
             @endphp
-            <span class="totalCarrito">Total: ${{$total}}</span>
 
             @empty
                 <h3 style="text-align: center;">Sin productos en el Carrito</h3>
             @endforelse
+            <span class="totalCarrito" style="text-align: center; padding: 9px;">Total: ${{$total}}</span>
 
     </section>
     <form class="botonFinalizar" action="/finalizarcompra" method="post">

@@ -10,10 +10,9 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-
     public function mostrarCarrito(){
         //tomo todos los carritos activos con el Id del usuario logueado.
-        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get(); 
+        $carrito = Cart::where("user_id",\Auth::user()->id)->where('status','=','1')->get();
        
         //si hay un carrito activo en la pocision [0] lo guardo en la variable $carritoActivo sino instancio un objeto de tipo carrito y lo guardo en la misma variable.
         if(isset($carrito[0])){
@@ -22,6 +21,8 @@ class CartController extends Controller
             $carritoActivo = new Cart;
         }
 
+
+        
         //busco todos los productos en la tabla cart_product cuyo cart_id sea el mismo que el id del $carritoActivo y lo guardo en $products (plural).
         $products = Cart_Product::where("cart_id", $carritoActivo->id)->get();
         
@@ -80,8 +81,17 @@ class CartController extends Controller
         }
         //En la variable $total guardo la cantidad de productos que hay en el carrito.
         $total = count($products);
+
+        $allCarts = Cart::all();
+        if (!$allCarts->isEmpty()){ 
+            $lastCartId =  $allCarts->last();
+            $cartId = $lastCartId->id + 1;
+        } else {
+            $cartId = 1;
+        }
+       
         //Comparto $result y $total a la vista de "carrito"/
-        return view('carrito', compact('result', 'total'));
+        return view('carrito', compact('result', 'total', 'cartId'));
     }
 
     public function fechaCastellano ($fecha) {
@@ -154,6 +164,7 @@ class CartController extends Controller
    
      public function mostrarComprasCerradas() {
         $carritosInactivos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        $carritosInactivos = $carritosInactivos->reverse();
         $closedCartObject = (object)[];
         foreach($carritosInactivos as $carritoInactivo) {
             $inactivProducts = Cart_Product::where("cart_id", $carritoInactivo->id)->get();
@@ -176,14 +187,13 @@ class CartController extends Controller
             }
 
             $fecha = $carritoInactivo->updated_at->toDateTimeString();
-            $anotherCounter = 0;
+            
             $dateTime = $this->fechaCastellano($fecha); 
             $objectArray = [];
             foreach($inactivProductIdCount as $id =>$inactivQuantity) {
                  foreach($inactivProducts as $inactivProduct){
                      if($inactivProduct->product_id == $id){
                          $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
-                         $anotherCounter += $inactivQuantity;
                          $selectedInactivProduct->quantity = $inactivQuantity;
                          $selectedInactivProduct->date = $dateTime;
                          $objectArray[] = $selectedInactivProduct;
@@ -194,8 +204,6 @@ class CartController extends Controller
             $closedCartObject->{$carritoInactivo->id} = $objectArray;
         } 
 
-        
-       
         $vac = compact('closedCartObject');
         
         return view('tuscompras', $vac); 

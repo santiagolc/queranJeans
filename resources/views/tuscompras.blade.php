@@ -29,7 +29,7 @@ QueranJeans - Checkout
                             <span>${{$product->price}}</span>
                             
                             <!-- <span>Cantidad de Productos en el carrito: {{count($array)}}</span><br> -->
-                            <span class="cantProductosComprados">{{$product->quantity}}</span>
+                            <span class="cantProductosComprados" style="background-color: white;">{{$product->quantity}}</span>
                         </div>
                     </li>
                             @php

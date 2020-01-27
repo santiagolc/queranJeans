@@ -25,6 +25,12 @@ QueranJeans - EDITAR PERFIL
     <label for="avatar">Modifica tu Avatar</label><br>
     <input id="avatar" type="file" class="form-control form-control-sm" name="avatar"><br>
 
+    <label for="provincia">En que provincia vivis?</label><br>
+    <select id="locality-dropdown" name="locality" style="text-align-last: center; text-align: center;">
+        <option disabled selected value>-- Elije tu provincia --</option>
+    </select> <br>
+
     <input class="boton1" type="submit" name="" id="" class="btn-sm btn-primary">
 </form>
+<script src="/js/api.js"></script>  
 @endsection
