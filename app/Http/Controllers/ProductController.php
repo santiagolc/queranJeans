@@ -15,23 +15,23 @@ class ProductController extends Controller
     }
     
     public function ofertas(){
-        $products = Product::where("offer", "=", "si")->take(4)->get();
+        $products = Product::where("offer", "=", "si")->where('status', '=', 1)->take(4)->get();
         return view("index", compact("products"));
     }
 
     public function todos(){
-        $products = Product::all();
+        $products = Product::where('status', '=', 1)->get();
         return view('productos', compact('products'));
     }
 
     public function mostrarProductosHombre(){
-        $products = Product::where('category', '=', 'hombre')->paginate(12);
+        $products = Product::where('category', '=', 'hombre')->where('status', '=', 1)->paginate(12);
         return view('categoria_hombre', compact('products'));
     }
 
     public function mostrarProductosMujer(){
         //dd(Product::where('category', '=', 'mujer')->get());
-        $products = Product::where('category', '=', 'mujer')->paginate(12);
+        $products = Product::where('category', '=', 'mujer')->where('status', '=', 1)->paginate(12);
         return view('categoria_mujer', compact('products'));
     }
 
@@ -166,7 +166,8 @@ class ProductController extends Controller
 
     public function delete($id){
         $product = Product::find($id);
-        $product->delete();
+        $product->status = 0;
+        $product->save();
 
         return redirect('productos');
     }
