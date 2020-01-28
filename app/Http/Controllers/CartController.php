@@ -164,43 +164,41 @@ class CartController extends Controller
    
      public function mostrarComprasCerradas() {
         $carritosInactivos = Cart::where("user_id",\Auth::user()->id)->where('status','=','0')->get();
+        //invierto orden de carrito
         $carritosInactivos = $carritosInactivos->reverse();
+        //creo objeto de tipo array
         $closedCartObject = (object)[];
         foreach($carritosInactivos as $carritoInactivo) {
-            $inactivProducts = Cart_Product::where("cart_id", $carritoInactivo->id)->get();
-            $inactivProductIds = [];
-            foreach($inactivProducts as $inactivProduct) {
-                $inactivProductIds[] = $inactivProduct->product_id;
+            $inactiveProducts = Cart_Product::where("cart_id", $carritoInactivo->id)->get();
+            $inactiveProductIds = [];
+            foreach($inactiveProducts as $inactiveProduct) {
+                $inactiveProductIds[] = $inactiveProduct->product_id;
             }
-            $inactivProductsUniqueIds = array_unique($inactivProductIds);
+            $inactiveProductsUniqueIds = array_unique($inactiveProductIds);
 
-            $inactivProductIdCount = (object)[];
+            $inactiveProductIdCount = (object)[];
 
-            foreach($inactivProductsUniqueIds as $id) {
-                $inactivCount = 0;
-                foreach($inactivProducts as $inactivProduct) {
-                    if($inactivProduct->product_id==$id) {
-                        $inactivCount ++;
+            foreach($inactiveProductsUniqueIds as $id) {
+                $inactiveCount = 0;
+                foreach($inactiveProducts as $inactiveProduct) {
+                    if($inactiveProduct->product_id==$id) {
+                        $inactiveCount ++;
                     }
                 }
-                $inactivProductIdCount->{$id} = $inactivCount;
+                $inactiveProductIdCount->{$id} = $inactiveCount;
             }
 
             $fecha = $carritoInactivo->updated_at->toDateTimeString();
             
             $dateTime = $this->fechaCastellano($fecha); 
             $objectArray = [];
-            foreach($inactivProductIdCount as $id =>$inactivQuantity) {
-                 foreach($inactivProducts as $inactivProduct){
-                     if($inactivProduct->product_id == $id){
-                        /* if($inactivProduct->product_id == $id){
-                            /* if(!isset(Product::where('id', $inactivProduct->product_id)->get()[0])) {
-                               continue; 
-                            } */ 
-                        $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
-                        $selectedInactivProduct->quantity = $inactivQuantity;
-                        $selectedInactivProduct->date = $dateTime;
-                        $objectArray[] = $selectedInactivProduct;
+            foreach($inactiveProductIdCount as $id =>$inactiveQuantity) {
+                 foreach($inactiveProducts as $inactiveProduct){
+                     if($inactiveProduct->product_id == $id){
+                        $selectedInactiveProduct = Product::where('id', $inactiveProduct->product_id)->get()[0];
+                        $selectedInactiveProduct->quantity = $inactiveQuantity;
+                        $selectedInactiveProduct->date = $dateTime;
+                        $objectArray[] = $selectedInactiveProduct;
                         break;
                      }
                  }
