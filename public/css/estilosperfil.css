@@ -22,6 +22,16 @@
     border: 1px solid grey;
 }
 
+.perfil a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.perfil a:hover{
+    text-transform: lowercase;
+}
+
 /* media querie para tablets */
 @media (max-width: 768px){
     
@@ -33,7 +43,6 @@
         margin: 17px;
     }
 }
-
 
 /* media querie para mobile */
 @media (max-width: 450px){
