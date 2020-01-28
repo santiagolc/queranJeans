@@ -102,8 +102,13 @@
 /* media querie para mobile */
 @media (max-width: 450px){
 
+    .laCompra{
+        margin-top: 35px;
+    }
+
     .contenedorFinalizada {
-        margin-top: 14px;
+        margin-top: 35px;
+        margin-bottom: 46px;
     }
 
     .contenedorFinalizada h1, .datosCompra span{
