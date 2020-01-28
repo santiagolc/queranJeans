@@ -1,16 +1,45 @@
-.botonMobile{
+.eliminarMobile{
     display: none;
 }
 
+.eliminarWeb{
+    background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
+    background-color:#8c8c8c;
+    border-radius:5px;
+    border:1px solid #080808;
+    display:inline-block;
+    cursor:pointer;
+    padding: 4px 8px;
+    color:#ffffff;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #00050a;
+}
+
+.eliminarWeb:hover {
+    background:linear-gradient(to bottom, #424242 5%, #8c8c8c 100%);
+    background-color:#424242;
+}
+
+.eliminarWeb:active {
+    position:relative;
+    top:1px;
+}
+
 .contenedorCarrito{
-    min-height: 304px;
+    margin-top: 187px;
+    min-height: 47vh;
+}
+
+.numeroOrden{
+    text-align: center;
+    margin-bottom: 15px;
+
 }
 
 .carrito{
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .productoCarrito{
@@ -48,23 +77,47 @@
 }
 
 .botonFinalizar{
-text-align: center;}
+    text-align: center;
+    margin-bottom: 15px;
+}
 
 
 
 /* media querie para tablets */
 @media (max-width: 768px){
    
-    .botonMobile{
+    .eliminarMobile{
         display: block;
         padding: 10px 10px 0px 10px;
     }
 
-    .botonMobile i{
-        font-size: 30px;
+    .eliminarMobile{
+        background:linear-gradient(to bottom, #8c8c8c 5%, #424242 100%);
+        background-color:#8c8c8c;
+        border-radius:5px;
+        border:1px solid #080808;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #00050a;
+    }
+    
+    .eliminarMobile:hover {
+        background:linear-gradient(to bottom, #424242 5%, #8c8c8c 100%);
+        background-color:#424242;
+    }
+    
+    .eliminarMobile:active {
+        position:relative;
+        top:1px;
     }
 
-    .botonWeb{
+    .eliminarMobile i{
+        font-size: 31px;
+    }
+
+    .eliminarWeb{
         display: none;
     }
 

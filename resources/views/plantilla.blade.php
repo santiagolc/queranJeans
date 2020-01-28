@@ -56,10 +56,10 @@
                     $productQuantity = count($carritoActivo->products);
                 @endphp
                 <a href="/carrito">
-                <i class="large material-icons">shopping_cart</i>
-                <span>Carrito</span> 
+                    <i class="large material-icons">shopping_cart</i>Carrito
+                </a>   
                 @if($productQuantity>0)
-                    <span style="font-size: 22px;">( {{$productQuantity}} )</span></a>
+                <span style="font-size: 16px; color: white;">( {{$productQuantity}} )</span> 
                 @endif
             </li>   
 

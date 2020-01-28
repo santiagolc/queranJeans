@@ -9,7 +9,7 @@ QueranJeans - PERFIL
 @section("principal")
 
     <div class="perfil">
-            <h2 style="text-decoration: underline; margin-bottom: 30px;">Tu perfil:</h2> 
+            <h2 style="margin-bottom: 30px;">TU PERFIL</h2> 
             <h2>Nombre Completo: {{$user->name}} {{$user->surname}}</h2>
             <h2>Email: {{$user->email}}</h2>
             @if($user->province!=null)
@@ -21,12 +21,12 @@ QueranJeans - PERFIL
                 @endforelse
             @endif
             @if(count($cart)>0)
-                <a href="/tuscompras">Tus compras</a>
+                <a href="/tuscompras">TUS COMPRAS</a>
             @else 
-                <h2 style="color: grey;">Aun no tienes Compras Realizadas</h2>
+                <h2 class="siNoHayCompras">Aun no tienes Compras Realizadas</h2>
             @endif
             <br>
-            <img class="imgAvatarEdit" src='{{$user->avatar}}' alt="avatar usuario" style="width:300px; height: 300px; border-radius: 150px; border: 1px solid grey;">
+            <img class="imgAvatarEdit" src='{{$user->avatar}}' alt="avatar usuario">
             <br>
             <a class="linkEditar" href="edit">Hace Click aca para editar tus datos!</a>
         </div>     

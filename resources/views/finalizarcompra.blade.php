@@ -46,12 +46,16 @@ QueranJeans - Checkout
 
                 @if(isset($closedCartsObjectArray))
                     <ul>
-                        <li style="text-align: right; padding: 10px; margin-right:10%;">
+                        <li style="text-align: right; padding: 10px; margin-right:10%; list-style: none;">
                             <span style="text-align: center;">Precio Total: ${{$total}}</span>
                         </li>
                     </ul>
                 @endif 
+
             </div>   
         </ul>
+        
+        <a class="linkVolverHome" href="/">VOLVER AL INICIO</a>
+
     </div>
 @stop

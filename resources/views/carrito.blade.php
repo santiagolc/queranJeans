@@ -31,8 +31,8 @@ QueranJeans - CARRITO
                 <form class="formCarrito" action="/eliminar" method="post">
                     @csrf
                     <input type="hidden" value="{{$product->id}}" name="product_id">
-                    <button class="botonMobile" type="submit"><i class="large material-icons">delete</i></button>
-                    <button class="botonWeb" type="submit" style="border-radius: 10px;"><i class="large material-icons">delete</i>Eliminar</button>
+                    <button class="eliminarMobile" type="submit"><i class="large material-icons">delete</i></button>
+                    <button class="eliminarWeb" type="submit"><i class="large material-icons">delete</i>Eliminar</button>
                 </form>
             </article>
            
@@ -43,7 +43,7 @@ QueranJeans - CARRITO
             @empty
                 <h3 style="text-align: center;">Sin productos en el Carrito</h3>
             @endforelse
-            <span class="totalCarrito" style="text-align: center; padding: 9px;">Total: ${{$total}}</span>
+            <h4 class="totalCarrito" style="text-align: center; padding: 9px;">Total: ${{$total}}</h4>
 
     </section>
     <form class="botonFinalizar" action="/finalizarcompra" method="post">
