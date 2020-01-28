@@ -54,6 +54,8 @@
                 @php
                     $productQuantity = count($carritoActivo->products);
                 @endphp
+
+                <li><a href="/">Home</a></li>
                 <a href="/carrito">
                 <i class="large material-icons">shopping_cart</i>
                 <span>Carrito</span> 
@@ -68,7 +70,6 @@
                 } 
             @endphp
 
-            <li><a href="/">Home</a></li>
             <li><a href="/profile"><span>{{ Auth::user()->name }}</span></a></li>
             
             <li class="avatarHeader"><img src="/{{ Auth::user()->avatar }}" alt=""></li>
