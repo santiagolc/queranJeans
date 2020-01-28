@@ -1,6 +1,7 @@
 .contenedorTusCompras{
-    margin-top: 170px;
-    min-height: 50vh;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    min-height: 35vh;
 }
 
 .tituloCompras{
@@ -28,8 +29,9 @@ span a{
 @media (max-width: 768px){
     
     .contenedorTusCompras{
-        margin-top: 150px;
-        min-height: 4130px;
+        margin-top: 170px;
+        margin-bottom: 0;
+        min-height: 70vh;
     }
 
 }
@@ -39,7 +41,8 @@ span a{
 
     .contenedorTusCompras{ 
         margin-top: 40px;
-        min-height: 2620px;
+        min-height: 35vh;
+
     }
 
     .paraBloquear{

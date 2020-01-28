@@ -54,8 +54,5 @@ QueranJeans - Checkout
 
             </div>   
         </ul>
-        
-        <a class="linkVolverHome" href="/">VOLVER AL INICIO</a>
-
     </div>
 @stop

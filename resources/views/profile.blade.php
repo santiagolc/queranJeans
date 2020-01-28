@@ -9,7 +9,7 @@ QueranJeans - PERFIL
 @section("principal")
 
     <div class="perfil">
-            <h2 style="margin-bottom: 30px;">TU PERFIL</h2> 
+            <h2 >TU PERFIL</h2> 
             <h2>Nombre Completo: {{$user->name}} {{$user->surname}}</h2>
             <h2>Email: {{$user->email}}</h2>
             @if($user->province!=null)

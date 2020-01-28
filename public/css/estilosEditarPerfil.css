@@ -56,5 +56,9 @@
     font-size: 0.8em;
     width: 300px;
   } 
+
+  .formEditar select{
+    width: 90%;
+  }
 }
 

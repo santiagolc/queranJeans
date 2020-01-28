@@ -27,12 +27,10 @@
     
     .perfil{
         margin-top: 130px;
-        margin-bottom: 40px;
-        padding: 10px;
     }
 
-    div .imgAvatarEdit{
-        width: 150px;
+    .linkEditar {
+        margin: 17px;
     }
 }
 
@@ -47,10 +45,4 @@
     .perfil h2, .perfil a{
         font-size: 20px;
     }
-
-    div .imgAvatarEdit{
-        width: 100px;
-        margin-bottom: 10px;
-    }
-
 }

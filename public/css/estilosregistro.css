@@ -90,7 +90,8 @@ label[for="avatar"]:active {
 @media (max-width: 768px){
    
   .formRegistro {
-    margin-top: 130px;
+    margin-top: 143px;
+    margin-bottom: 60px;
   }
 }
 

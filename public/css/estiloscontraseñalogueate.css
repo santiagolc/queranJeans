@@ -1,6 +1,6 @@
     .contenedorContraseña{
-        margin-top: 170px;
-        margin-bottom: 67px;
+        margin-top: 175px;
+        min-height: 67vh;
         text-align: center;
     }
 
@@ -29,11 +29,20 @@
         margin-bottom: 10px;
     }
 
+/* media querie para tablet */
+    @media (max-width: 768px){
+    
+    #email{
+        margin-top: 26px;
+    }
+}
+
 /* media querie para mobile */
 @media (max-width: 450px){
 
     .contenedorContraseña{
         margin-top: 60px;
+        min-height: 38vh;
     }
 
     .contenedorContraseña label, .contenedorContraseña button{
