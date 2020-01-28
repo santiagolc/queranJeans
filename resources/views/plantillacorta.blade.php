@@ -68,6 +68,7 @@
                 } 
             @endphp
 
+            <li><a href="/">Home</a></li>
             <li><a href="/profile"><span>{{ Auth::user()->name }}</span></a></li>
             
             <li class="avatarHeader"><img src="/{{ Auth::user()->avatar }}" alt=""></li>
