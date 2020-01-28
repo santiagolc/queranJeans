@@ -193,10 +193,14 @@ class CartController extends Controller
             foreach($inactivProductIdCount as $id =>$inactivQuantity) {
                  foreach($inactivProducts as $inactivProduct){
                      if($inactivProduct->product_id == $id){
-                         $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
-                         $selectedInactivProduct->quantity = $inactivQuantity;
-                         $selectedInactivProduct->date = $dateTime;
-                         $objectArray[] = $selectedInactivProduct;
+                        if($inactivProduct->product_id == $id){
+                            if(!isset(Product::where('id', $inactivProduct->product_id)->get()[0])) {
+                               continue; 
+                            }
+                        $selectedInactivProduct = Product::where('id', $inactivProduct->product_id)->get()[0];
+                        $selectedInactivProduct->quantity = $inactivQuantity;
+                        $selectedInactivProduct->date = $dateTime;
+                        $objectArray[] = $selectedInactivProduct;
                      break;
                      }
                  }
@@ -208,6 +212,7 @@ class CartController extends Controller
         
         return view('tuscompras', $vac); 
     }
+}
 
 
     /**

@@ -11,6 +11,12 @@ footer{
     
 }
 
+.footerCorto {
+    position: fixed;
+    width: 100%;
+    left: 0;
+}
+
 footer ul{
     display: flex;
     flex-direction: column;

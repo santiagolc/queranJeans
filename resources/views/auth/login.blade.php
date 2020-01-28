@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('plantillacorta')
 
 @section("titulo")
 

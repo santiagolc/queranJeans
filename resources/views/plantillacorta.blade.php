@@ -35,7 +35,7 @@
     </title>
     
 </head>
-<body>
+<body class="bodyCorto">
 <header>
     <nav>
         <span class="logo">
@@ -50,16 +50,15 @@
         @endguest
         @auth
         <ul>
-            <li><a href="/">Home</a></li>
             <li>
                 @php
                     $productQuantity = count($carritoActivo->products);
                 @endphp
                 <a href="/carrito">
-                    <i class="large material-icons">shopping_cart</i>Carrito
-                </a>   
+                <i class="large material-icons">shopping_cart</i>
+                <span>Carrito</span> 
                 @if($productQuantity>0)
-                <span style="font-size: 16px; color: white;">( {{$productQuantity}} )</span> 
+                    <span style="font-size: 22px;">( {{$productQuantity}} )</span></a>
                 @endif
             </li>   
 
@@ -89,7 +88,7 @@
 
  @yield("principal")
 
-<footer>
+<footer class="footerCorto">
         <div class="contacto">
             <h3>Contacto</h3>
             <a href="tel:5254-5658">5254-5658</a><br>

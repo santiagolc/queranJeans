@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('plantillacorta')
 
 @section("titulo")
 
@@ -16,7 +16,10 @@ QueranJeans - CARRITO
                 $total = 0;
             @endphp
 
-            <h2 class="numeroOrden">Numero de Orden de Compra: #{{$cartId}}</h2>
+            @if(!empty($carritoActivo->products->count()))
+                <h2 style="text-align: center;">Numero de Orden de Compra: #{{$cartId}}</h2>
+            @endif
+
             @forelse($result as $product) 
           
             <article class="productoCarrito">
@@ -45,13 +48,11 @@ QueranJeans - CARRITO
     </section>
     <form class="botonFinalizar" action="/finalizarcompra" method="post">
         @csrf
-        @php
-            if(empty($carritoActivo->products->count())){
-                echo '<button type="submit" disabled>Finalizar Compra</button>';
-            } else {
-                echo '<button class="boton1" type="submit">Finalizar Compra</button>';  
-            }
-        @endphp
+        @if(empty($carritoActivo->products->count()))
+            <button type="submit" disabled>Finalizar Compra</button>
+        @else 
+            <button class="boton1" type="submit">Finalizar Compra</button> 
+        @endif
     </form>
 </div>
 @stop
