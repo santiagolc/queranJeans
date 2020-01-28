@@ -66,4 +66,5 @@ QueranJeans - MUJERES
         </section>
     </main>
 </div>
+<div class="paginacionCategoria" > {{ $products->links() }} </div>
 @stop

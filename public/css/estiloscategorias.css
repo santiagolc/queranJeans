@@ -37,7 +37,6 @@
     .contenedorCategorias{
         display: flex;
         margin-top: 12%;
-        margin-bottom: 1%;
     }
 
     .lateralizq{
@@ -101,6 +100,22 @@
         border-radius: 10px;
         border: 1px solid white;
         padding: 2px;
+    }
+
+    .paginacionCategoria{
+        margin-bottom: 10px;
+    }
+
+    .paginacionCategoria span{
+        font-size: 30px;
+        font-weight: bold;
+        color: black;
+        padding: 5px;
+    }
+
+    .paginacionCategoria li a{
+        color: black;
+        padding: 5px;
     }
 
 @media (max-width: 1200px){
@@ -171,7 +186,9 @@
     }
 
     .producto{
-        height: 227px;
+        height: 330px;
+        width: 45%;
+        margin: 0% 2% 2% 2%;
     }
 
     .producto .datos{
@@ -179,7 +196,7 @@
     }
 
     .lateralizq{
-        height: 945px;
+        height: 2040px;;
     }
 
     .lista ul, .lista ul li a{
@@ -193,6 +210,18 @@
     .producto .datos span, .producto .datos a{
         font-size: 12px;
     }    
+
+    .paginacionCategoria{
+        margin-top: 10px;
+    }
+
+    .paginacionCategoria nav{
+        padding: 0;
+    }
+
+    .paginacionCategoria nav ul{
+        left: 11%;
+    }
 
 }
 
@@ -257,5 +286,11 @@
     .producto .datos span, .producto .datos a{
         font-size: 18px;
     } 
+
+    .paginacionCategoria nav ul{
+        display: flex;
+        flex-direction: row;
+        left: 3%;
+    }
 
 }

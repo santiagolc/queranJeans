@@ -60,10 +60,9 @@ QueranJeans - HOMBRES
 
             @endforeach
 
-            {{ $products->links() }}
-
             </div>
         </section>
     </main>
 </div>
+<div class="paginacionCategoria" > {{ $products->links() }} </div>
 @stop
