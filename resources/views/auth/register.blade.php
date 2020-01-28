@@ -18,9 +18,9 @@ QueranJeans - REGISTRO
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="given-name" autofocus>
                 <p class="error" id="shortName">Tu nombre es muy corto!</p>
                 @error('name')
-                    <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
+                    <p class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}
-                    </span>
+                    </p>
                 @enderror
             </div>
         </div>
@@ -30,11 +30,11 @@ QueranJeans - REGISTRO
 
             <div class="col-md-6">
                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}"  autocomplete="family-name" autofocus>
-                <p class="error" id="shortSurnameError">El apellido es muy corto.</p>
+                <p class="error" id="shortSurnameError">Tu apellido es muy corto!</p>
                 @error('surname')
-                <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
+                <p class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}
-                    </span>
+                    </p>
                 @enderror
             </div>
         </div>
@@ -47,9 +47,9 @@ QueranJeans - REGISTRO
                 <p class="error" id="shortEmail">Este email es muy corto</p>
                 <p class="error" id="emailFormatError">No tiene formato de Email</p>
                 @error('email')
-                <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
+                <p class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}
-                    </span>
+                    </p>
                 @enderror
             </div>
         </div>
@@ -59,11 +59,11 @@ QueranJeans - REGISTRO
 
             <div class="col-md-6">
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
-                <p class="error" id="shortPassword">El password debe tener al menos 4 caracteres</p>
+                <p class="error" id="shortPassword">La contraseña debe tener al menos 4 caracteres</p>
                 @error('password')
-                <span class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
+                <p class="invalid-feedback" role="alert" style="color:red; font-size:16px;">
                         {{ $message }}
-                    </span>
+                    </p>
                 @enderror
             </div>
         </div>

@@ -16,7 +16,7 @@
 }
 
 .formulario {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .formFinalizar{
@@ -85,6 +85,10 @@ label[for="avatar"]:active {
     position:relative;
     top:1px;
   }
+
+.formRegistro input{
+  margin-bottom: 20px;
+}
 
 /* media querie para tablets */    
 @media (max-width: 768px){

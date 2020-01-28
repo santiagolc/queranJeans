@@ -4,7 +4,7 @@
         text-align: center;
     }
 
-    #email{
+    .contenedorContraseña #email{
         margin-top: 20px;
     }
 
@@ -32,7 +32,7 @@
 /* media querie para tablet */
     @media (max-width: 768px){
     
-    #email{
+    .contenedorContraseña #email{
         margin-top: 26px;
     }
 }

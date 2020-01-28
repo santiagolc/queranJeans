@@ -4,7 +4,7 @@
 
 .formLogin{
     text-align: center;
-    margin-top: 140px;
+    margin-top: 133px;
 }
 
 .labelblock {
@@ -23,6 +23,10 @@
 .formulario a {
 text-decoration: none;
 color: black;
+}
+
+.containerLogin input{
+    margin-bottom: 15px;
 }
 
 

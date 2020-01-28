@@ -16,27 +16,28 @@ QueranJeans - EDITAR PRODUCTO
     
     <label for="name">Nombre del Producto:</label><br>
     <input type="text" name="name" value="{{$product->name}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('name')}} </span><br>
+    <p style="color:red; font-size:16px;"> {{$errors->first('name')}} </p><br>
 
    
-    <label for="price">Precio (numero):</label><br>
+    <label for="price">Precio:</label><br>
     <input type="text" name="price" value="{{$product->price}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('price')}} </span><br>
+    <p style="color:red; font-size:16px;"> {{$errors->first('price')}} </p><br>
 
    
-    <label for="offer">Oferta: (si/no)</label><br>
-    <input type="text" name="offer" value="{{$product->offer}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('offer')}} </span><br>
+    <label for="offer">Oferta:</label><br>
+    <input type="radio" name="offer" value="si">SI
+    <input type="radio" name="offer" value="no">NO
+    <p style="color:red; font-size:16px;"> {{$errors->first('offer')}} </p><br>
 
 
-    <label for="sale">Descuento (0-100):</label><br>
+    <label for="sale">Descuento:</label><br>
     <input type="text" name="sale" value="{{$product->sale}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('sale')}} </span><br>
+    <p style="color:red; font-size:16px;"> {{$errors->first('sale')}} </p><br>
 
 
     <label for="category">Categoria:</label><br>
     <input type="text" name="category" value="{{$product->category}}">
-    <span style="color:red; font-size:16px;"> {{$errors->first('category')}} </span><br>
+    <p style="color:red; font-size:16px;"> {{$errors->first('category')}} </p><br>
 
 
     <label for="avatar">Imagen</label><br>
