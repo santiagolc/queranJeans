@@ -1,7 +1,6 @@
   .formEditar {
     text-align: center;
     margin-top: 150px;
-    margin-bottom: 30px;
   }
 
   .formEditar input{ 
@@ -33,8 +32,9 @@
 @media (max-width: 768px){
  
   .formEditar {
-    margin-top: 130px;
-  }
+    margin-top: 175px;
+    min-height: 705px; 
+   }
 }
 
 /* media querie para mobile */
