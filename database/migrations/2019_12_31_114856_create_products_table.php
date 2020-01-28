@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('offer');
             $table->integer('sale');
             $table->string('category');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
 
