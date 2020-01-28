@@ -20,6 +20,8 @@ QueranJeans - EDITAR PERFIL
     <label for="name">Apellido</label><br>
     <input type="text" name="surname" id="" style="text-align: center;" value="{{$user->surname}}">
     <span style="color:red; font-size:12px;">{{$errors->first('surname')}}</span> <br>
+
+    <a href="{{ route('password.request') }}">Haz click aqui para cambiar tu contraseña</a><br><br>
             
     <label for="provincia">En que provincia vivis?</label><br>
     <select id="locality-dropdown" name="locality" style="text-align-last: center; text-align: center;">

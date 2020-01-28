@@ -21,7 +21,7 @@ QueranJeans - PERFIL
                 @endforelse
             @endif
             @if(count($cart)>0)
-                <a href="/tuscompras">TUS COMPRAS</a>
+                <a href="/tuscompras" style = "color: red; margin-top: 40px;">TUS COMPRAS</a>
             @else 
                 <h2 class="siNoHayCompras">Aun no tienes Compras Realizadas</h2>
             @endif
