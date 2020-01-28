@@ -13,7 +13,7 @@ QueranJeans - Checkout
     <h1 class="tituloCompras">Estas son las compras que realizaste en queranJeans:</h1>
         <ul>
                 @forelse($closedCartObject as $cartId => $array)
-                <div class="laCompra">
+                <div class="laCompra" style = "margin-top: 100px;">
                     <li class="infoCompra">
                         <span>ID Compra: #{{$cartId}}</span><br>
                         <span>Fecha de Compra: {{$array[0]->date}}</span>
