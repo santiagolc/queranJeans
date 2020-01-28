@@ -6,10 +6,20 @@
     margin-top: 170px;
 }
 
-div .imgAvatarEdit{
-    width: 200px;
-    border-radius: 50%;
-    margin-bottom: 30px;
+.siNoHayCompras{
+    color: grey;
+    margin-top: 10px;
+}
+
+.linkEditar{
+    margin: 20px;
+}
+
+.imgAvatarEdit{
+    width:300px; 
+    height: 300px; 
+    border-radius: 150px; 
+    border: 1px solid grey;
 }
 
 /* media querie para tablets */

@@ -1,5 +1,6 @@
 .contenedorTusCompras{
     margin-top: 170px;
+    min-height: 50vh;
 }
 
 .tituloCompras{
