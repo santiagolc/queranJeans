@@ -26,8 +26,8 @@
 }
 
 .contenedorCarrito{
-    margin-top: 170px;
-    min-height: 47vh;
+    margin-top: 175px;
+    min-height: 49vh;
 }
 
 .numeroOrden{
@@ -85,6 +85,11 @@
 
 /* media querie para tablets */
 @media (max-width: 768px){
+
+    .contenedorCarrito{
+        margin-top: 183px;
+        min-height: 68vh;
+    }
    
     .eliminarMobile{
         display: block;
@@ -150,7 +155,8 @@
     }
 
     .contenedorCarrito{
-        margin-top: 30px;
+        margin-top: 43px;
+        min-height: 34vh;
     }
 
     .carrito{
