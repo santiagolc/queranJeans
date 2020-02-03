@@ -19,8 +19,7 @@ QueranJeans - HOME
 
             
             <div class="ofertas">
-            @foreach ($products as $product)
-              
+            @forelse($products as $product)
                 <article class="oferta">
                 <img src='{{$product->image}}' alt='{{$product->name}}'>
                 <div class="datos">
@@ -38,8 +37,9 @@ QueranJeans - HOME
                     <span>{{$product->sale}}%</span>
                 </div>
                 </article>
-
-            @endforeach
+            @empty
+                <h2 style="text-align:center; color: red;">Descargar los productos de la BBDD en public->SQL->"queranje_.sql"</h2>
+            @endforelse
             </div>
 
             <div class="jeans">
